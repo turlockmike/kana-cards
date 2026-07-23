@@ -42,6 +42,7 @@
   let session = [];        // in-memory queue of due cardIds
   let flipped = false;
   let curDrawn = false;
+  let showPicker = false;  // force the profile picker even when a profile is active
 
   // ---- profile helpers ----
   function profileName(id){ const p=meta.profiles.find(p=>p.id===id); return p?p.name:'—'; }
@@ -49,9 +50,20 @@
     const id='p'+Math.random().toString(36).slice(2,8);
     meta.profiles.push({id,name}); meta.active=id; saveMeta(meta);
     pid=id; deck=loadDeck(pid); saveDeck(pid,deck);
+    showPicker=false;
     introduceNext(3); // start everyone with 3 cards
+    startSession();
   }
-  function switchProfile(id){ meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid); startSession(); }
+  function switchProfile(id){ showPicker=false; meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid); startSession(); }
+  function deleteProfile(id){
+    localStorage.removeItem(deckKey(id));
+    meta.profiles = meta.profiles.filter(p=>p.id!==id);
+    if(meta.active===id){ meta.active = meta.profiles[0] ? meta.profiles[0].id : null; }
+    saveMeta(meta);
+    pid = meta.active; deck = pid? loadDeck(pid) : null;
+    if(pid && deck.introduced.length===0) introduceNext(3);
+    render();
+  }
 
   // ---- deck logic ----
   function introduceNext(n){
@@ -99,7 +111,7 @@
 
   function render(){
     updateHeader();
-    if(!pid){ renderProfileCreate(); return; }
+    if(!pid || showPicker){ renderPicker(); return; }
     if(session.length===0){ renderCaughtUp(); return; }
     renderCard(session[0]);
   }
@@ -112,19 +124,43 @@
     }
   }
 
-  function renderProfileCreate(){
+  function renderPicker(){
+    const has = meta.profiles.length>0;
+    const list = meta.profiles.map(p=>
+      `<div class="pcard ${p.id===pid?'active':''}" data-pick="${p.id}">
+         <span style="display:flex;align-items:center"><span class="av">${esc(p.name[0]||'?').toUpperCase()}</span>${esc(p.name)}</span>
+         <button class="del" data-del="${p.id}" title="remove">✕</button>
+       </div>`).join('');
     main.innerHTML =
      `<div class="center">
         <h2>Who's studying?</h2>
-        <p>Make a profile for each learner. Everyone gets their own deck and progress.</p>
-        <input id="pname" placeholder="Type a name" maxlength="16"
-          style="font-size:18px;padding:14px;border:1px solid #dfe3ef;border-radius:14px;width:220px;text-align:center">
-        <button class="bigbtn" id="createP">Start learning →</button>
-        ${meta.profiles.length? `<div style="margin-top:10px">${meta.profiles.map(p=>
-            `<button class="bigbtn ghost" style="margin:4px" data-pid="${p.id}">${esc(p.name)}</button>`).join('')}</div>`:''}
+        ${has ? `<div class="plist">${list}</div>` :
+                `<p>No login, no password — just make a profile for each learner.</p>`}
+        <div id="createWrap" style="${has?'display:none':''};display:flex;flex-direction:column;gap:10px;align-items:center;width:100%;max-width:300px">
+          <input id="pname" placeholder="Type a name" maxlength="16"
+            style="font-size:18px;padding:14px;border:2px solid #e6e9f5;border-radius:14px;width:100%;text-align:center">
+          <button class="bigbtn" id="createP" style="width:100%">Start learning →</button>
+        </div>
+        ${has ? `<button class="bigbtn ghost" id="showCreate" style="max-width:300px;width:100%">➕ New profile</button>` : ''}
       </div>`;
-    $('#createP').onclick=()=>{ const n=$('#pname').value.trim(); if(n){ newProfile(n); render(); } };
-    main.querySelectorAll('[data-pid]').forEach(b=>b.onclick=()=>switchProfile(b.dataset.pid));
+    // select an existing profile
+    main.querySelectorAll('[data-pick]').forEach(el=>el.onclick=e=>{
+      if(e.target.closest('[data-del]')) return;      // ignore clicks on the delete X
+      switchProfile(el.dataset.pick);
+    });
+    // delete a profile
+    main.querySelectorAll('[data-del]').forEach(b=>b.onclick=e=>{
+      e.stopPropagation();
+      const id=b.dataset.del, nm=profileName(id);
+      if(confirm('Remove '+nm+' and their progress from THIS device?')) deleteProfile(id);
+    });
+    // reveal create field
+    const sc=$('#showCreate'); if(sc) sc.onclick=()=>{ $('#createWrap').style.display='flex'; sc.style.display='none'; $('#pname').focus(); };
+    const cp=$('#createP'); if(cp){
+      const go=()=>{ const n=$('#pname').value.trim(); if(n){ newProfile(n); render(); } };
+      cp.onclick=go;
+      $('#pname').addEventListener('keydown',e=>{ if(e.key==='Enter') go(); });
+    }
   }
 
   function renderCaughtUp(){
@@ -242,7 +278,7 @@
 
   // ================= SETTINGS SHEET =================
   $('#gearBtn').onclick=()=>openSheet();
-  $('#profileBtn').onclick=()=>openSheet(true);
+  $('#profileBtn').onclick=()=>{ showPicker=true; render(); };
   $('#closeSheet').onclick=()=>$('#sheet').classList.remove('show');
   $('#sheet').addEventListener('click',e=>{ if(e.target.id==='sheet') e.target.classList.remove('show'); });
 

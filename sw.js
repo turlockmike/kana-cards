@@ -1,5 +1,5 @@
 /* Offline-first service worker. Cache-first for the app shell so it works with no network. */
-const CACHE='kana-v1';
+const CACHE='kana-v2';
 const ASSETS=['./','./index.html','./kana.js','./fsrs.js','./app.js',
               './manifest.json','./icon.svg'];
 self.addEventListener('install',e=>{

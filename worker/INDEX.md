@@ -2,7 +2,8 @@
 # Index — /home/mike/projects/kana-flashcards/worker
 
 ## Files
+- `sync.test.mjs`
 - `worker.js`
 - `wrangler.toml`
 
-_0 subfolders, 2 files._
+_0 subfolders, 3 files._

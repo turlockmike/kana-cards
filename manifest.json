@@ -1,7 +1,7 @@
 {
-  "name": "Kana Cards",
-  "short_name": "Kana",
-  "description": "Learn hiragana & katakana with stroke-order flashcards.",
+  "name": "Japanese Cards — Kana & Words",
+  "short_name": "Japanese",
+  "description": "Learn Japanese: hiragana & katakana with stroke order, plus 625 picture-vocab words (picture → kana + audio).",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

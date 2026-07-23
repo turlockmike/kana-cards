@@ -1,0 +1,21 @@
+Image attribution — word625-cards
+==================================
+
+Emoji images (entries with "source": "emoji" in images.json)
+------------------------------------------------------------
+All emoji glyphs are from the OpenMoji project — the open-source emoji and
+icon library. https://openmoji.org
+
+License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+Attribution: "OpenMoji" — see https://openmoji.org
+Copyright: OpenMoji contributors (HfG Schwäbisch Gmünd).
+
+Per CC BY-SA 4.0, this attribution must ship with any distribution that
+includes these images, and derivative/adapted versions of the glyphs must be
+shared under the same license.
+
+Photo images (entries with "license": "cc0" / "pdm")
+----------------------------------------------------
+Sourced via Openverse (openverse.org). CC0 / Public Domain Mark — no
+attribution required; per-image creator + landing page are recorded in
+images.json for good hygiene.

@@ -6,6 +6,8 @@
 - **worker/**
 
 ## Files
+- `BACKLOG.md` — Kana Cards — feature backlog
+- `DEPLOY.md` — Kana Cards — cloud sync deploy (one-time, ~5 min)
 - `README.md` — Kana Cards
 - `app.js`
 - `build_kana.py`
@@ -15,5 +17,6 @@
 - `kana.js`
 - `manifest.json`
 - `sw.js`
+- `sync.js`
 
-_2 subfolders, 9 files._
+_2 subfolders, 12 files._

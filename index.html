@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#5b6ee1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>Kana Cards</title>
+<title>Japanese Cards — Kana &amp; Words</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235b6ee1'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'%3E&#12354;%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235b6ee1'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'%3E&#12354;%3C/text%3E%3C/svg%3E">
@@ -79,6 +79,19 @@
   textarea{width:100%;height:70px;font-size:12px;border:1px solid #dfe3ef;border-radius:10px;padding:8px;font-family:monospace;}
   .tiny{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.5;}
   .close{background:#eef0fb;color:var(--accent);width:100%;margin-top:14px;}
+  /* mode toggle bar */
+  #modebar{display:flex;gap:6px;padding:0 14px 8px;}
+  #modebar button{flex:1;background:#eef0fb;border:none;color:var(--muted);font-size:15px;
+        font-weight:700;border-radius:14px;padding:10px;transition:background .12s,color .12s;}
+  #modebar button.on{background:var(--accent);color:#fff;}
+  /* words card: picture front, kana+audio back */
+  .imgwrap{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;padding:14px;background:#fff;}
+  .cardimg{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;}
+  #answer.wordanswer .kana{font-size:44px;font-weight:700;margin-bottom:8px;}
+  #answer.wordanswer .kana.stub{font-size:18px;color:var(--muted);font-weight:600;}
+  .audiobtn{background:#eef0fb;border:none;color:var(--accent);font-weight:700;
+        border-radius:20px;padding:10px 22px;font-size:16px;}
+  .audiobtn:disabled{opacity:.4;}
 </style>
 </head>
 <body>
@@ -88,11 +101,17 @@
   <button class="gear" id="gearBtn" aria-label="settings">⚙</button>
 </header>
 
+<div id="modebar">
+  <button data-mode="kana" class="on">✍️ Kana</button>
+  <button data-mode="words">🖼️ Words</button>
+</div>
+
 <main id="main"></main>
 
 <div class="sheet" id="sheet">
   <div class="sheetinner">
     <h3>Settings</h3>
+    <div class="row"><span>Current mode</span><b id="s_mode">—</b></div>
     <div class="row"><span>Learned so far</span><b id="s_learned">0</b></div>
     <div class="row"><span>Cards reviewed (total)</span><b id="s_reviews">0</b></div>
     <p class="tiny" style="margin-top:14px">Move progress to another phone: copy this code on the old phone, paste it into <b>Restore</b> on the new one.</p>

@@ -1,23 +1,78 @@
-/* Kana Cards — offline-first flashcards with FSRS + drawing + stroke animation.
- * Multi-profile. Progress in localStorage (source of truth). Optional cloud sync is
- * additive via sync.js (off unless SYNC_ENDPOINT is set there) — see DEPLOY.md. */
+/* Japanese Cards — one app, two decks: KANA (stroke-order) + WORDS (picture → kana+audio).
+ * Consolidated 2026-07-23 (Mike's order): word625 picture-cards grafted into the kana app.
+ *
+ * ONE profile list (kana_meta_v1) holds BOTH decks. A mode toggle (Kana | Words) swaps the
+ * active deck + card renderer. Decks are namespaced by mode in localStorage:
+ *     kana_deck_<pid>          -> KANA deck  (unchanged — existing progress preserved)
+ *     kana_deck_<pid>_words    -> WORDS deck
+ * FSRS scheduling is per-card, independent per mode. localStorage is the source of truth;
+ * optional cloud sync (sync.js, off by default) round-trips BOTH decks per profile.
+ *
+ * WORDS pedagogy (Mike, 2026-07-23): PICTURE on front -> produce kana + audio on back,
+ * NO English on the card. Card content loaded at boot from two static JSON files:
+ *     media/img/images.json  -> [{en, slug, file, category, status, ...}]  (images we have)
+ *     data/words.json        -> [{id|en, kana, en, audio}]                 (kana + audio)
+ */
 (function(){
   "use strict";
   const KANA = window.KANA, FSRS = window.FSRS;
   const $ = s => document.querySelector(s);
   const now = () => Date.now();
 
-  // ---- ordered introduction list: all hiragana (by gojuon order), then all katakana ----
-  const ALLIDS = Object.keys(KANA).sort((a,b)=>{
+  // ================= CONTENT PROVIDERS =================
+  // --- KANA: hiragana (gojuon order) then katakana. Synchronous (from kana.js). ---
+  const KANA_IDS = Object.keys(KANA).sort((a,b)=>{
     const A=KANA[a], B=KANA[b];
     if(A.type!==B.type) return A.type==='hiragana' ? -1 : 1;
     return A.order-B.order;
   });
-  const TOTAL = ALLIDS.length;
 
-  // ---- persistence ----
+  // --- WORDS: picture cards. Loaded async from JSON, SW-cached for offline. ---
+  const IMG_DIR = 'media/img/', AUDIO_DIR = 'media/audio/';
+  const W = { cards:{}, ids:[], ready:false };   // cards: slug -> {slug,en,file,category,kana,audio}
+  async function loadJSON(url){
+    try{ const r = await fetch(url, {cache:'no-cache'}); if(!r.ok) throw 0; return await r.json(); }
+    catch(e){ return null; }
+  }
+  async function loadWords(){
+    const imgs = await loadJSON(IMG_DIR+'images.json') || [];
+    const words = await loadJSON('data/words.json');
+    const byEn = {};
+    if(Array.isArray(words)){
+      words.forEach(w=>{ const k=(w.en||w.english||'').trim().toLowerCase(); if(k) byEn[k]=w; });
+    }
+    imgs.filter(e=>e && e.status==='ok' && e.file).forEach(e=>{
+      const slug = (e.slug || e.en || '').trim().toLowerCase();
+      if(!slug) return;
+      const w = byEn[(e.en||slug).trim().toLowerCase()] || null;
+      W.cards[slug] = {
+        slug, en: e.en||slug, file: e.file, category: e.category||'',
+        kana:  w ? (w.kana||null) : null,
+        audio: w ? (w.audio||null) : null
+      };
+    });
+    // keep images.json order (already category-grouped)
+    const orderIdx = {}; let i=0;
+    imgs.forEach(e=>{ const s=(e.slug||e.en||'').trim().toLowerCase(); if(s && !(s in orderIdx)) orderIdx[s]=i++; });
+    W.ids = Object.keys(W.cards).sort((a,b)=>(orderIdx[a]??1e9)-(orderIdx[b]??1e9));
+    W.ready = true;
+  }
+
+  // --- mode registry ---
+  const MODES = {
+    kana:  { label:'Kana',  unit:'characters', suffix:'',       ids:()=>KANA_IDS, ready:()=>true,      order:KANA_IDS },
+    words: { label:'Words', unit:'words',      suffix:'_words', ids:()=>W.ids,    ready:()=>W.ready,   order:null }
+  };
+  let mode = localStorage.getItem('kana_mode');
+  if(mode!=='kana' && mode!=='words') mode='kana';
+  const idsOf   = m => MODES[m].ids();
+  const readyOf = m => MODES[m].ready();
+  const contentOf = (m,id) => m==='kana' ? KANA[id] : W.cards[id];
+  const orderIndex = (m,id) => m==='kana' ? KANA_IDS.indexOf(id) : W.ids.indexOf(id);
+
+  // ================= PERSISTENCE =================
   const META_KEY = 'kana_meta_v1';
-  const deckKey = pid => 'kana_deck_'+pid;
+  const deckKey = (pid,m) => 'kana_deck_'+pid + MODES[m].suffix;
   function deviceId(){
     let d = localStorage.getItem('kana_device');
     if(!d){ d = 'd'+Math.random().toString(36).slice(2,10); localStorage.setItem('kana_device',d); }
@@ -28,77 +83,82 @@
     catch(e){ return {active:null,profiles:[]}; }
   }
   function saveMeta(m){ localStorage.setItem(META_KEY, JSON.stringify(m)); }
-  function loadDeck(pid){
-    try{ const d=JSON.parse(localStorage.getItem(deckKey(pid)));
+  function loadDeck(pid,m){
+    m = m||mode;
+    try{ const d=JSON.parse(localStorage.getItem(deckKey(pid,m)));
          if(d&&d.cards&&d.introduced) return d; }catch(e){}
     return {cards:{}, introduced:[], reviews:0, updatedAt:now(), device:deviceId()};
   }
-  function saveDeck(pid,d){ d.updatedAt=now(); d.device=deviceId();
-    localStorage.setItem(deckKey(pid), JSON.stringify(d));
-    if(window.KanaSync) window.KanaSync.onSave(pid,d); } // additive: no-op when sync off/unreachable
+  function saveDeck(pid,m,d){
+    // tolerate legacy 2-arg calls: saveDeck(pid, deck)
+    if(d===undefined && m && typeof m==='object'){ d=m; m=mode; }
+    d.updatedAt=now(); d.device=deviceId();
+    localStorage.setItem(deckKey(pid,m), JSON.stringify(d));
+    if(window.KanaSync) window.KanaSync.onSave(pid,d,m); // additive: no-op when sync off/unreachable
+  }
 
-  // ---- app state ----
+  // ================= APP STATE =================
   let meta = loadMeta();
   let pid = meta.active;
-  let deck = pid ? loadDeck(pid) : null;
-  let session = [];        // in-memory queue of due cardIds
+  let deck = pid ? loadDeck(pid,mode) : null;
+  let session = [];        // in-memory queue of due cardIds (current mode)
   let flipped = false;
   let curDrawn = false;
-  let showPicker = false;  // force the profile picker even when a profile is active
+  let showPicker = false;
 
-  // ---- profile helpers ----
+  // ================= PROFILE HELPERS =================
   function profileName(id){ const p=meta.profiles.find(p=>p.id===id); return p?p.name:'—'; }
   function newProfile(name){
     const id='p'+Math.random().toString(36).slice(2,8);
     meta.profiles.push({id,name}); meta.active=id; saveMeta(meta);
-    pid=id; deck=loadDeck(pid); saveDeck(pid,deck);
+    pid=id; deck=loadDeck(pid,mode); saveDeck(pid,mode,deck);
     showPicker=false;
-    introduceNext(3); // start everyone with 3 cards
+    introduceNext(3);
     startSession();
-    syncPull(); // same-named learner on another device? pull their existing progress
+    syncPull();
   }
-  function switchProfile(id){ showPicker=false; meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid); startSession(); syncPull(); }
+  function switchProfile(id){ showPicker=false; meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid,mode);
+    if(readyOf(mode) && deck.introduced.length===0) introduceNext(3);
+    startSession(); syncPull(); }
   function deleteProfile(id){
-    localStorage.removeItem(deckKey(id));
+    // remove BOTH decks for this profile (all modes)
+    Object.keys(MODES).forEach(m=>localStorage.removeItem(deckKey(id,m)));
     meta.profiles = meta.profiles.filter(p=>p.id!==id);
     if(meta.active===id){ meta.active = meta.profiles[0] ? meta.profiles[0].id : null; }
     saveMeta(meta);
-    pid = meta.active; deck = pid? loadDeck(pid) : null;
-    if(pid && deck.introduced.length===0) introduceNext(3);
+    pid = meta.active; deck = pid? loadDeck(pid,mode) : null;
+    if(pid && readyOf(mode) && deck.introduced.length===0) introduceNext(3);
     render();
   }
 
-  // ---- deck logic ----
+  // ================= DECK LOGIC (operates on current mode) =================
   function introduceNext(n){
     let added=0;
-    for(const id of ALLIDS){
+    for(const id of idsOf(mode)){
       if(added>=n) break;
       if(!deck.cards[id]){
         deck.cards[id]={S:0,D:0,reps:0,lapses:0,last:0,due:now(),state:'new'};
         deck.introduced.push(id); added++;
       }
     }
-    saveDeck(pid,deck);
+    saveDeck(pid,mode,deck);
     return added;
   }
   function dueIds(){
     const t=now();
-    return deck.introduced.filter(id=>deck.cards[id].due<=t)
+    return deck.introduced.filter(id=>deck.cards[id] && deck.cards[id].due<=t)
       .sort((a,b)=>deck.cards[a].due-deck.cards[b].due);
   }
   function learnedCount(){
-    // "learned" = introduced & has passed at least one non-Bad review (reps>0 & state review & S>=1day)
-    return deck.introduced.filter(id=>{const c=deck.cards[id];return c.reps>0 && c.S>=1;}).length;
+    return deck.introduced.filter(id=>{const c=deck.cards[id];return c && c.reps>0 && c.S>=1;}).length;
   }
-  function startSession(){ session = dueIds(); flipped=false; render(); }
+  function startSession(){ session = (pid && readyOf(mode)) ? dueIds() : []; flipped=false; curDrawn=false; render(); }
 
-  // pull-merge this profile's deck from cloud sync (no-op when sync off/unreachable).
-  // Guarded by target===pid so a slow pull can't clobber the view after a profile switch.
   function syncPull(){
     if(!window.KanaSync || !pid) return;
     const target=pid;
     window.KanaSync.pull(target).then(changed=>{
-      if(changed && pid===target){ deck=loadDeck(pid); render(); }
+      if(changed && pid===target){ deck=loadDeck(pid,mode); render(); }
     }).catch(()=>{});
   }
 
@@ -108,15 +168,27 @@
     const r=FSRS.schedule(c,g,now());
     Object.assign(c,r);
     deck.reviews=(deck.reviews||0)+1;
-    saveDeck(pid,deck);
+    saveDeck(pid,mode,deck);
     session.shift();
-    if(g===1){ // Bad → re-show soon this session
-      const pos=Math.min(3,session.length);
-      session.splice(pos,0,id);
-    }
+    if(g===1){ const pos=Math.min(3,session.length); session.splice(pos,0,id); }
     flipped=false; curDrawn=false;
-    if(session.length===0) session=dueIds(); // pick up anything newly due
+    if(session.length===0) session=dueIds();
     render();
+  }
+
+  // ================= MODE SWITCH =================
+  function setMode(m){
+    if(m===mode || !MODES[m]) return;
+    mode=m; localStorage.setItem('kana_mode',m);
+    deck = pid ? loadDeck(pid,mode) : null;
+    if(pid && readyOf(mode) && deck.introduced.length===0) introduceNext(3);
+    startSession();
+    updateModeBar();
+  }
+  function updateModeBar(){
+    document.querySelectorAll('#modebar [data-mode]').forEach(b=>{
+      b.classList.toggle('on', b.dataset.mode===mode);
+    });
   }
 
   // ================= RENDERING =================
@@ -124,24 +196,35 @@
 
   function render(){
     updateHeader();
+    updateModeBar();
+    if(!readyOf(mode)){ renderLoading(); return; }
+    if(idsOf(mode).length===0){ renderNoContent(); return; }
     if(!pid || showPicker){ renderPicker(); return; }
     if(session.length===0){ renderCaughtUp(); return; }
     renderCard(session[0]);
   }
   function updateHeader(){
     $('#profileName').textContent = pid ? profileName(pid) : '—';
-    $('#totalCount').textContent = TOTAL;
-    if(deck){
+    $('#totalCount').textContent = idsOf(mode).length;
+    if(deck && readyOf(mode)){
       $('#dueCount').textContent = dueIds().length;
       $('#learnedCount').textContent = learnedCount();
+    } else {
+      $('#dueCount').textContent = 0; $('#learnedCount').textContent = 0;
     }
+  }
+
+  function renderLoading(){ main.innerHTML = `<div class="center"><h2>Loading…</h2></div>`; }
+  function renderNoContent(){
+    main.innerHTML = `<div class="center"><h2>No cards yet</h2>
+      <p>Content for this mode hasn't been added yet.</p></div>`;
   }
 
   function renderPicker(){
     const has = meta.profiles.length>0;
     const list = meta.profiles.map(p=>
       `<div class="pcard ${p.id===pid?'active':''}" data-pick="${p.id}">
-         <span style="display:flex;align-items:center"><span class="av">${esc(p.name[0]||'?').toUpperCase()}</span>${esc(p.name)}</span>
+         <span style="display:flex;align-items:center"><span class="av">${esc((p.name[0]||'?')).toUpperCase()}</span>${esc(p.name)}</span>
          <button class="del" data-del="${p.id}" title="remove">✕</button>
        </div>`).join('');
     main.innerHTML =
@@ -156,18 +239,15 @@
         </div>
         ${has ? `<button class="bigbtn ghost" id="showCreate" style="max-width:300px;width:100%">➕ New profile</button>` : ''}
       </div>`;
-    // select an existing profile
     main.querySelectorAll('[data-pick]').forEach(el=>el.onclick=e=>{
-      if(e.target.closest('[data-del]')) return;      // ignore clicks on the delete X
+      if(e.target.closest('[data-del]')) return;
       switchProfile(el.dataset.pick);
     });
-    // delete a profile
     main.querySelectorAll('[data-del]').forEach(b=>b.onclick=e=>{
       e.stopPropagation();
       const id=b.dataset.del, nm=profileName(id);
-      if(confirm('Remove '+nm+' and their progress from THIS device?')) deleteProfile(id);
+      if(confirm('Remove '+nm+' and their progress (both Kana and Words) from THIS device?')) deleteProfile(id);
     });
-    // reveal create field
     const sc=$('#showCreate'); if(sc) sc.onclick=()=>{ $('#createWrap').style.display='flex'; sc.style.display='none'; $('#pname').focus(); };
     const cp=$('#createP'); if(cp){
       const go=()=>{ const n=$('#pname').value.trim(); if(n){ newProfile(n); render(); } };
@@ -177,17 +257,16 @@
   }
 
   function renderCaughtUp(){
-    const remaining = TOTAL - deck.introduced.length;
-    const next = dueIds(); // 0 here
-    // find soonest future due
+    const remaining = idsOf(mode).length - deck.introduced.length;
+    const unit = MODES[mode].unit;
     let soon=null;
     deck.introduced.forEach(id=>{const d=deck.cards[id].due; if(d>now()&&(soon===null||d<soon))soon=d;});
     const soonTxt = soon? `Next review ready ${relTime(soon)}.` : '';
     main.innerHTML =
      `<div class="center">
         <h2>🎉 All caught up!</h2>
-        <p>${soonTxt||'Nice work.'} ${remaining>0?`You've learned ${deck.introduced.length} of ${TOTAL} characters.`:'You\'ve unlocked every character!'}</p>
-        ${remaining>0?`<button class="bigbtn" id="addBtn">➕ Add 3 new cards</button>`:''}
+        <p>${soonTxt||'Nice work.'} ${remaining>0?`You've learned ${deck.introduced.length} of ${idsOf(mode).length} ${unit}.`:`You've unlocked every ${unit.replace(/s$/,'')}!`}</p>
+        ${remaining>0?`<button class="bigbtn" id="addBtn">➕ Add 3 new ${unit}</button>`:''}
         ${soon?`<button class="bigbtn ghost" id="reviewAhead">Review ahead anyway</button>`:''}
       </div>`;
     if(remaining>0) $('#addBtn').onclick=()=>{ introduceNext(3); startSession(); };
@@ -196,6 +275,12 @@
   }
 
   function renderCard(id){
+    if(mode==='kana') renderKanaCard(id);
+    else renderWordCard(id);
+  }
+
+  // ---- KANA card: draw the sound, flip -> stroke-order + kana ----
+  function renderKanaCard(id){
     const c=KANA[id];
     main.innerHTML =
      `<div class="card">
@@ -228,11 +313,10 @@
         </div>
       </div>`;
     setupPad();
-    $('#flipBtn').onclick=()=>doFlip(id);
+    $('#flipBtn').onclick=()=>doFlipKana(id);
     $('#grade').querySelectorAll('button').forEach(b=>b.onclick=()=>grade(+b.dataset.g));
   }
-
-  function doFlip(id){
+  function doFlipKana(id){
     if(flipped) return; flipped=true;
     $('#answer').classList.add('show');
     $('#flipBtn').style.display='none';
@@ -240,16 +324,12 @@
     buildStrokes(id);
     $('#replayBtn').onclick=()=>buildStrokes(id);
   }
-
-  // ---- stroke-order animation ----
   function buildStrokes(id){
     const strokes=KANA[id].strokes;
     const svg=$('#strokeSvg'); svg.innerHTML='';
     const NS='http://www.w3.org/2000/svg';
-    // faint guides (whole character)
     strokes.forEach(d=>{ const p=document.createElementNS(NS,'path');
       p.setAttribute('d',d); p.setAttribute('class','guide'); svg.appendChild(p); });
-    // animated live strokes, drawn sequentially
     const live=strokes.map(d=>{ const p=document.createElementNS(NS,'path');
       p.setAttribute('d',d); p.setAttribute('class','live'); svg.appendChild(p); return p; });
     live.forEach(p=>{ const L=p.getTotalLength(); p.style.strokeDasharray=L; p.style.strokeDashoffset=L; });
@@ -257,14 +337,12 @@
     (function step(){
       if(i>=live.length) return;
       const p=live[i], L=p.getTotalLength();
-      const dur=Math.max(320, L*7); // speed ~ length
+      const dur=Math.max(320, L*7);
       p.animate([{strokeDashoffset:L},{strokeDashoffset:0}],
                 {duration:dur,fill:'forwards',easing:'ease-in-out'});
       i++; setTimeout(step, dur+180);
     })();
   }
-
-  // ---- drawing pad ----
   function setupPad(){
     const cv=$('#pad'); if(!cv) return;
     const fit=()=>{
@@ -285,8 +363,49 @@
     cv.addEventListener('pointerdown',down); cv.addEventListener('pointermove',move);
     window.addEventListener('pointerup',up);
     $('#clearBtn').onclick=()=>{ cv._ctx.clearRect(0,0,cv._w,cv._h); };
-    // refit if orientation changes mid-card
     cv._fit=fit;
+  }
+
+  // ---- WORDS card: picture on front, flip -> kana + audio (NO English) ----
+  function renderWordCard(id){
+    const c=W.cards[id];
+    const hasKana = !!c.kana;
+    const answerInner = hasKana
+      ? `<div class="kana">${esc(c.kana)}</div>
+         <button class="audiobtn" id="audioBtn" ${c.audio?'':'disabled'}>🔊 Play</button>`
+      : `<div class="kana stub">かな + 🔊 coming soon</div>`;
+    main.innerHTML =
+     `<div class="card">
+        <div class="imgwrap">
+          <img class="cardimg" id="cardImg" src="${esc(IMG_DIR+c.file)}" alt="">
+        </div>
+        <div id="answer" class="wordanswer">${answerInner}</div>
+      </div>
+      <div class="actions">
+        <button class="flipbtn" id="flipBtn">Show answer →</button>
+        <div class="grade" id="grade">
+          <button class="b-bad"  data-g="1">Missed<span class="sub">again</span></button>
+          <button class="b-okay" data-g="2">Close<span class="sub">soon</span></button>
+          <button class="b-good" data-g="3">Got it<span class="sub">later</span></button>
+        </div>
+      </div>`;
+    $('#flipBtn').onclick=()=>doFlipWord(id);
+    $('#grade').querySelectorAll('button').forEach(b=>b.onclick=()=>grade(+b.dataset.g));
+  }
+  let curAudio=null;
+  function playAudio(c){
+    if(!c.audio) return;
+    try{ if(curAudio){ curAudio.pause(); } curAudio = new Audio(AUDIO_DIR+c.audio); curAudio.play().catch(()=>{}); }
+    catch(e){}
+  }
+  function doFlipWord(id){
+    if(flipped) return; flipped=true;
+    $('#answer').classList.add('show');
+    $('#flipBtn').style.display='none';
+    $('#grade').classList.add('show');
+    const c=W.cards[id];
+    const ab=$('#audioBtn');
+    if(ab && c.audio){ ab.onclick=()=>playAudio(c); playAudio(c); } // auto-play once on reveal
   }
 
   // ================= SETTINGS SHEET =================
@@ -295,8 +414,9 @@
   $('#closeSheet').onclick=()=>$('#sheet').classList.remove('show');
   $('#sheet').addEventListener('click',e=>{ if(e.target.id==='sheet') e.target.classList.remove('show'); });
 
-  function openSheet(focusProfiles){
-    $('#s_learned').textContent = deck? learnedCount()+' / '+TOTAL : '0';
+  function openSheet(){
+    $('#s_mode').textContent = MODES[mode].label;
+    $('#s_learned').textContent = (deck && readyOf(mode))? learnedCount()+' / '+idsOf(mode).length : '0';
     $('#s_reviews').textContent = deck? (deck.reviews||0) : '0';
     injectProfileControls();
     $('#sheet').classList.add('show');
@@ -316,10 +436,13 @@
     $('#addProf').onclick=()=>{ const n=prompt('New learner name:'); if(n&&n.trim()){ newProfile(n.trim()); $('#sheet').classList.remove('show'); render(); } };
   }
 
-  // ---- backup / restore (manual cross-device bridge until cloud sync) ----
+  // ---- backup / restore (manual cross-device bridge; carries BOTH decks per profile) ----
   $('#backupBtn').onclick=()=>{
-    const payload={v:1, meta, decks:{}};
-    meta.profiles.forEach(p=>payload.decks[p.id]=loadDeck(p.id));
+    const payload={v:2, meta, decks:{}};
+    meta.profiles.forEach(p=>{
+      payload.decks[p.id]={};
+      Object.keys(MODES).forEach(m=>payload.decks[p.id][m]=loadDeck(p.id,m));
+    });
     const code=b64(JSON.stringify(payload));
     $('#backupArea').value=code;
     if(navigator.clipboard) navigator.clipboard.writeText(code).catch(()=>{});
@@ -330,36 +453,41 @@
     try{
       const p=JSON.parse(unb64($('#backupArea').value.trim()));
       if(!p||!p.decks||!p.meta) throw 0;
-      // merge: per profile, per card keep the most recently reviewed version
       const inMeta=p.meta;
       inMeta.profiles.forEach(prof=>{
         if(!meta.profiles.find(x=>x.id===prof.id)) meta.profiles.push(prof);
-        const local=loadDeck(prof.id), incoming=p.decks[prof.id];
+        const incoming=p.decks[prof.id];
         if(!incoming) return;
-        const merged=mergeDeck(local,incoming);
-        saveDeck(prof.id,merged);
+        if(p.v>=2){ // v2: {kana:{...}, words:{...}}
+          Object.keys(MODES).forEach(m=>{
+            if(incoming[m]) saveDeck(prof.id, m, mergeDeck(loadDeck(prof.id,m), incoming[m], m));
+          });
+        } else { // v1 legacy: a single kana deck
+          saveDeck(prof.id, 'kana', mergeDeck(loadDeck(prof.id,'kana'), incoming, 'kana'));
+        }
       });
       meta.active=inMeta.active||meta.active; saveMeta(meta);
-      pid=meta.active; deck=loadDeck(pid);
+      pid=meta.active; deck=loadDeck(pid,mode);
       $('#sheet').classList.remove('show'); startSession();
       alert('Progress restored & merged ✓');
     }catch(e){ alert('That code didn\'t look right — recopy it from the other device.'); }
   };
-  function mergeDeck(a,b){
+  function mergeDeck(a,b,m){
+    m = m||mode;
     const out={cards:{},introduced:[],reviews:Math.max(a.reviews||0,b.reviews||0)};
-    const ids=new Set([...a.introduced,...b.introduced]);
+    const ids=new Set([...(a.introduced||[]),...(b.introduced||[])]);
     ids.forEach(id=>{
       const ca=a.cards[id], cb=b.cards[id];
       out.cards[id]= !ca?cb : !cb?ca : (cb.last>=ca.last? cb:ca); // newest review wins
       out.introduced.push(id);
     });
-    out.introduced.sort((x,y)=>ALLIDS.indexOf(x)-ALLIDS.indexOf(y));
+    out.introduced.sort((x,y)=>orderIndex(m,x)-orderIndex(m,y));
     return out;
   }
 
   $('#resetBtn').onclick=()=>{
-    if(!confirm('Erase ALL progress for '+profileName(pid)+'? This cannot be undone.')) return;
-    localStorage.removeItem(deckKey(pid)); deck=loadDeck(pid); introduceNext(3); startSession();
+    if(!confirm('Erase ALL progress for '+profileName(pid)+' in '+MODES[mode].label+' mode? This cannot be undone.')) return;
+    localStorage.removeItem(deckKey(pid,mode)); deck=loadDeck(pid,mode); introduceNext(3); startSession();
     $('#sheet').classList.remove('show');
   };
 
@@ -374,10 +502,25 @@
     return 'in '+Math.round(h/24)+' day'+(Math.round(h/24)>1?'s':'');
   }
 
-  // ---- boot ----
-  if(pid){ deck=loadDeck(pid); if(deck.introduced.length===0) introduceNext(3); startSession(); syncPull(); }
-  else render();
+  // ================= MODE BAR WIRING =================
+  document.querySelectorAll('#modebar [data-mode]').forEach(b=>{
+    b.onclick=()=>setMode(b.dataset.mode);
+  });
 
-  // expose a hook for future cloud sync
-  window.KanaApp={ loadDeck, saveDeck, loadMeta, mergeDeck, get pid(){return pid;} };
+  // ================= BOOT =================
+  // Kana is ready immediately; start now if the active mode is kana.
+  if(pid && readyOf(mode)){ if(deck.introduced.length===0) introduceNext(3); startSession(); syncPull(); }
+  else render(); // shows picker (kana) or Loading… (words not yet fetched)
+
+  // Load words content in the background; if the user is in (or switches to) Words, refresh.
+  loadWords().then(()=>{
+    if(mode==='words'){
+      if(pid){ deck=loadDeck(pid,mode); if(deck.introduced.length===0) introduceNext(3); startSession(); syncPull(); }
+      else render();
+    }
+  });
+
+  // expose hook for cloud sync (mode-aware)
+  window.KanaApp={ loadDeck, saveDeck, loadMeta, mergeDeck, modes:Object.keys(MODES),
+                   get pid(){return pid;}, get mode(){return mode;} };
 })();

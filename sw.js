@@ -1,6 +1,6 @@
 /* Offline-first service worker. Cache-first for the app shell so it works with no network. */
-const CACHE='kana-v2';
-const ASSETS=['./','./index.html','./kana.js','./fsrs.js','./app.js',
+const CACHE='kana-v3';
+const ASSETS=['./','./index.html','./kana.js','./fsrs.js','./sync.js','./app.js',
               './manifest.json','./icon.svg'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
@@ -11,6 +11,9 @@ self.addEventListener('activate',e=>{
 });
 self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET') return;
+  // Never cache cross-origin requests (the cloud-sync Worker) — always hit the network,
+  // else a stale pulled deck would be served from cache. App shell is same-origin only.
+  if(new URL(e.request.url).origin!==self.location.origin) return;
   e.respondWith(
     caches.match(e.request).then(hit=> hit || fetch(e.request).then(res=>{
       const copy=res.clone();

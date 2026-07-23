@@ -1,0 +1,12 @@
+# Cloudflare Worker config for Kana Cards cloud sync.
+# Deploy steps are in ../DEPLOY.md. You only edit the KV id line after creating the namespace.
+
+name = "kana-sync"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+# KV namespace binding. Create it once, then paste the returned id below:
+#   npx wrangler kv namespace create KANA_KV
+[[kv_namespaces]]
+binding = "KANA_KV"
+id = "PASTE_KV_NAMESPACE_ID_HERE"

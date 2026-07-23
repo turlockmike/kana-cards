@@ -1,5 +1,6 @@
 /* Kana Cards — offline-first flashcards with FSRS + drawing + stroke animation.
- * Multi-profile. Progress in localStorage (source of truth); cloud sync bolts on later. */
+ * Multi-profile. Progress in localStorage (source of truth). Optional cloud sync is
+ * additive via sync.js (off unless SYNC_ENDPOINT is set there) — see DEPLOY.md. */
 (function(){
   "use strict";
   const KANA = window.KANA, FSRS = window.FSRS;
@@ -33,7 +34,8 @@
     return {cards:{}, introduced:[], reviews:0, updatedAt:now(), device:deviceId()};
   }
   function saveDeck(pid,d){ d.updatedAt=now(); d.device=deviceId();
-    localStorage.setItem(deckKey(pid), JSON.stringify(d)); }
+    localStorage.setItem(deckKey(pid), JSON.stringify(d));
+    if(window.KanaSync) window.KanaSync.onSave(pid,d); } // additive: no-op when sync off/unreachable
 
   // ---- app state ----
   let meta = loadMeta();
@@ -53,8 +55,9 @@
     showPicker=false;
     introduceNext(3); // start everyone with 3 cards
     startSession();
+    syncPull(); // same-named learner on another device? pull their existing progress
   }
-  function switchProfile(id){ showPicker=false; meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid); startSession(); }
+  function switchProfile(id){ showPicker=false; meta.active=id; saveMeta(meta); pid=id; deck=loadDeck(pid); startSession(); syncPull(); }
   function deleteProfile(id){
     localStorage.removeItem(deckKey(id));
     meta.profiles = meta.profiles.filter(p=>p.id!==id);
@@ -88,6 +91,16 @@
     return deck.introduced.filter(id=>{const c=deck.cards[id];return c.reps>0 && c.S>=1;}).length;
   }
   function startSession(){ session = dueIds(); flipped=false; render(); }
+
+  // pull-merge this profile's deck from cloud sync (no-op when sync off/unreachable).
+  // Guarded by target===pid so a slow pull can't clobber the view after a profile switch.
+  function syncPull(){
+    if(!window.KanaSync || !pid) return;
+    const target=pid;
+    window.KanaSync.pull(target).then(changed=>{
+      if(changed && pid===target){ deck=loadDeck(pid); render(); }
+    }).catch(()=>{});
+  }
 
   function grade(g){ // g: 1 bad, 2 okay, 3 good
     const id=session[0]; if(!id) return;
@@ -362,7 +375,7 @@
   }
 
   // ---- boot ----
-  if(pid){ deck=loadDeck(pid); if(deck.introduced.length===0) introduceNext(3); startSession(); }
+  if(pid){ deck=loadDeck(pid); if(deck.introduced.length===0) introduceNext(3); startSession(); syncPull(); }
   else render();
 
   // expose a hook for future cloud sync

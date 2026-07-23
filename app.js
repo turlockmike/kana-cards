@@ -64,7 +64,11 @@
     words: { label:'Words', unit:'words',      suffix:'_words', ids:()=>W.ids,    ready:()=>W.ready,   order:null }
   };
   let mode = localStorage.getItem('kana_mode');
+  // URL hash wins on entry (#words / #kana) — lets the old word625 bookmark land in Words mode.
+  const hash = (location.hash||'').replace('#','').toLowerCase();
+  if(hash==='words' || hash==='kana') mode=hash;
   if(mode!=='kana' && mode!=='words') mode='kana';
+  localStorage.setItem('kana_mode', mode);
   const idsOf   = m => MODES[m].ids();
   const readyOf = m => MODES[m].ready();
   const contentOf = (m,id) => m==='kana' ? KANA[id] : W.cards[id];

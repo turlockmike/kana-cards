@@ -1,0 +1,14 @@
+{
+  "name": "Kana Cards",
+  "short_name": "Kana",
+  "description": "Learn hiragana & katakana with stroke-order flashcards.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f5fb",
+  "theme_color": "#5b6ee1",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#5b6ee1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Kana Cards</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235b6ee1'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'%3E&#12354;%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%235b6ee1'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'%3E&#12354;%3C/text%3E%3C/svg%3E">
+<style>
+  :root{ --bg:#f4f5fb; --card:#ffffff; --ink:#222; --accent:#5b6ee1;
+         --good:#3aab5c; --okay:#e0a200; --bad:#d9534f; --muted:#8a90a2; }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:var(--bg); color:var(--ink); display:flex; flex-direction:column;
+       height:100dvh; overflow:hidden; user-select:none;}
+  header{display:flex; align-items:center; justify-content:space-between;
+         padding:10px 14px; font-size:13px; color:var(--muted);}
+  header b{color:var(--ink);}
+  .gear{background:none;border:none;font-size:20px;color:var(--muted);padding:4px;}
+  .profile{background:#eef0fb;border:none;color:var(--accent);font-size:13px;font-weight:600;border-radius:14px;padding:6px 10px;}
+  .stats{flex:1;text-align:center;}
+  main{flex:1; display:flex; flex-direction:column; padding:0 14px 12px; min-height:0;}
+  .card{flex:1; background:var(--card); border-radius:20px; box-shadow:0 4px 20px rgba(30,40,90,.08);
+        display:flex; flex-direction:column; overflow:hidden; min-height:0;}
+  .prompt{padding:14px; text-align:center; border-bottom:1px solid #eef0f6;}
+  .prompt .label{font-size:12px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase;}
+  .prompt .romaji{font-size:44px; font-weight:700; line-height:1.1; margin-top:2px;}
+  .prompt .type{font-size:12px; color:var(--muted); margin-top:2px;}
+  /* answer area (revealed on flip) */
+  #answer{display:none; padding:8px 14px 4px; text-align:center; border-bottom:1px solid #eef0f6;}
+  #answer.show{display:block;}
+  #answer .kana{font-size:40px; font-weight:700; margin-bottom:2px;}
+  .strokebox{display:flex; align-items:center; justify-content:center; gap:14px;}
+  svg.stroke{width:130px; height:130px; background:#fafbff; border-radius:12px;}
+  svg.stroke .guide{stroke:#dfe3ef; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round;}
+  svg.stroke .live{stroke:var(--accent); stroke-width:4.5; fill:none; stroke-linecap:round; stroke-linejoin:round;}
+  .replay{background:#eef0fb;border:none;color:var(--accent);font-weight:600;
+          border-radius:20px;padding:8px 16px;font-size:14px;}
+  /* drawing */
+  .drawwrap{flex:1; position:relative; min-height:0; display:flex; flex-direction:column;}
+  .drawhint{font-size:12px;color:var(--muted);text-align:center;padding:6px 0 0;}
+  canvas{flex:1; width:100%; touch-action:none; min-height:0;}
+  .clearbtn{position:absolute; top:8px; right:10px; background:#f0f1f6;border:none;
+            color:var(--muted); border-radius:16px; padding:6px 12px; font-size:12px;}
+  /* action buttons */
+  .actions{padding:12px 14px calc(12px + env(safe-area-inset-bottom));}
+  .flipbtn{width:100%; background:var(--accent); color:#fff; border:none; border-radius:16px;
+           padding:18px; font-size:19px; font-weight:700;}
+  .grade{display:none; gap:10px;}
+  .grade.show{display:flex;}
+  .grade button{flex:1; border:none; border-radius:16px; padding:16px 6px; font-size:16px; font-weight:700; color:#fff;}
+  .grade .sub{display:block;font-size:11px;font-weight:500;opacity:.85;margin-top:2px;}
+  .b-bad{background:var(--bad);} .b-okay{background:var(--okay);} .b-good{background:var(--good);}
+  /* empty / done */
+  .center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;padding:20px;}
+  .center h2{margin:0;font-size:22px;}
+  .center p{margin:0;color:var(--muted);max-width:280px;}
+  .bigbtn{background:var(--accent);color:#fff;border:none;border-radius:16px;padding:16px 26px;font-size:17px;font-weight:700;}
+  .ghost{background:#eef0fb;color:var(--accent);}
+  /* settings sheet */
+  .sheet{position:fixed;inset:0;background:rgba(20,24,40,.45);display:none;align-items:flex-end;z-index:20;}
+  .sheet.show{display:flex;}
+  .sheetinner{background:#fff;width:100%;border-radius:20px 20px 0 0;padding:20px 18px calc(24px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto;}
+  .sheetinner h3{margin:0 0 10px;}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f1f6;font-size:15px;}
+  .sheetinner button{border:none;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:600;}
+  textarea{width:100%;height:70px;font-size:12px;border:1px solid #dfe3ef;border-radius:10px;padding:8px;font-family:monospace;}
+  .tiny{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.5;}
+  .close{background:#eef0fb;color:var(--accent);width:100%;margin-top:14px;}
+</style>
+</head>
+<body>
+<header>
+  <button class="profile" id="profileBtn">👤 <b id="profileName">—</b> ▾</button>
+  <span class="stats">Due: <b id="dueCount">0</b> · Learned: <b id="learnedCount">0</b>/<b id="totalCount">0</b></span>
+  <button class="gear" id="gearBtn" aria-label="settings">⚙</button>
+</header>
+
+<main id="main"></main>
+
+<div class="sheet" id="sheet">
+  <div class="sheetinner">
+    <h3>Settings</h3>
+    <div class="row"><span>Learned so far</span><b id="s_learned">0</b></div>
+    <div class="row"><span>Cards reviewed (total)</span><b id="s_reviews">0</b></div>
+    <p class="tiny" style="margin-top:14px">Move progress to another phone: copy this code on the old phone, paste it into <b>Restore</b> on the new one.</p>
+    <button class="ghost" id="backupBtn" style="width:100%;margin-bottom:8px">Copy backup code</button>
+    <textarea id="backupArea" placeholder="Backup code appears here / paste a code to restore"></textarea>
+    <button class="ghost" id="restoreBtn" style="width:100%;margin-top:8px">Restore from pasted code</button>
+    <div class="row" style="margin-top:14px"><span style="color:var(--bad)">Reset all progress</span>
+      <button style="background:#fdecec;color:var(--bad)" id="resetBtn">Reset</button></div>
+    <p class="tiny">Stroke-order data: <a href="https://kanjivg.tagaini.net" style="color:var(--muted)">KanjiVG</a> by Ulrich Apel, CC&nbsp;BY-SA&nbsp;3.0. Scheduling: FSRS. Made for you 💙</p>
+    <button class="close" id="closeSheet">Done</button>
+  </div>
+</div>
+
+<script src="kana.js"></script>
+<script src="fsrs.js"></script>
+<script src="app.js"></script>
+<script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>

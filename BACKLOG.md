@@ -84,10 +84,14 @@ are MISSING a sentence, taken alphabetically by `en`"** — reproducible, no dep
 was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" this way.)
 
 **⚠ AUTHORING NOTES (learned slice-2, save the next ~7 cycles the re-discovery):**
-- **Deck order = `data/words.json`, alphabetical by `en`.** (There is NO `images.json`;
-  older notes named it — that name is stale. `kana-smoke` only checks images.json's
-  *presence*, it is not the deck.) The done-50 from slice-1 were category-scattered, not
-  the alphabetical front — key by `en` slug, not by position.
+- **Deck order = `data/words.json`, alphabetical by `en`.** (⚠ CORRECTED 2026-07-24:
+  `media/img/images.json` DOES exist and IS the deck's render frontier — app.js builds
+  cards from its 586 slugs and keys sentences by slug. The old "there is NO images.json"
+  claim was FALSE and is retired; only a `data/images.json` never existed. The correct
+  missing-key join is on images.json's own `en` field — do NOT string-munge the slug, the
+  `en`↔slug map is space-vs-hyphen ("to buy" ↔ "to-buy"). See slice-11 frontier note below.)
+  The done-50 from slice-1 were category-scattered, not the alphabetical front — key by `en`
+  slug, not by position.
 - **6 words SKIPPED for a phrasing/data decision** (don't just re-hit them): `alive`
   (せいぜん odd), `billion` (abstract number), `blindess` (messy kana + typo'd `en`),
   `ceiling` (kana was でんじょう typo — NOW FIXED to てんじょう, safe to author),

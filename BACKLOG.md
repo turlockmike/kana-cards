@@ -67,7 +67,7 @@ origin ahead=0 · live sw=v11 + gameKanaPool + gameBtn confirmed deployed. Remai
 candidates (whack-a-mole / falling-kana / speed rounds) are net-new future increments.
 
 ## 4. Words mode: example sentence + word→sentence→word audio (Mike 2026-07-23)
-**✅ FEATURE CLOSED 2026-07-24 (sw v26). Coverage 582/586 rendered cards; the remaining 4 are a documented permanent skip-set (below).**
+**✅ FEATURE CLOSED 2026-07-24 (sw v26). Coverage 582/586 rendered cards; the remaining were a documented permanent skip-set (below). ✅ UPDATE 2026-07-24 (sw v27): Mike ordered the `to-have-sex` card REMOVED ("it's a kids app") — word (セックス) + image + audio deleted, live-verified 404. Deck now 585 cards, coverage 582/585, permanent-skip set = 3 (city/old/blindess). NOTE the sibling `sex`→せいべつ (性別 = gender/male-female, two-kids illustration, no English shown) was KEPT as legitimate vocab; offered Mike to pull it too.**
 
 > **📐 Coverage is a JOIN, never a file size. Read the number from the tool: `kana-smoke --coverage`** (added 2026-07-24 reflect). It reports covered/missing/stale by joining sentence keys against `status==ok && file` image slugs. This exists because "565/586, frontier near ceiling" was an artifact of counting raw sentences.json size (15 keys were stale non-rendered slugs). If words-mode reopens (net-new daughter words), run `--coverage` first — do NOT eyeball key counts.
 Final close-out slice authored the whole authorable remainder in one pass (32 sentences) rather than another mid-slice, closing the feature:
@@ -77,7 +77,7 @@ Final close-out slice authored the whole authorable remainder in one pass (32 se
 - **Discovery/SURPRISE:** sentences.json had 565 keys but 15 were stale non-rendered slugs, so true rendered coverage was 550/586 (not 565) → 36 cards missing, not the assumed ~21. The "frontier near ceiling" belief was an artifact of counting sentences.json size instead of joining on `ok`-status image slugs. Correct coverage metric = join sentences keys against `imgs.filter(status=='ok' && file)` slugs.
 
 **📌 PERMANENT SKIP-SET (4 — feature is CLOSED with these documented, each needs a Mike curriculum/content decision, not an authoring pass):**
-- `to-have-sex` (セックス) — **inappropriate for a child-facing app; this card should probably be REMOVED from the deck entirely — flagged for Mike.**
+- ~~`to-have-sex` (セックス) — inappropriate for a child-facing app.~~ **✅ REMOVED 2026-07-24 per Mike (sw v27) — word+image+audio deleted, live 404. No longer in the deck.**
 - `city` (し) — a 1-character highlight (し) is pedagogically ambiguous (し is an ubiquitous mora/particle sound); better as とし/まち, a translation decision.
 - `old` (おい) — ambiguous sense (甥 nephew / 老い aging) and collides with `old-thing`=ふるい; needs a sense decision.
 - `blindess` (めのふじゆ（な）) — misspelled `en` ("blindess") + messy kana; needs a data-cleanup decision.

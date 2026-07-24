@@ -172,6 +172,20 @@ Two coupled asks:
   audio; keep the NO-English pedagogy rule — sentence is JP only, word highlighted).
 - Applies to Words mode specifically (word625 deck now inside the kana app).
 
+## 5. Words mode: kanji on the card back (Mike 2026-07-24) — ✅ SHIPPED & LIVE (sw v25)
+Mike: "the back of the vocab card should show both the kana version and the kanji version if it exists."
+- words.json gained an optional `kanji` field; card back (renderWordCard + teach card)
+  shows `<div class="kanji">` under the kana when present. CSS 34px / .82 opacity.
+- **Backfill source = JMdict, NEVER weights.** `~/projects/japanese-reader/data/jmdict-eng.json`,
+  matched on BOTH kana reading AND English gloss so homophones can't cross-assign
+  (かく "to draw" → 描く, not 書く). 412/595 assigned; 3 ambiguous verbs hand-set
+  (泣く/描く/競走); loanwords + bare-numeral forms (８０, Ｔシャツ) correctly left kana-only.
+- **Guard:** kana-smoke inverse check — a present `kanji` field MUST contain a real CJK
+  ideograph and differ from the kana (else mis-populated) + a selftest mutation. 17 checks.
+- **Remaining (future):** 183 words have no kanji — most are genuine loanwords (correct),
+  but a tail may just be JMdict gloss-mismatches. A wider pass (fuzzy gloss / secondary
+  readings) could recover a few more, but ONLY via JMdict, never hand-typed.
+
 ## Verify step (run before/after every increment)
 `kana-smoke --selftest` (static: JS syntax + the NO-English pedagogy oracle on the
 word renderer + mode/deck-namespace integrity + data present; self-proving via a

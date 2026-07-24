@@ -37,6 +37,7 @@
   async function loadWords(){
     const imgs = await loadJSON(IMG_DIR+'images.json') || [];
     const words = await loadJSON('data/words.json');
+    const sents = await loadJSON('data/sentences.json') || {};   // slug -> {s, hl, a}
     const byEn = {};
     if(Array.isArray(words)){
       words.forEach(w=>{ const k=(w.en||w.english||'').trim().toLowerCase(); if(k) byEn[k]=w; });
@@ -45,10 +46,14 @@
       const slug = (e.slug || e.en || '').trim().toLowerCase();
       if(!slug) return;
       const w = byEn[(e.en||slug).trim().toLowerCase()] || null;
+      const sent = sents[slug] || null;
       W.cards[slug] = {
         slug, en: e.en||slug, file: e.file, category: e.category||'',
         kana:  w ? (w.kana||null) : null,
-        audio: w ? (w.audio||null) : null
+        audio: w ? (w.audio||null) : null,
+        sentence: sent ? (sent.s||null) : null,
+        hl:       sent ? (sent.hl||null) : null,
+        saudio:   sent ? (sent.a||null) : null
       };
     });
     // keep images.json order (already category-grouped)
@@ -374,8 +379,18 @@
   function renderWordCard(id){
     const c=W.cards[id];
     const hasKana = !!c.kana;
+    // Example sentence (JP only, no English) with the target word highlighted.
+    let sentHtml='';
+    if(c.sentence){
+      const s=c.sentence, hl=c.hl, i = hl ? s.indexOf(hl) : -1;
+      const inner = i>=0
+        ? esc(s.slice(0,i))+'<mark class="hl">'+esc(hl)+'</mark>'+esc(s.slice(i+hl.length))
+        : esc(s);
+      sentHtml = `<div class="sentence" id="sentence">${inner}</div>`;
+    }
     const answerInner = hasKana
       ? `<div class="kana">${esc(c.kana)}</div>
+         ${sentHtml}
          <button class="audiobtn" id="audioBtn" ${c.audio?'':'disabled'}>🔊 Play</button>`
       : `<div class="kana stub">かな + 🔊 coming soon</div>`;
     main.innerHTML =
@@ -396,12 +411,26 @@
     $('#flipBtn').onclick=()=>doFlipWord(id);
     $('#grade').querySelectorAll('button').forEach(b=>b.onclick=()=>grade(+b.dataset.g));
   }
-  let curAudio=null;
-  function playAudio(c){
-    if(!c.audio) return;
-    try{ if(curAudio){ curAudio.pause(); } curAudio = new Audio(AUDIO_DIR+c.audio); curAudio.play().catch(()=>{}); }
-    catch(e){}
+  let curAudio=null, seqToken=0;
+  function playOne(src){
+    return new Promise(res=>{
+      try{ if(curAudio){ curAudio.pause(); } const a=new Audio(src); curAudio=a;
+           a.onended=()=>res(); a.onerror=()=>res(); a.play().catch(()=>res()); }
+      catch(e){ res(); }
+    });
   }
+  // Comprehensible-input playback: word → sentence → word. Falls back to word-only
+  // when no sentence audio exists yet (deck is being filled in incrementally).
+  async function playSequence(c){
+    const seq=[];
+    if(c.audio)  seq.push(AUDIO_DIR+c.audio);
+    if(c.saudio) seq.push(AUDIO_DIR+c.saudio);
+    if(c.audio)  seq.push(AUDIO_DIR+c.audio);
+    if(!seq.length) return;
+    const mine=++seqToken;                       // supersede any in-flight sequence
+    for(const src of seq){ if(mine!==seqToken) return; await playOne(src); }
+  }
+  function playAudio(c){ if(c.audio) playOne(AUDIO_DIR+c.audio); } // word-only (kept)
   function doFlipWord(id){
     if(flipped) return; flipped=true;
     $('#answer').classList.add('show');
@@ -409,7 +438,7 @@
     $('#grade').classList.add('show');
     const c=W.cards[id];
     const ab=$('#audioBtn');
-    if(ab && c.audio){ ab.onclick=()=>playAudio(c); playAudio(c); } // auto-play once on reveal
+    if(ab && (c.audio||c.saudio)){ ab.onclick=()=>playSequence(c); playSequence(c); } // auto-play once on reveal
   }
 
   // ================= SETTINGS SHEET =================

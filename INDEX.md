@@ -2,7 +2,9 @@
 # Index — /home/mike/projects/kana-flashcards
 
 ## Subfolders
+- **data/**
 - **kanjivg/**
+- **media/**
 - **worker/**
 
 ## Files
@@ -19,4 +21,4 @@
 - `sw.js`
 - `sync.js`
 
-_2 subfolders, 12 files._
+_4 subfolders, 12 files._

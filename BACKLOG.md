@@ -31,6 +31,27 @@ Design constraint: games draw from the learner's SEEN kana (profile progress
 already in localStorage) so play reinforces, never introduces unseen kana —
 introduction stays feature 1's job.
 
+## 4. Words mode: example sentence + word→sentence→word audio (Mike 2026-07-23)
+Two coupled asks:
+- **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate
+  the source (which voice/engine word625 uses) and improve it as part of this work.
+- **Example-sentence card** — for each word, the card should show the word AND a
+  natural sentence that uses it, with the target word **highlighted** in the sentence.
+  Audio playback sequence: play the **word**, then the **sentence**, then the **word
+  again**. (Rationale: hear the word in isolation, hear it in natural context, then
+  re-anchor on the word — comprehensible-input style, no English.)
+- Needs per-word example sentences (source: generate/curate JP sentences + their own
+  audio; keep the NO-English pedagogy rule — sentence is JP only, word highlighted).
+- Applies to Words mode specifically (word625 deck now inside the kana app).
+
+## Verify step (run before/after every increment)
+`kana-smoke --selftest` (static: JS syntax + the NO-English pedagogy oracle on the
+word renderer + mode/deck-namespace integrity + data present; self-proving via a
+mutation) and `kana-smoke --live` (key GitHub Pages paths 200 + sw cache version).
+Built 2026-07-23 to replace the throwaway DOM-shim harness the consolidation used.
+This IS the regression gate — the "no English on the word card" rule leaked once
+(journal 2026-07-23 15:42); the pedagogy check now catches it automatically.
+
 ## Notes
 - All three fit the existing offline-first/no-backend architecture
   (localStorage per profile; no server needed).

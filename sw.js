@@ -1,9 +1,10 @@
 /* Offline-first service worker. Cache-first for the app shell so it works with no network. */
-const CACHE='kana-v5';
+const CACHE='kana-v6';
 // App shell + the words image/word manifests. Individual images, audio, and cards are
 // cached on first view by the runtime fetch handler below — offline-first once seen.
 const ASSETS=['./','./index.html','./kana.js','./fsrs.js','./sync.js','./app.js',
-              './manifest.json','./icon.svg','./media/img/images.json','./data/words.json'];
+              './manifest.json','./icon.svg','./media/img/images.json','./data/words.json',
+              './data/sentences.json'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });

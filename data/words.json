@@ -3,31 +3,36 @@
   "id": 1492387750055,
   "kana": "けいようし",
   "en": "adjective",
-  "audio": "けいようし.mp3"
+  "audio": "けいようし.mp3",
+  "kanji": "形容詞"
  },
  {
   "id": 1492387809643,
   "kana": "おとな",
   "en": "adult",
-  "audio": "おとな.mp3"
+  "audio": "おとな.mp3",
+  "kanji": "大人"
  },
  {
   "id": 1492387830676,
   "kana": "ごご",
   "en": "afternoon",
-  "audio": "ごご.mp3"
+  "audio": "ごご.mp3",
+  "kanji": "午後"
  },
  {
   "id": 1492387852178,
   "kana": "くうき",
   "en": "air",
-  "audio": "くうき.mp3"
+  "audio": "くうき.mp3",
+  "kanji": "空気"
  },
  {
   "id": 1492387875590,
   "kana": "くうこう",
   "en": "airport",
-  "audio": "くうこう.mp3"
+  "audio": "くうこう.mp3",
+  "kanji": "空港"
  },
  {
   "id": 1492387889441,
@@ -39,7 +44,8 @@
   "id": 1492387937109,
   "kana": "どうぶつ",
   "en": "animal",
-  "audio": "どうぶつ.mp3"
+  "audio": "どうぶつ.mp3",
+  "kanji": "動物"
  },
  {
   "id": 1492387955642,
@@ -57,13 +63,15 @@
   "id": 1492387979678,
   "kana": "しがつ",
   "en": "april",
-  "audio": "しがつ.mp3"
+  "audio": "しがつ.mp3",
+  "kanji": "４月"
  },
  {
   "id": 1492388004337,
   "kana": "て",
   "en": "hand",
-  "audio": "て.mp3"
+  "audio": "て.mp3",
+  "kanji": "手"
  },
  {
   "id": 1492388031534,
@@ -75,49 +83,57 @@
   "id": 1492388085629,
   "kana": "びじゅつ",
   "en": "art",
-  "audio": "びじゅつ.mp3"
+  "audio": "びじゅつ.mp3",
+  "kanji": "美術"
  },
  {
   "id": 1492388104966,
   "kana": "げいじゅつか",
   "en": "artist",
-  "audio": "げいじゅつか.mp3"
+  "audio": "げいじゅつか.mp3",
+  "kanji": "芸術家"
  },
  {
   "id": 1492388174404,
   "kana": "はちがつ",
   "en": "august",
-  "audio": "はちがつ.mp3"
+  "audio": "はちがつ.mp3",
+  "kanji": "８月"
  },
  {
   "id": 1492388207488,
   "kana": "さっか",
   "en": "author",
-  "audio": "さっか.mp3"
+  "audio": "さっか.mp3",
+  "kanji": "作家"
  },
  {
   "id": 1492388229056,
   "kana": "あかちゃん",
   "en": "baby",
-  "audio": "あかちゃん.mp3"
+  "audio": "あかちゃん.mp3",
+  "kanji": "赤ちゃん"
  },
  {
   "id": 1492388238059,
   "kana": "せ",
   "en": "back",
-  "audio": "せ.mp3"
+  "audio": "せ.mp3",
+  "kanji": "背"
  },
  {
   "id": 1492388272056,
   "kana": "わるい",
   "en": "bad",
-  "audio": "わるい.mp3"
+  "audio": "わるい.mp3",
+  "kanji": "悪い"
  },
  {
   "id": 1492388280624,
   "kana": "かばん",
   "en": "bag",
-  "audio": "かばん.mp3"
+  "audio": "かばん.mp3",
+  "kanji": "鞄"
  },
  {
   "id": 1492388298497,
@@ -141,31 +157,36 @@
   "id": 1492388349548,
   "kana": "ぎんこう",
   "en": "bank",
-  "audio": null
+  "audio": null,
+  "kanji": "銀行"
  },
  {
   "id": 1492388408655,
   "kana": "おてあらい",
   "en": "bathroom",
-  "audio": "おてあらい.mp3"
+  "audio": "おてあらい.mp3",
+  "kanji": "お手洗い"
  },
  {
   "id": 1492388423945,
   "kana": "うみべ",
   "en": "beach",
-  "audio": "うみべ.mp3"
+  "audio": "うみべ.mp3",
+  "kanji": "海辺"
  },
  {
   "id": 1492388466219,
   "kana": "ひげ",
   "en": "beard",
-  "audio": "ひげ.mp3"
+  "audio": "ひげ.mp3",
+  "kanji": "髭"
  },
  {
   "id": 1492388560341,
   "kana": "きれい",
   "en": "beautiful",
-  "audio": "きれい.mp3"
+  "audio": "きれい.mp3",
+  "kanji": "綺麗"
  },
  {
   "id": 1492388601035,
@@ -177,13 +198,15 @@
   "id": 1492388617571,
   "kana": "しんしつ",
   "en": "bedroom",
-  "audio": "しんしつ.mp3"
+  "audio": "しんしつ.mp3",
+  "kanji": "寝室"
  },
  {
   "id": 1492388636921,
   "kana": "ぎゅうにく",
   "en": "beef",
-  "audio": "ぎゅうにく.mp3"
+  "audio": "ぎゅうにく.mp3",
+  "kanji": "牛肉"
  },
  {
   "id": 1492388657122,
@@ -195,43 +218,50 @@
   "id": 1492388704791,
   "kana": "のみもの",
   "en": "beverage",
-  "audio": "のみもの.mp3"
+  "audio": "のみもの.mp3",
+  "kanji": "飲み物"
  },
  {
   "id": 1492388730798,
   "kana": "じてんしゃ",
   "en": "bicycle",
-  "audio": "じてんしゃ.mp3"
+  "audio": "じてんしゃ.mp3",
+  "kanji": "自転車"
  },
  {
   "id": 1492388743216,
   "kana": "おおきい",
   "en": "big",
-  "audio": "おおきい.mp3"
+  "audio": "おおきい.mp3",
+  "kanji": "大きい"
  },
  {
   "id": 1492388755979,
   "kana": "つけ",
   "en": "bill",
-  "audio": "つけ.mp3"
+  "audio": "つけ.mp3",
+  "kanji": "付け"
  },
  {
   "id": 1492388793432,
   "kana": "じゅうおく",
   "en": "billion",
-  "audio": "じゅうおく.mp3"
+  "audio": "じゅうおく.mp3",
+  "kanji": "十億"
  },
  {
   "id": 1492388814700,
   "kana": "とり",
   "en": "bird",
-  "audio": "とり.mp3"
+  "audio": "とり.mp3",
+  "kanji": "鳥"
  },
  {
   "id": 1492388833030,
   "kana": "くろい",
   "en": "black",
-  "audio": "くろい.mp3"
+  "audio": "くろい.mp3",
+  "kanji": "黒い"
  },
  {
   "id": 1492388841983,
@@ -243,13 +273,15 @@
   "id": 1492388939250,
   "kana": "けつえき",
   "en": "blood",
-  "audio": "けつえき.mp3"
+  "audio": "けつえき.mp3",
+  "kanji": "血液"
  },
  {
   "id": 1492388968798,
   "kana": "あおい",
   "en": "blue",
-  "audio": "あおい.mp3"
+  "audio": "あおい.mp3",
+  "kanji": "青い"
  },
  {
   "id": 1492388984520,
@@ -261,49 +293,57 @@
   "id": 1492389009116,
   "kana": "からだ",
   "en": "body",
-  "audio": "からだ.mp3"
+  "audio": "からだ.mp3",
+  "kanji": "体"
  },
  {
   "id": 1492389018792,
   "kana": "ほね",
   "en": "bone",
-  "audio": "ほね.mp3"
+  "audio": "ほね.mp3",
+  "kanji": "骨"
  },
  {
   "id": 1492389033604,
   "kana": "ほん",
   "en": "book",
-  "audio": "ほん.mp3"
+  "audio": "ほん.mp3",
+  "kanji": "本"
  },
  {
   "id": 1492389055115,
   "kana": "びん",
   "en": "bottle",
-  "audio": "びん.mp3"
+  "audio": "びん.mp3",
+  "kanji": "瓶"
  },
  {
   "id": 1492389073503,
   "kana": "うら",
   "en": "bottom",
-  "audio": "うら.mp3"
+  "audio": "うら.mp3",
+  "kanji": "裏"
  },
  {
   "id": 1492389104338,
   "kana": "はこ",
   "en": "box",
-  "audio": "はこ.mp3"
+  "audio": "はこ.mp3",
+  "kanji": "箱"
  },
  {
   "id": 1492389123612,
   "kana": "おとこのこ",
   "en": "boy",
-  "audio": "おとこのこ.mp3"
+  "audio": "おとこのこ.mp3",
+  "kanji": "男の子"
  },
  {
   "id": 1492389144386,
   "kana": "のう",
   "en": "brain",
-  "audio": "のう.mp3"
+  "audio": "のう.mp3",
+  "kanji": "脳"
  },
  {
   "id": 1492389217474,
@@ -315,31 +355,36 @@
   "id": 1492389233413,
   "kana": "あさごはん",
   "en": "breakfast",
-  "audio": "あさごはん.mp3"
+  "audio": "あさごはん.mp3",
+  "kanji": "朝ごはん"
  },
  {
   "id": 1492389243858,
   "kana": "はし",
   "en": "bridge",
-  "audio": "はし.mp3"
+  "audio": "はし.mp3",
+  "kanji": "橋"
  },
  {
   "id": 1492389253008,
   "kana": "おにいさん",
   "en": "(older) brother",
-  "audio": "おにいさん.mp3"
+  "audio": "おにいさん.mp3",
+  "kanji": "お兄さん"
  },
  {
   "id": 1492389267014,
   "kana": "おとうと",
   "en": "(little) brother",
-  "audio": "おとうと.mp3"
+  "audio": "おとうと.mp3",
+  "kanji": "弟"
  },
  {
   "id": 1492389289909,
   "kana": "ちゃいろ",
   "en": "brown",
-  "audio": "ちゃいろ.mp3"
+  "audio": "ちゃいろ.mp3",
+  "kanji": "茶色"
  },
  {
   "id": 1492389352087,
@@ -375,7 +420,8 @@
   "id": 1492389488743,
   "kana": "くるま",
   "en": "car",
-  "audio": "くるま.mp3"
+  "audio": "くるま.mp3",
+  "kanji": "車"
  },
  {
   "id": 1492389499635,
@@ -393,13 +439,15 @@
   "id": 1492389579143,
   "kana": "てんじょう",
   "en": "ceiling",
-  "audio": "てんじょう.mp3"
+  "audio": "てんじょう.mp3",
+  "kanji": "天井"
  },
  {
   "id": 1492389619975,
   "kana": "けいたいでんわ",
   "en": "cell phone",
-  "audio": "けいたいでんわ.mp3"
+  "audio": "けいたいでんわ.mp3",
+  "kanji": "携帯電話"
  },
  {
   "id": 1492389636873,
@@ -411,13 +459,15 @@
   "id": 1492389655788,
   "kana": "いす",
   "en": "chair",
-  "audio": "いす.mp3"
+  "audio": "いす.mp3",
+  "kanji": "椅子"
  },
  {
   "id": 1492389667633,
   "kana": "やすい",
   "en": "cheap",
-  "audio": "やすい.mp3"
+  "audio": "やすい.mp3",
+  "kanji": "安い"
  },
  {
   "id": 1492389679994,
@@ -435,37 +485,43 @@
   "id": 1492389710805,
   "kana": "こども",
   "en": "child",
-  "audio": "こども.mp3"
+  "audio": "こども.mp3",
+  "kanji": "子供"
  },
  {
   "id": 1492389721570,
   "kana": "きょうかい",
   "en": "church",
-  "audio": "きょうかい.mp3"
+  "audio": "きょうかい.mp3",
+  "kanji": "教会"
  },
  {
   "id": 1492389741781,
   "kana": "まる",
   "en": "circle",
-  "audio": "まる.mp3"
+  "audio": "まる.mp3",
+  "kanji": "丸"
  },
  {
   "id": 1492389757842,
   "kana": "し",
   "en": "city",
-  "audio": "し.mp3"
+  "audio": "し.mp3",
+  "kanji": "市"
  },
  {
   "id": 1492389775851,
   "kana": "ねんど",
   "en": "clay",
-  "audio": "ねんど.mp3"
+  "audio": "ねんど.mp3",
+  "kanji": "粘土"
  },
  {
   "id": 1492389875147,
   "kana": "とけい",
   "en": "clock",
-  "audio": "とけい.mp3"
+  "audio": "とけい.mp3",
+  "kanji": "時計"
  },
  {
   "id": 1492389937440,
@@ -477,7 +533,8 @@
   "id": 1492389960088,
   "kana": "クラブ",
   "en": "club",
-  "audio": "クラブ.mp3"
+  "audio": "クラブ.mp3",
+  "kanji": "倶楽部"
  },
  {
   "id": 1492389984153,
@@ -489,7 +546,8 @@
   "id": 1492390034963,
   "kana": "コーヒー",
   "en": "coffee",
-  "audio": "コーヒー.mp3"
+  "audio": "コーヒー.mp3",
+  "kanji": "珈琲"
  },
  {
   "id": 1492390045103,
@@ -501,7 +559,8 @@
   "id": 1492390054102,
   "kana": "いろ",
   "en": "color",
-  "audio": "いろ.mp3"
+  "audio": "いろ.mp3",
+  "kanji": "色"
  },
  {
   "id": 1492390081903,
@@ -519,7 +578,8 @@
   "id": 1492390131196,
   "kana": "けいやく",
   "en": "contract",
-  "audio": "けいやく.mp3"
+  "audio": "けいやく.mp3",
+  "kanji": "契約"
  },
  {
   "id": 1492390188173,
@@ -531,7 +591,8 @@
   "id": 1492390203984,
   "kana": "こうか",
   "en": "coin",
-  "audio": "こうか.mp3"
+  "audio": "こうか.mp3",
+  "kanji": "硬貨"
  },
  {
   "id": 1492390218169,
@@ -543,7 +604,8 @@
   "id": 1492390273721,
   "kana": "すみ",
   "en": "corner",
-  "audio": "すみ.mp3"
+  "audio": "すみ.mp3",
+  "kanji": "隅"
  },
  {
   "id": 1492390338404,
@@ -555,13 +617,15 @@
   "id": 1492390357962,
   "kana": "さいばんしょ",
   "en": "court",
-  "audio": "さいばんしょ.mp3"
+  "audio": "さいばんしょ.mp3",
+  "kanji": "裁判所"
  },
  {
   "id": 1492390376147,
   "kana": "うし",
   "en": "cow",
-  "audio": "うし.mp3"
+  "audio": "うし.mp3",
+  "kanji": "牛"
  },
  {
   "id": 1492390459694,
@@ -579,7 +643,8 @@
   "id": 1492390557026,
   "kana": "くらい",
   "en": "dark",
-  "audio": "くらい.mp3"
+  "audio": "くらい.mp3",
+  "kanji": "暗い"
  },
  {
   "id": 1492390648052,
@@ -591,7 +656,8 @@
   "id": 1492390670684,
   "kana": "ひ",
   "en": "day",
-  "audio": "ひ.mp3"
+  "audio": "ひ.mp3",
+  "kanji": "日"
  },
  {
   "id": 1492390760547,
@@ -603,7 +669,8 @@
   "id": 1492390794140,
   "kana": "じゅうにがつ",
   "en": "december",
-  "audio": "じゅうにがつ.mp3"
+  "audio": "じゅうにがつ.mp3",
+  "kanji": "１２月"
  },
  {
   "id": 1492390918966,
@@ -615,31 +682,36 @@
   "id": 1492391018157,
   "kana": "ばんごはん",
   "en": "dinner",
-  "audio": "ばんごはん.mp3"
+  "audio": "ばんごはん.mp3",
+  "kanji": "晩御飯"
  },
  {
   "id": 1492391036525,
   "kana": "ほう",
   "en": "direction",
-  "audio": "ほう.mp3"
+  "audio": "ほう.mp3",
+  "kanji": "方"
  },
  {
   "id": 1492391060921,
   "kana": "きたない",
   "en": "dirty",
-  "audio": "きたない.mp3"
+  "audio": "きたない.mp3",
+  "kanji": "汚い"
  },
  {
   "id": 1492391089158,
   "kana": "びょうき",
   "en": "disease",
-  "audio": "びょうき.mp3"
+  "audio": "びょうき.mp3",
+  "kanji": "病気"
  },
  {
   "id": 1492391107372,
   "kana": "いしゃ",
   "en": "doctor",
-  "audio": "いしゃ.mp3"
+  "audio": "いしゃ.mp3",
+  "kanji": "医者"
  },
  {
   "id": 1492391123581,
@@ -651,19 +723,22 @@
   "id": 1492391129195,
   "kana": "ドル",
   "en": "dollar",
-  "audio": "ドル.mp3"
+  "audio": "ドル.mp3",
+  "kanji": "弗"
  },
  {
   "id": 1492391142219,
   "kana": "とびら",
   "en": "door",
-  "audio": "とびら.mp3"
+  "audio": "とびら.mp3",
+  "kanji": "扉"
  },
  {
   "id": 1492391167609,
   "kana": "てん",
   "en": "dot",
-  "audio": "てん.mp3"
+  "audio": "てん.mp3",
+  "kanji": "点"
  },
  {
   "id": 1492391185011,
@@ -675,7 +750,8 @@
   "id": 1492391245989,
   "kana": "ゆめ",
   "en": "dream",
-  "audio": "ゆめ.mp3"
+  "audio": "ゆめ.mp3",
+  "kanji": "夢"
  },
  {
   "id": 1492391272372,
@@ -687,7 +763,8 @@
   "id": 1492391324412,
   "kana": "やくざい",
   "en": "drug",
-  "audio": "やくざい.mp3"
+  "audio": "やくざい.mp3",
+  "kanji": "薬剤"
  },
  {
   "id": 1492391353616,
@@ -699,43 +776,50 @@
   "id": 1492391422403,
   "kana": "ほこり",
   "en": "dust",
-  "audio": "ほこり.mp3"
+  "audio": "ほこり.mp3",
+  "kanji": "埃"
  },
  {
   "id": 1492391448440,
   "kana": "みみ",
   "en": "ear",
-  "audio": "みみ.mp3"
+  "audio": "みみ.mp3",
+  "kanji": "耳"
  },
  {
   "id": 1492391717277,
   "kana": "ひがし",
   "en": "east",
-  "audio": "ひがし.mp3"
+  "audio": "ひがし.mp3",
+  "kanji": "東"
  },
  {
   "id": 1492391777383,
   "kana": "ふち",
   "en": "edge",
-  "audio": "ふち.mp3"
+  "audio": "ふち.mp3",
+  "kanji": "縁"
  },
  {
   "id": 1492391838206,
   "kana": "たまご",
   "en": "egg",
-  "audio": "たまご.mp3"
+  "audio": "たまご.mp3",
+  "kanji": "卵"
  },
  {
   "id": 1492391846335,
   "kana": "はち",
   "en": "eight",
-  "audio": null
+  "audio": null,
+  "kanji": "八"
  },
  {
   "id": 1492391856331,
   "kana": "じゅうはち",
   "en": "eighteen",
-  "audio": "じゅうはち.mp3"
+  "audio": "じゅうはち.mp3",
+  "kanji": "十八"
  },
  {
   "id": 1492391872548,
@@ -753,7 +837,8 @@
   "id": 1492391934038,
   "kana": "じゅういち",
   "en": "eleven",
-  "audio": "じゅういち.mp3"
+  "audio": "じゅういち.mp3",
+  "kanji": "十一"
  },
  {
   "id": 1492392010890,
@@ -765,31 +850,36 @@
   "id": 1492392032459,
   "kana": "よる",
   "en": "evening",
-  "audio": "よる.mp3"
+  "audio": "よる.mp3",
+  "kanji": "夜"
  },
  {
   "id": 1492392116454,
   "kana": "たかい",
   "en": "expensive",
-  "audio": "たかい.mp3"
+  "audio": "たかい.mp3",
+  "kanji": "高い"
  },
  {
   "id": 1492392202402,
   "kana": "め",
   "en": "eye",
-  "audio": "め.mp3"
+  "audio": "め.mp3",
+  "kanji": "目"
  },
  {
   "id": 1492392219618,
   "kana": "かお",
   "en": "face",
-  "audio": "かお.mp3"
+  "audio": "かお.mp3",
+  "kanji": "顔"
  },
  {
   "id": 1492392302657,
   "kana": "かぞく",
   "en": "family",
-  "audio": "かぞく.mp3"
+  "audio": "かぞく.mp3",
+  "kanji": "家族"
  },
  {
   "id": 1492392315941,
@@ -801,7 +891,8 @@
   "id": 1492392328360,
   "kana": "せんぷうき",
   "en": "electric fan",
-  "audio": "せんぷうき.mp3"
+  "audio": "せんぷうき.mp3",
+  "kanji": "扇風機"
  },
  {
   "id": 1492392390012,
@@ -813,31 +904,36 @@
   "id": 1492392423295,
   "kana": "はやい",
   "en": "fast",
-  "audio": "はやい.mp3"
+  "audio": "はやい.mp3",
+  "kanji": "早い"
  },
  {
   "id": 1492392444524,
   "kana": "おとうさん",
   "en": "father",
-  "audio": "おとうさん.mp3"
+  "audio": "おとうさん.mp3",
+  "kanji": "お父さん"
  },
  {
   "id": 1492392455887,
   "kana": "にがつ",
   "en": "february",
-  "audio": "にがつ.mp3"
+  "audio": "にがつ.mp3",
+  "kanji": "２月"
  },
  {
   "id": 1492392565690,
   "kana": "おんな",
   "en": "female",
-  "audio": "おんな.mp3"
+  "audio": "おんな.mp3",
+  "kanji": "女"
  },
  {
   "id": 1492392582947,
   "kana": "じゅうご",
   "en": "fifteen",
-  "audio": "じゅうご.mp3"
+  "audio": "じゅうご.mp3",
+  "kanji": "十五"
  },
  {
   "id": 1492392614549,
@@ -849,43 +945,50 @@
   "id": 1492392696770,
   "kana": "ゆび",
   "en": "finger",
-  "audio": "ゆび.mp3"
+  "audio": "ゆび.mp3",
+  "kanji": "指"
  },
  {
   "id": 1492392729412,
   "kana": "ひ",
   "en": "fire",
-  "audio": "ひ.mp3"
+  "audio": "ひ.mp3",
+  "kanji": "火"
  },
  {
   "id": 1492392782206,
   "kana": "さかな",
   "en": "fish",
-  "audio": "さかな.mp3"
+  "audio": "さかな.mp3",
+  "kanji": "魚"
  },
  {
   "id": 1492392799299,
   "kana": "ゆか",
   "en": "floor",
-  "audio": "ゆか.mp3"
+  "audio": "ゆか.mp3",
+  "kanji": "床"
  },
  {
   "id": 1492392825158,
   "kana": "はな",
   "en": "flower",
-  "audio": "はな.mp3"
+  "audio": "はな.mp3",
+  "kanji": "花"
  },
  {
   "id": 1492392979497,
   "kana": "たべもの",
   "en": "food",
-  "audio": "たべもの.mp3"
+  "audio": "たべもの.mp3",
+  "kanji": "食べ物"
  },
  {
   "id": 1492393041183,
   "kana": "もり",
   "en": "forest",
-  "audio": "もり.mp3"
+  "audio": "もり.mp3",
+  "kanji": "森"
  },
  {
   "id": 1492393062105,
@@ -909,25 +1012,29 @@
   "id": 1492393131339,
   "kana": "じゅうよん",
   "en": "fourteen",
-  "audio": "じゅうよん.mp3"
+  "audio": "じゅうよん.mp3",
+  "kanji": "十四"
  },
  {
   "id": 1492393168280,
   "kana": "きんようび",
   "en": "friday",
-  "audio": "きんようび.mp3"
+  "audio": "きんようび.mp3",
+  "kanji": "金曜日"
  },
  {
   "id": 1492393182758,
   "kana": "ともだち",
   "en": "friend",
-  "audio": "ともだち.mp3"
+  "audio": "ともだち.mp3",
+  "kanji": "友達"
  },
  {
   "id": 1492393192757,
   "kana": "ぜんぶ",
   "en": "front",
-  "audio": "ぜんぶ.mp3"
+  "audio": "ぜんぶ.mp3",
+  "kanji": "前部"
  },
  {
   "id": 1492393255480,
@@ -939,7 +1046,8 @@
   "id": 1492393288075,
   "kana": "にわ",
   "en": "garden",
-  "audio": "にわ.mp3"
+  "audio": "にわ.mp3",
+  "kanji": "庭"
  },
  {
   "id": 1492393305060,
@@ -951,19 +1059,22 @@
   "id": 1492393328398,
   "kana": "おくりもの",
   "en": "gift",
-  "audio": "おくりもの.mp3"
+  "audio": "おくりもの.mp3",
+  "kanji": "贈り物"
  },
  {
   "id": 1492393365325,
   "kana": "おんなのこ",
   "en": "girl",
-  "audio": "おんなのこ.mp3"
+  "audio": "おんなのこ.mp3",
+  "kanji": "女の子"
  },
  {
   "id": 1492393430965,
   "kana": "かみ",
   "en": "paper",
-  "audio": "かみ.mp3"
+  "audio": "かみ.mp3",
+  "kanji": "紙"
  },
  {
   "id": 1492393449611,
@@ -981,43 +1092,50 @@
   "id": 1492393482460,
   "kana": "おじいさん",
   "en": "grandfather",
-  "audio": "おじいさん.mp3"
+  "audio": "おじいさん.mp3",
+  "kanji": "お祖父さん"
  },
  {
   "id": 1492393515179,
   "kana": "おばあさん",
   "en": "grandmother",
-  "audio": "おばあさん.mp3"
+  "audio": "おばあさん.mp3",
+  "kanji": "お祖母さん"
  },
  {
   "id": 1492393529972,
   "kana": "くさ",
   "en": "grass",
-  "audio": "くさ.mp3"
+  "audio": "くさ.mp3",
+  "kanji": "草"
  },
  {
   "id": 1492393545801,
   "kana": "はいいろ",
   "en": "gray",
-  "audio": "はいいろ.mp3"
+  "audio": "はいいろ.mp3",
+  "kanji": "灰色"
  },
  {
   "id": 1492393567053,
   "kana": "みどり",
   "en": "green",
-  "audio": "みどり.mp3"
+  "audio": "みどり.mp3",
+  "kanji": "緑"
  },
  {
   "id": 1492393593020,
   "kana": "ち",
   "en": "ground",
-  "audio": "ち.mp3"
+  "audio": "ち.mp3",
+  "kanji": "地"
  },
  {
   "id": 1492393733022,
   "kana": "じゅう",
   "en": "gun",
-  "audio": "じゅう.mp3"
+  "audio": "じゅう.mp3",
+  "kanji": "銃"
  },
  {
   "id": 1492393792756,
@@ -1029,37 +1147,43 @@
   "id": 1492393805727,
   "kana": "はん",
   "en": "half",
-  "audio": "はん.mp3"
+  "audio": "はん.mp3",
+  "kanji": "半"
  },
  {
   "id": 1492393811914,
   "kana": "て",
   "en": "hand",
-  "audio": "て.mp3"
+  "audio": "て.mp3",
+  "kanji": "手"
  },
  {
   "id": 1492393861121,
   "kana": "うれしい",
   "en": "happy",
-  "audio": "うれしい.mp3"
+  "audio": "うれしい.mp3",
+  "kanji": "嬉しい"
  },
  {
   "id": 1492393886488,
   "kana": "むずかしい",
   "en": "hard",
-  "audio": "むずかしい.mp3"
+  "audio": "むずかしい.mp3",
+  "kanji": "難しい"
  },
  {
   "id": 1492393896315,
   "kana": "ぼうし",
   "en": "hat",
-  "audio": "ぼうし.mp3"
+  "audio": "ぼうし.mp3",
+  "kanji": "帽子"
  },
  {
   "id": 1492393923438,
   "kana": "あたま",
   "en": "head",
-  "audio": "あたま.mp3"
+  "audio": "あたま.mp3",
+  "kanji": "頭"
  },
  {
   "id": 1492393930670,
@@ -1071,61 +1195,71 @@
   "id": 1492394028269,
   "kana": "しんぞう",
   "en": "heart",
-  "audio": "しんぞう.mp3"
+  "audio": "しんぞう.mp3",
+  "kanji": "心臓"
  },
  {
   "id": 1492394057661,
   "kana": "ねつ",
   "en": "fever",
-  "audio": "ねつ.mp3"
+  "audio": "ねつ.mp3",
+  "kanji": "熱"
  },
  {
   "id": 1492394107870,
   "kana": "てんごく",
   "en": "heaven",
-  "audio": "てんごく.mp3"
+  "audio": "てんごく.mp3",
+  "kanji": "天国"
  },
  {
   "id": 1492394131746,
   "kana": "おもい",
   "en": "heavy",
-  "audio": "おもい.mp3"
+  "audio": "おもい.mp3",
+  "kanji": "重い"
  },
  {
   "id": 1492394153164,
   "kana": "じごく",
   "en": "hell",
-  "audio": "じごく.mp3"
+  "audio": "じごく.mp3",
+  "kanji": "地獄"
  },
  {
   "id": 1492394290092,
   "kana": "おか",
   "en": "hill",
-  "audio": "おか.mp3"
+  "audio": "おか.mp3",
+  "kanji": "丘"
  },
  {
   "id": 1492394322287,
   "kana": "あな",
   "en": "hole",
-  "audio": "あな.mp3"
+  "audio": "あな.mp3",
+  "kanji": "穴"
  },
  {
   "id": 1492394347166,
   "kana": "うま",
   "en": "horse",
-  "audio": "うま.mp3"
+  "audio": "うま.mp3",
+  "kanji": "馬"
  },
  {
   "id": 1492394360400,
   "kana": "びょういん",
   "en": "hospital",
-  "audio": "びょういん.mp3"
+  "audio": "びょういん.mp3",
+  "kanji": "病院"
  },
  {
   "id": 1492394372132,
   "kana": "あつい",
   "en": "hot",
-  "audio": "あつい.mp3"
+  "audio": "あつい.mp3",
+  "kanji": "暑い"
  },
  {
   "id": 1492394379621,
@@ -1137,25 +1271,29 @@
   "id": 1492394392384,
   "kana": "じかん",
   "en": "hour",
-  "audio": "じかん.mp3"
+  "audio": "じかん.mp3",
+  "kanji": "時間"
  },
  {
   "id": 1492394402684,
   "kana": "いえ",
   "en": "house",
-  "audio": "いえ.mp3"
+  "audio": "いえ.mp3",
+  "kanji": "家"
  },
  {
   "id": 1492394409677,
   "kana": "にんげん",
   "en": "human",
-  "audio": "にんげん.mp3"
+  "audio": "にんげん.mp3",
+  "kanji": "人間"
  },
  {
   "id": 1492394425148,
   "kana": "ひゃく",
   "en": "hundred",
-  "audio": "ひゃく.mp3"
+  "audio": "ひゃく.mp3",
+  "kanji": "百"
  },
  {
   "id": 1492394440201,
@@ -1167,49 +1305,57 @@
   "id": 1492394518397,
   "kana": "こおり",
   "en": "ice",
-  "audio": "こおり (1).mp3"
+  "audio": "こおり (1).mp3",
+  "kanji": "氷"
  },
  {
   "id": 1492394535068,
   "kana": "ぞう",
   "en": "image",
-  "audio": "ぞう.mp3"
+  "audio": "ぞう.mp3",
+  "kanji": "像"
  },
  {
   "id": 1492394558497,
   "kana": "インチ",
   "en": "inch",
-  "audio": "インチ.mp3"
+  "audio": "インチ.mp3",
+  "kanji": "吋"
  },
  {
   "id": 1492394587958,
   "kana": "ふしょう",
   "en": "injury",
-  "audio": "ふしょう.mp3"
+  "audio": "ふしょう.mp3",
+  "kanji": "負傷"
  },
  {
   "id": 1492394613117,
   "kana": "なか",
   "en": "inside",
-  "audio": "なか.mp3"
+  "audio": "なか.mp3",
+  "kanji": "中"
  },
  {
   "id": 1492394644347,
   "kana": "しま",
   "en": "island",
-  "audio": "しま.mp3"
+  "audio": "しま.mp3",
+  "kanji": "島"
  },
  {
   "id": 1492394655724,
   "kana": "いちがつ",
   "en": "january",
-  "audio": "いちがつ.mp3"
+  "audio": "いちがつ.mp3",
+  "kanji": "１月"
  },
  {
   "id": 1492394682128,
   "kana": "しごと",
   "en": "job",
-  "audio": "しごと.mp3"
+  "audio": "しごと.mp3",
+  "kanji": "仕事"
  },
  {
   "id": 1492394691495,
@@ -1221,43 +1367,50 @@
   "id": 1492394699317,
   "kana": "しちがつ",
   "en": "july",
-  "audio": "しちがつ.mp3"
+  "audio": "しちがつ.mp3",
+  "kanji": "７月"
  },
  {
   "id": 1492394776653,
   "kana": "ろくがつ",
   "en": "june",
-  "audio": "ろくがつ.mp3"
+  "audio": "ろくがつ.mp3",
+  "kanji": "６月"
  },
  {
   "id": 1492394797066,
   "kana": "かぎ",
   "en": "key",
-  "audio": "かぎ.mp3"
+  "audio": "かぎ.mp3",
+  "kanji": "鍵"
  },
  {
   "id": 1492394858219,
   "kana": "キログラム",
   "en": "kilogram",
-  "audio": "キログラム.mp3"
+  "audio": "キログラム.mp3",
+  "kanji": "瓩"
  },
  {
   "id": 1492394895854,
   "kana": "おう",
   "en": "king",
-  "audio": "おう.mp3"
+  "audio": "おう.mp3",
+  "kanji": "王"
  },
  {
   "id": 1492394954712,
   "kana": "だいどころ",
   "en": "kitchen",
-  "audio": "だいどころ.mp3"
+  "audio": "だいどころ.mp3",
+  "kanji": "台所"
  },
  {
   "id": 1492394982643,
   "kana": "ひざ",
   "en": "knee",
-  "audio": "ひざ.mp3"
+  "audio": "ひざ.mp3",
+  "kanji": "膝"
  },
  {
   "id": 1492394999015,
@@ -1269,7 +1422,8 @@
   "id": 1492395015589,
   "kana": "みずうみ",
   "en": "lake",
-  "audio": "みずうみ.mp3"
+  "audio": "みずうみ.mp3",
+  "kanji": "湖"
  },
  {
   "id": 1492395037505,
@@ -1287,103 +1441,120 @@
   "id": 1492395114352,
   "kana": "べんごし",
   "en": "lawyer",
-  "audio": "べんごし.mp3"
+  "audio": "べんごし.mp3",
+  "kanji": "弁護士"
  },
  {
   "id": 1492395129758,
   "kana": "は",
   "en": "leaf",
-  "audio": "は.mp3"
+  "audio": "は.mp3",
+  "kanji": "葉"
  },
  {
   "id": 1492395205017,
   "kana": "レモン",
   "en": "lemon",
-  "audio": "レモン.mp3"
+  "audio": "レモン.mp3",
+  "kanji": "檸檬"
  },
  {
   "id": 1492395260581,
   "kana": "としょかん",
   "en": "library",
-  "audio": "としょかん.mp3"
+  "audio": "としょかん.mp3",
+  "kanji": "図書館"
  },
  {
   "id": 1492395439439,
   "kana": "ひかり",
   "en": "light",
-  "audio": "ひかり.mp3"
+  "audio": "ひかり.mp3",
+  "kanji": "光"
  },
  {
   "id": 1492395486230,
   "kana": "くちびる",
   "en": "lips",
-  "audio": "くちびる.mp3"
+  "audio": "くちびる.mp3",
+  "kanji": "唇"
  },
  {
   "id": 1492395560702,
   "kana": "ばしょ",
   "en": "location",
-  "audio": "ばしょ.mp3"
+  "audio": "ばしょ.mp3",
+  "kanji": "場所"
  },
  {
   "id": 1492395669102,
   "kana": "ゆるい",
   "en": "loose",
-  "audio": "ゆるい.mp3"
+  "audio": "ゆるい.mp3",
+  "kanji": "緩い"
  },
  {
   "id": 1492395738657,
   "kana": "うるさい",
   "en": "loud",
-  "audio": "うるさい.mp3"
+  "audio": "うるさい.mp3",
+  "kanji": "煩い"
  },
  {
   "id": 1492395828174,
   "kana": "ひるごはん",
   "en": "lunch",
-  "audio": "ひるごはん.mp3"
+  "audio": "ひるごはん.mp3",
+  "kanji": "昼ご飯"
  },
  {
   "id": 1492395942182,
   "kana": "ざっし",
   "en": "magazine",
-  "audio": "ざっし.mp3"
+  "audio": "ざっし.mp3",
+  "kanji": "雑誌"
  },
  {
   "id": 1492395955375,
   "kana": "おとこ",
   "en": "male",
-  "audio": "おとこ.mp3"
+  "audio": "おとこ.mp3",
+  "kanji": "男"
  },
  {
   "id": 1492395962541,
   "kana": "おとこのひと",
   "en": "man",
-  "audio": "おとこのひと.mp3"
+  "audio": "おとこのひと.mp3",
+  "kanji": "男の人"
  },
  {
   "id": 1492395976015,
   "kana": "しはいにん",
   "en": "manager",
-  "audio": "しはいにん.mp3"
+  "audio": "しはいにん.mp3",
+  "kanji": "支配人"
  },
  {
   "id": 1492396009489,
   "kana": "ちず",
   "en": "map",
-  "audio": "ちず.mp3"
+  "audio": "ちず.mp3",
+  "kanji": "地図"
  },
  {
   "id": 1492396021380,
   "kana": "さんがつ",
   "en": "march",
-  "audio": "さんがつ.mp3"
+  "audio": "さんがつ.mp3",
+  "kanji": "３月"
  },
  {
   "id": 1492396032614,
   "kana": "いちば",
   "en": "(town) market",
-  "audio": "いちば.mp3"
+  "audio": "いちば.mp3",
+  "kanji": "市場"
  },
  {
   "id": 1492396075477,
@@ -1401,7 +1572,8 @@
   "id": 1492396218003,
   "kana": "ごがつ",
   "en": "may",
-  "audio": "ごがつ.mp3"
+  "audio": "ごがつ.mp3",
+  "kanji": "５月"
  },
  {
   "id": 1492396236531,
@@ -1413,19 +1585,22 @@
   "id": 1492396324413,
   "kana": "くすり",
   "en": "medicine",
-  "audio": "くすり.mp3"
+  "audio": "くすり.mp3",
+  "kanji": "薬"
  },
  {
   "id": 1492396392520,
   "kana": "きんぞく",
   "en": "metal",
-  "audio": "きんぞく.mp3"
+  "audio": "きんぞく.mp3",
+  "kanji": "金属"
  },
  {
   "id": 1492396409467,
   "kana": "メートル",
   "en": "meter",
-  "audio": "メートル.mp3"
+  "audio": "メートル.mp3",
+  "kanji": "米"
  },
  {
   "id": 1492396440988,
@@ -1437,7 +1612,8 @@
   "id": 1492396455451,
   "kana": "ひゃくまん",
   "en": "one million",
-  "audio": "ひゃくまん.mp3"
+  "audio": "ひゃくまん.mp3",
+  "kanji": "１００万"
  },
  {
   "id": 1492396482801,
@@ -1449,97 +1625,113 @@
   "id": 1492396528777,
   "kana": "げつようび",
   "en": "monday",
-  "audio": "げつようび.mp3"
+  "audio": "げつようび.mp3",
+  "kanji": "月曜日"
  },
  {
   "id": 1492396541785,
   "kana": "おかね",
   "en": "money",
-  "audio": "おかね.mp3"
+  "audio": "おかね.mp3",
+  "kanji": "お金"
  },
  {
   "id": 1492396608458,
   "kana": "つき",
   "en": "moon",
-  "audio": "つき.mp3"
+  "audio": "つき.mp3",
+  "kanji": "月"
  },
  {
   "id": 1492396633098,
   "kana": "あさ",
   "en": "morning",
-  "audio": "あさ.mp3"
+  "audio": "あさ.mp3",
+  "kanji": "朝"
  },
  {
   "id": 1492396641818,
   "kana": "おかあさん",
   "en": "mother",
-  "audio": "おかあさん.mp3"
+  "audio": "おかあさん.mp3",
+  "kanji": "お母さん"
  },
  {
   "id": 1492396653212,
   "kana": "やま",
   "en": "mountain",
-  "audio": "やま.mp3"
+  "audio": "やま.mp3",
+  "kanji": "山"
  },
  {
   "id": 1492396659713,
   "kana": "ねずみ",
   "en": "mouse",
-  "audio": "ねずみ.mp3"
+  "audio": "ねずみ.mp3",
+  "kanji": "鼠"
  },
  {
   "id": 1492396684978,
   "kana": "くち",
   "en": "mouth",
-  "audio": "くち.mp3"
+  "audio": "くち.mp3",
+  "kanji": "口"
  },
  {
   "id": 1492396701978,
   "kana": "えいが",
   "en": "movie",
-  "audio": "えいが.mp3"
+  "audio": "えいが.mp3",
+  "kanji": "映画"
  },
  {
   "id": 1492396715939,
   "kana": "さつじん",
   "en": "murder",
-  "audio": "さつじん.mp3"
+  "audio": "さつじん.mp3",
+  "kanji": "殺人"
  },
  {
   "id": 1492396738219,
   "kana": "おんがく",
   "en": "music",
-  "audio": "おんがく.mp3"
+  "audio": "おんがく.mp3",
+  "kanji": "音楽"
  },
  {
   "id": 1492396816619,
   "kana": "せまい",
   "en": "narrow",
-  "audio": "せまい.mp3"
+  "audio": "せまい.mp3",
+  "kanji": "狭い"
  },
  {
   "id": 1492396826243,
   "kana": "しぜん",
   "en": "nature",
-  "audio": "しぜん.mp3"
+  "audio": "しぜん.mp3",
+  "kanji": "自然"
  },
  {
   "id": 1492396845551,
   "kana": "くび",
   "en": "neck",
-  "audio": "くび.mp3"
+  "audio": "くび.mp3",
+  "kanji": "首"
  },
  {
   "id": 1492396874303,
   "kana": "はり",
   "en": "needle",
-  "audio": "はり.mp3"
+  "audio": "はり.mp3",
+  "kanji": "針"
  },
  {
   "id": 1492396896890,
   "kana": "りんじん",
   "en": "neighbor",
-  "audio": "りんじん.mp3"
+  "audio": "りんじん.mp3",
+  "kanji": "隣人"
  },
  {
   "id": 1492396940455,
@@ -1551,13 +1743,15 @@
   "id": 1492396961243,
   "kana": "あたらしい",
   "en": "new",
-  "audio": "あたらしい.mp3"
+  "audio": "あたらしい.mp3",
+  "kanji": "新しい"
  },
  {
   "id": 1492396976059,
   "kana": "しんぶん",
   "en": "newspaper",
-  "audio": "しんぶん.mp3"
+  "audio": "しんぶん.mp3",
+  "kanji": "新聞"
  },
  {
   "id": 1492397044798,
@@ -1575,7 +1769,8 @@
   "id": 1492397111480,
   "kana": "じゅうきゅう",
   "en": "nineteen",
-  "audio": "じゅうきゅう.mp3"
+  "audio": "じゅうきゅう.mp3",
+  "kanji": "十九"
  },
  {
   "id": 1492397124398,
@@ -1593,19 +1788,22 @@
   "id": 1492397140803,
   "kana": "きた",
   "en": "north",
-  "audio": "きた.mp3"
+  "audio": "きた.mp3",
+  "kanji": "北"
  },
  {
   "id": 1492397150542,
   "kana": "はな",
   "en": "nose",
-  "audio": "はな.mp3"
+  "audio": "はな.mp3",
+  "kanji": "鼻"
  },
  {
   "id": 1492397193305,
   "kana": "じゅういちがつ",
   "en": "november",
-  "audio": "じゅういちがつ.mp3"
+  "audio": "じゅういちがつ.mp3",
+  "kanji": "１１月"
  },
  {
   "id": 1492397214888,
@@ -1617,31 +1815,36 @@
   "id": 1492397251261,
   "kana": "ばんごう",
   "en": "number",
-  "audio": "ばんごう.mp3"
+  "audio": "ばんごう.mp3",
+  "kanji": "番号"
  },
  {
   "id": 1492397273810,
   "kana": "かいよう",
   "en": "ocean",
-  "audio": "かいよう.mp3"
+  "audio": "かいよう.mp3",
+  "kanji": "海洋"
  },
  {
   "id": 1492397293023,
   "kana": "じゅうがつ",
   "en": "october",
-  "audio": "じゅうがつ.mp3"
+  "audio": "じゅうがつ.mp3",
+  "kanji": "１０月"
  },
  {
   "id": 1492397319951,
   "kana": "じむしょ",
   "en": "office",
-  "audio": "じむしょ.mp3"
+  "audio": "じむしょ.mp3",
+  "kanji": "事務所"
  },
  {
   "id": 1492397423050,
   "kana": "いち",
   "en": "one",
-  "audio": "いち.mp3"
+  "audio": "いち.mp3",
+  "kanji": "一"
  },
  {
   "id": 1492397535748,
@@ -1653,37 +1856,43 @@
   "id": 1492397551516,
   "kana": "やがい",
   "en": "outside",
-  "audio": "やがい.mp3"
+  "audio": "やがい.mp3",
+  "kanji": "野外"
  },
  {
   "id": 1492397593435,
   "kana": "ページ",
   "en": "page",
-  "audio": "ページ.mp3"
+  "audio": "ページ.mp3",
+  "kanji": "頁"
  },
  {
   "id": 1492397612529,
   "kana": "いたみ",
   "en": "pain",
-  "audio": "いたみ.mp3"
+  "audio": "いたみ.mp3",
+  "kanji": "痛み"
  },
  {
   "id": 1492397776798,
   "kana": "えのぐ",
   "en": "paint",
-  "audio": "えのぐ.mp3"
+  "audio": "えのぐ.mp3",
+  "kanji": "絵の具"
  },
  {
   "id": 1492397813413,
   "kana": "おや",
   "en": "parent",
-  "audio": "おや.mp3"
+  "audio": "おや.mp3",
+  "kanji": "親"
  },
  {
   "id": 1492397889622,
   "kana": "かんじゃ",
   "en": "patient",
-  "audio": "かんじゃ.mp3"
+  "audio": "かんじゃ.mp3",
+  "kanji": "患者"
  },
  {
   "id": 1492397929676,
@@ -1713,13 +1922,15 @@
   "id": 1492398165027,
   "kana": "ひと",
   "en": "person",
-  "audio": "ひと.mp3"
+  "audio": "ひと.mp3",
+  "kanji": "人"
  },
  {
   "id": 1492398180000,
   "kana": "しゃしん",
   "en": "photograph",
-  "audio": "しゃしん.mp3"
+  "audio": "しゃしん.mp3",
+  "kanji": "写真"
  },
  {
   "id": 1492398236331,
@@ -1737,13 +1948,15 @@
   "id": 1492398296342,
   "kana": "ひこうき",
   "en": "plane",
-  "audio": "ひこうき.mp3"
+  "audio": "ひこうき.mp3",
+  "kanji": "飛行機"
  },
  {
   "id": 1492398310765,
   "kana": "しょくぶつ",
   "en": "plant",
-  "audio": "しょくぶつ.mp3"
+  "audio": "しょくぶつ.mp3",
+  "kanji": "植物"
  },
  {
   "id": 1492398340147,
@@ -1755,7 +1968,8 @@
   "id": 1492398495103,
   "kana": "さら",
   "en": "plate",
-  "audio": "さら.mp3"
+  "audio": "さら.mp3",
+  "kanji": "皿"
  },
  {
   "id": 1492398633803,
@@ -1767,7 +1981,8 @@
   "id": 1492398647914,
   "kana": "どく",
   "en": "poison",
-  "audio": "どく.mp3"
+  "audio": "どく.mp3",
+  "kanji": "毒"
  },
  {
   "id": 1492398666213,
@@ -1791,7 +2006,8 @@
   "id": 1492398736428,
   "kana": "ぶたにく",
   "en": "pork",
-  "audio": "ぶたにく.mp3"
+  "audio": "ぶたにく.mp3",
+  "kanji": "豚肉"
  },
  {
   "id": 1492398828882,
@@ -1803,25 +2019,29 @@
   "id": 1492398863851,
   "kana": "かかく",
   "en": "price",
-  "audio": "かかく.mp3"
+  "audio": "かかく.mp3",
+  "kanji": "価格"
  },
  {
   "id": 1492398895467,
   "kana": "そう",
   "en": "priest",
-  "audio": "そう.mp3"
+  "audio": "そう.mp3",
+  "kanji": "僧"
  },
  {
   "id": 1492398911205,
   "kana": "けいむしょ",
   "en": "prison",
-  "audio": "けいむしょ.mp3"
+  "audio": "けいむしょ.mp3",
+  "kanji": "刑務所"
  },
  {
   "id": 1492399018306,
   "kana": "じょおう",
   "en": "queen",
-  "audio": "じょおう.mp3"
+  "audio": "じょおう.mp3",
+  "kanji": "女王"
  },
  {
   "id": 1492399063181,
@@ -1839,25 +2059,29 @@
   "id": 1492399150108,
   "kana": "あめ",
   "en": "rain",
-  "audio": "あめ.mp3"
+  "audio": "あめ.mp3",
+  "kanji": "雨"
  },
  {
   "id": 1492399157742,
   "kana": "あかい",
   "en": "red",
-  "audio": "あかい (1).mp3"
+  "audio": "あかい (1).mp3",
+  "kanji": "赤い"
  },
  {
   "id": 1492399168104,
   "kana": "しゅうきょう",
   "en": "religion",
-  "audio": "しゅうきょう.mp3"
+  "audio": "しゅうきょう.mp3",
+  "kanji": "宗教"
  },
  {
   "id": 1492399197075,
   "kana": "きしゃ",
   "en": "reporter",
-  "audio": "きしゃ.mp3"
+  "audio": "きしゃ.mp3",
+  "kanji": "記者"
  },
  {
   "id": 1492399227331,
@@ -1887,55 +2111,64 @@
   "id": 1492399353687,
   "kana": "かわ",
   "en": "river",
-  "audio": "かわ.mp3"
+  "audio": "かわ.mp3",
+  "kanji": "川"
  },
  {
   "id": 1492399361634,
   "kana": "やね",
   "en": "roof",
-  "audio": "やね.mp3"
+  "audio": "やね.mp3",
+  "kanji": "屋根"
  },
  {
   "id": 1492399396319,
   "kana": "こんげん",
   "en": "root",
-  "audio": "こんげん.mp3"
+  "audio": "こんげん.mp3",
+  "kanji": "根源"
  },
  {
   "id": 1492399439777,
   "kana": "かなしい",
   "en": "sad",
-  "audio": "かなしい.mp3"
+  "audio": "かなしい.mp3",
+  "kanji": "悲しい"
  },
  {
   "id": 1492399454550,
   "kana": "しお",
   "en": "salt",
-  "audio": "しお.mp3"
+  "audio": "しお.mp3",
+  "kanji": "塩"
  },
  {
   "id": 1492399474909,
   "kana": "すな",
   "en": "sand",
-  "audio": "すな.mp3"
+  "audio": "すな.mp3",
+  "kanji": "砂"
  },
  {
   "id": 1492399495540,
   "kana": "どようび",
   "en": "saturday",
-  "audio": "どようび.mp3"
+  "audio": "どようび.mp3",
+  "kanji": "土曜日"
  },
  {
   "id": 1492399508572,
   "kana": "がっこう",
   "en": "school",
-  "audio": "がっこう.mp3"
+  "audio": "がっこう.mp3",
+  "kanji": "学校"
  },
  {
   "id": 1492399516777,
   "kana": "かがく",
   "en": "science",
-  "audio": "かがく.mp3"
+  "audio": "かがく.mp3",
+  "kanji": "科学"
  },
  {
   "id": 1492399525855,
@@ -1947,13 +2180,15 @@
   "id": 1492399541537,
   "kana": "うみ",
   "en": "sea",
-  "audio": "うみ.mp3"
+  "audio": "うみ.mp3",
+  "kanji": "海"
  },
  {
   "id": 1492399689930,
   "kana": "きせつ",
   "en": "season",
-  "audio": "きせつ.mp3"
+  "audio": "きせつ.mp3",
+  "kanji": "季節"
  },
  {
   "id": 1492399849904,
@@ -1965,13 +2200,15 @@
   "id": 1492399920053,
   "kana": "しゅし",
   "en": "seed",
-  "audio": "しゅし.mp3"
+  "audio": "しゅし.mp3",
+  "kanji": "種子"
  },
  {
   "id": 1492399962989,
   "kana": "くがつ",
   "en": "september",
-  "audio": "くがつ.mp3"
+  "audio": "くがつ.mp3",
+  "kanji": "９月"
  },
  {
   "id": 1492399993511,
@@ -1983,7 +2220,8 @@
   "id": 1492400038744,
   "kana": "じゅうなな",
   "en": "seventeen",
-  "audio": "じゅうなな.mp3"
+  "audio": "じゅうなな.mp3",
+  "kanji": "十七"
  },
  {
   "id": 1492400049807,
@@ -1995,13 +2233,15 @@
   "id": 1492400164752,
   "kana": "あさい",
   "en": "shallow",
-  "audio": "あさい.mp3"
+  "audio": "あさい.mp3",
+  "kanji": "浅い"
  },
  {
   "id": 1492400228584,
   "kana": "ふね",
   "en": "ship",
-  "audio": "ふね.mp3"
+  "audio": "ふね.mp3",
+  "kanji": "船"
  },
  {
   "id": 1492400234288,
@@ -2013,25 +2253,29 @@
   "id": 1492400246022,
   "kana": "くつ",
   "en": "shoes",
-  "audio": "くつ.mp3"
+  "audio": "くつ.mp3",
+  "kanji": "靴"
  },
  {
   "id": 1492400362168,
   "kana": "かた",
   "en": "shoulder",
-  "audio": "かた.mp3"
+  "audio": "かた.mp3",
+  "kanji": "肩"
  },
  {
   "id": 1492400387342,
   "kana": "かたわら",
   "en": "side",
-  "audio": "かたわら.mp3"
+  "audio": "かたわら.mp3",
+  "kanji": "傍ら"
  },
  {
   "id": 1492400505943,
   "kana": "あいず",
   "en": "sign",
-  "audio": "あいず.mp3"
+  "audio": "あいず.mp3",
+  "kanji": "合図"
  },
  {
   "id": 1492400596024,
@@ -2043,7 +2287,8 @@
   "id": 1492400635809,
   "kana": "おねえさん",
   "en": "(older) sister",
-  "audio": "おねえさん.mp3"
+  "audio": "おねえさん.mp3",
+  "kanji": "お姉さん"
  },
  {
   "id": 1492400651730,
@@ -2055,13 +2300,15 @@
   "id": 1492400700719,
   "kana": "ろく",
   "en": "six",
-  "audio": "ろく.mp3"
+  "audio": "ろく.mp3",
+  "kanji": "六"
  },
  {
   "id": 1492400747322,
   "kana": "じゅうろく",
   "en": "sixteen",
-  "audio": "じゅうろく.mp3"
+  "audio": "じゅうろく.mp3",
+  "kanji": "十六"
  },
  {
   "id": 1492400756313,
@@ -2073,7 +2320,8 @@
   "id": 1492400765187,
   "kana": "ひふ",
   "en": "skin",
-  "audio": "ひふ.mp3"
+  "audio": "ひふ.mp3",
+  "kanji": "皮膚"
  },
  {
   "id": 1492400792803,
@@ -2085,67 +2333,78 @@
   "id": 1492400813264,
   "kana": "そら",
   "en": "sky",
-  "audio": "そら.mp3"
+  "audio": "そら.mp3",
+  "kanji": "空"
  },
  {
   "id": 1492400842994,
   "kana": "おそい",
   "en": "slow",
-  "audio": "おそい.mp3"
+  "audio": "おそい.mp3",
+  "kanji": "遅い"
  },
  {
   "id": 1492400879463,
   "kana": "ちいさい",
   "en": "small",
-  "audio": "ちいさい.mp3"
+  "audio": "ちいさい.mp3",
+  "kanji": "小さい"
  },
  {
   "id": 1492401103207,
   "kana": "ゆき",
   "en": "snow",
-  "audio": "ゆき.mp3"
+  "audio": "ゆき.mp3",
+  "kanji": "雪"
  },
  {
   "id": 1492401111505,
   "kana": "せっけん",
   "en": "soap",
-  "audio": "せっけん.mp3"
+  "audio": "せっけん.mp3",
+  "kanji": "石鹸"
  },
  {
   "id": 1492401141748,
   "kana": "やわらかい",
   "en": "soft",
-  "audio": "やわらかい.mp3"
+  "audio": "やわらかい.mp3",
+  "kanji": "柔らかい"
  },
  {
   "id": 1492401219737,
   "kana": "どじょう",
   "en": "soil",
-  "audio": "どじょう.mp3"
+  "audio": "どじょう.mp3",
+  "kanji": "土壌"
  },
  {
   "id": 1492401257768,
   "kana": "へいし",
   "en": "soldier",
-  "audio": "へいし.mp3"
+  "audio": "へいし.mp3",
+  "kanji": "兵士"
  },
  {
   "id": 1492401318174,
   "kana": "むすこ",
   "en": "son",
-  "audio": "むすこ.mp3"
+  "audio": "むすこ.mp3",
+  "kanji": "息子"
  },
  {
   "id": 1492401360880,
   "kana": "うた",
   "en": "song",
-  "audio": "うた.mp3"
+  "audio": "うた.mp3",
+  "kanji": "歌"
  },
  {
   "id": 1492401381073,
   "kana": "おと",
   "en": "sound",
-  "audio": "おと.mp3"
+  "audio": "おと.mp3",
+  "kanji": "音"
  },
  {
   "id": 1492401419230,
@@ -2157,7 +2416,8 @@
   "id": 1492401443192,
   "kana": "みなみ",
   "en": "south",
-  "audio": "みなみ.mp3"
+  "audio": "みなみ.mp3",
+  "kanji": "南"
  },
  {
   "id": 1492401459818,
@@ -2181,13 +2441,15 @@
   "id": 1492401620107,
   "kana": "しかく",
   "en": "square",
-  "audio": "しかく.mp3"
+  "audio": "しかく.mp3",
+  "kanji": "四角"
  },
  {
   "id": 1492401681553,
   "kana": "しみ",
   "en": "stain",
-  "audio": "しみ.mp3"
+  "audio": "しみ.mp3",
+  "kanji": "染み"
  },
  {
   "id": 1492401718037,
@@ -2199,25 +2461,29 @@
   "id": 1492401734846,
   "kana": "いし",
   "en": "stone",
-  "audio": "いし.mp3"
+  "audio": "いし.mp3",
+  "kanji": "石"
  },
  {
   "id": 1492401782602,
   "kana": "みせ",
   "en": "shop",
-  "audio": "みせ.mp3"
+  "audio": "みせ.mp3",
+  "kanji": "店"
  },
  {
   "id": 1492401877616,
   "kana": "みち",
   "en": "street",
-  "audio": "みち.mp3"
+  "audio": "みち.mp3",
+  "kanji": "道"
  },
  {
   "id": 1492401912168,
   "kana": "つよい",
   "en": "strong",
-  "audio": "つよい.mp3"
+  "audio": "つよい.mp3",
+  "kanji": "強い"
  },
  {
   "id": 1492401969834,
@@ -2229,7 +2495,8 @@
   "id": 1492401988198,
   "kana": "さとう",
   "en": "sugar",
-  "audio": "さとう.mp3"
+  "audio": "さとう.mp3",
+  "kanji": "砂糖"
  },
  {
   "id": 1492402004235,
@@ -2241,25 +2508,29 @@
   "id": 1492402016793,
   "kana": "なつ",
   "en": "summer",
-  "audio": "なつ.mp3"
+  "audio": "なつ.mp3",
+  "kanji": "夏"
  },
  {
   "id": 1492402029851,
   "kana": "たいよう",
   "en": "sun",
-  "audio": "たいよう.mp3"
+  "audio": "たいよう.mp3",
+  "kanji": "太陽"
  },
  {
   "id": 1492402062975,
   "kana": "にちようび",
   "en": "sunday",
-  "audio": "にちようび.mp3"
+  "audio": "にちようび.mp3",
+  "kanji": "日曜日"
  },
  {
   "id": 1492402076841,
   "kana": "あせ",
   "en": "sweat",
-  "audio": "あせ.mp3"
+  "audio": "あせ.mp3",
+  "kanji": "汗"
  },
  {
   "id": 1492402117603,
@@ -2289,7 +2560,8 @@
   "id": 1492402323145,
   "kana": "せんせい",
   "en": "teacher",
-  "audio": "せんせい.mp3"
+  "audio": "せんせい.mp3",
+  "kanji": "先生"
  },
  {
   "id": 1492402338313,
@@ -2307,7 +2579,8 @@
   "id": 1492402406312,
   "kana": "ぎじゅつ",
   "en": "technology",
-  "audio": "ぎじゅつ.mp3"
+  "audio": "ぎじゅつ.mp3",
+  "kanji": "技術"
  },
  {
   "id": 1492402458789,
@@ -2325,13 +2598,15 @@
   "id": 1492402515019,
   "kana": "じゅう",
   "en": "ten",
-  "audio": "じゅう.mp3"
+  "audio": "じゅう.mp3",
+  "kanji": "十"
  },
  {
   "id": 1492402531841,
   "kana": "えいがかん",
   "en": "(movie) theater",
-  "audio": "えいがかん.mp3"
+  "audio": "えいがかん.mp3",
+  "kanji": "映画館"
  },
  {
   "id": 1492402564427,
@@ -2343,13 +2618,15 @@
   "id": 1492402625198,
   "kana": "あつい",
   "en": "thick",
-  "audio": "あつい.mp3"
+  "audio": "あつい.mp3",
+  "kanji": "厚い"
  },
  {
   "id": 1492402796119,
   "kana": "じゅうさん",
   "en": "thirteen",
-  "audio": "じゅうさん.mp3"
+  "audio": "じゅうさん.mp3",
+  "kanji": "十三"
  },
  {
   "id": 1492402806073,
@@ -2361,19 +2638,22 @@
   "id": 1492402821729,
   "kana": "せん",
   "en": "thousand",
-  "audio": "せん.mp3"
+  "audio": "せん.mp3",
+  "kanji": "千"
  },
  {
   "id": 1492402829846,
   "kana": "さん",
   "en": "three",
-  "audio": "さん.mp3"
+  "audio": "さん.mp3",
+  "kanji": "三"
  },
  {
   "id": 1492402895491,
   "kana": "もくようび",
   "en": "thursday",
-  "audio": "もくようび.mp3"
+  "audio": "もくようび.mp3",
+  "kanji": "木曜日"
  },
  {
   "id": 1492402959853,
@@ -2385,49 +2665,57 @@
   "id": 1492403025380,
   "kana": "じかん",
   "en": "time",
-  "audio": "じかん.mp3"
+  "audio": "じかん.mp3",
+  "kanji": "時間"
  },
  {
   "id": 1492403080909,
   "kana": "した",
   "en": "tongue",
-  "audio": "した.mp3"
+  "audio": "した.mp3",
+  "kanji": "舌"
  },
  {
   "id": 1492403098601,
   "kana": "どうぐ",
   "en": "tool",
-  "audio": "どうぐ.mp3"
+  "audio": "どうぐ.mp3",
+  "kanji": "道具"
  },
  {
   "id": 1492403146711,
   "kana": "は",
   "en": "tooth",
-  "audio": "は.mp3"
+  "audio": "は.mp3",
+  "kanji": "歯"
  },
  {
   "id": 1492403161004,
   "kana": "ちょうじょう",
   "en": "top",
-  "audio": "ちょうじょう.mp3"
+  "audio": "ちょうじょう.mp3",
+  "kanji": "頂上"
  },
  {
   "id": 1492403350212,
   "kana": "まち",
   "en": "town",
-  "audio": "まち.mp3"
+  "audio": "まち.mp3",
+  "kanji": "町"
  },
  {
   "id": 1492403377118,
   "kana": "でんしゃ",
   "en": "train",
-  "audio": "でんしゃ.mp3"
+  "audio": "でんしゃ.mp3",
+  "kanji": "電車"
  },
  {
   "id": 1492403387819,
   "kana": "えき",
   "en": "train station",
-  "audio": "えき.mp3"
+  "audio": "えき.mp3",
+  "kanji": "駅"
  },
  {
   "id": 1492403396539,
@@ -2439,7 +2727,8 @@
   "id": 1492403432534,
   "kana": "き",
   "en": "tree",
-  "audio": "き.mp3"
+  "audio": "き.mp3",
+  "kanji": "木"
  },
  {
   "id": 1492403501981,
@@ -2451,13 +2740,15 @@
   "id": 1492403521190,
   "kana": "かようび",
   "en": "tuesday",
-  "audio": "かようび.mp3"
+  "audio": "かようび.mp3",
+  "kanji": "火曜日"
  },
  {
   "id": 1492403587925,
   "kana": "じゅうに",
   "en": "twelve",
-  "audio": "じゅうに.mp3"
+  "audio": "じゅうに.mp3",
+  "kanji": "十二"
  },
  {
   "id": 1492403608494,
@@ -2469,31 +2760,36 @@
   "id": 1492403624317,
   "kana": "に",
   "en": "two",
-  "audio": "に.mp3"
+  "audio": "に.mp3",
+  "kanji": "二"
  },
  {
   "id": 1492403631878,
   "kana": "だいがく",
   "en": "university",
-  "audio": "だいがく.mp3"
+  "audio": "だいがく.mp3",
+  "kanji": "大学"
  },
  {
   "id": 1492403647766,
   "kana": "うえ",
   "en": "up",
-  "audio": "うえ.mp3"
+  "audio": "うえ.mp3",
+  "kanji": "上"
  },
  {
   "id": 1492403664693,
   "kana": "たに",
   "en": "valley",
-  "audio": "たに.mp3"
+  "audio": "たに.mp3",
+  "kanji": "谷"
  },
  {
   "id": 1492403690954,
   "kana": "どうし",
   "en": "verb",
-  "audio": "どうし.mp3"
+  "audio": "どうし.mp3",
+  "kanji": "動詞"
  },
  {
   "id": 1492403724902,
@@ -2505,13 +2801,15 @@
   "id": 1492403761437,
   "kana": "こえ",
   "en": "voice",
-  "audio": "こえ.mp3"
+  "audio": "こえ.mp3",
+  "kanji": "声"
  },
  {
   "id": 1492403785556,
   "kana": "ぼいん",
   "en": "vowel",
-  "audio": "ぼいん.mp3"
+  "audio": "ぼいん.mp3",
+  "kanji": "母音"
  },
  {
   "id": 1492403812021,
@@ -2523,19 +2821,22 @@
   "id": 1492403894297,
   "kana": "かべ",
   "en": "wall",
-  "audio": "かべ.mp3"
+  "audio": "かべ.mp3",
+  "kanji": "壁"
  },
  {
   "id": 1492403914619,
   "kana": "せんそう",
   "en": "war",
-  "audio": "せんそう.mp3"
+  "audio": "せんそう.mp3",
+  "kanji": "戦争"
  },
  {
   "id": 1492403933731,
   "kana": "あたたかい",
   "en": "warm",
-  "audio": "あたたかい.mp3"
+  "audio": "あたたかい.mp3",
+  "kanji": "暖かい"
  },
  {
   "id": 1492403970090,
@@ -2547,73 +2848,85 @@
   "id": 1492403993608,
   "kana": "なみ",
   "en": "wave",
-  "audio": "なみ.mp3"
+  "audio": "なみ.mp3",
+  "kanji": "波"
  },
  {
   "id": 1492404014541,
   "kana": "わたしたち",
   "en": "we",
-  "audio": "わたしたち.mp3"
+  "audio": "わたしたち.mp3",
+  "kanji": "私たち"
  },
  {
   "id": 1492404030057,
   "kana": "よわい",
   "en": "weak",
-  "audio": "よわい.mp3"
+  "audio": "よわい.mp3",
+  "kanji": "弱い"
  },
  {
   "id": 1492404089132,
   "kana": "すいようび",
   "en": "wednesday",
-  "audio": "すいようび.mp3"
+  "audio": "すいようび.mp3",
+  "kanji": "水曜日"
  },
  {
   "id": 1492404115333,
   "kana": "しゅう",
   "en": "week",
-  "audio": "しゅう.mp3"
+  "audio": "しゅう.mp3",
+  "kanji": "週"
  },
  {
   "id": 1492404132093,
   "kana": "じゅうりょう",
   "en": "weight",
-  "audio": "じゅうりょう.mp3"
+  "audio": "じゅうりょう.mp3",
+  "kanji": "重量"
  },
  {
   "id": 1492404164370,
   "kana": "にし",
   "en": "west",
-  "audio": "にし.mp3"
+  "audio": "にし.mp3",
+  "kanji": "西"
  },
  {
   "id": 1492404294153,
   "kana": "しろい",
   "en": "white",
-  "audio": "しろい.mp3"
+  "audio": "しろい.mp3",
+  "kanji": "白い"
  },
  {
   "id": 1492404318854,
   "kana": "ひろい",
   "en": "wide",
-  "audio": "ひろい.mp3"
+  "audio": "ひろい.mp3",
+  "kanji": "広い"
  },
  {
   "id": 1492404333937,
   "kana": "おくさん",
   "en": "wife",
-  "audio": "おくさん.mp3"
+  "audio": "おくさん.mp3",
+  "kanji": "奥さん"
  },
  {
   "id": 1492404412744,
   "kana": "かぜ",
   "en": "wind",
-  "audio": "かぜ.mp3"
+  "audio": "かぜ.mp3",
+  "kanji": "風"
  },
  {
   "id": 1492404432925,
   "kana": "まど",
   "en": "window",
-  "audio": "まど.mp3"
+  "audio": "まど.mp3",
+  "kanji": "窓"
  },
  {
   "id": 1492404440642,
@@ -2625,37 +2938,43 @@
   "id": 1492404446109,
   "kana": "つばさ",
   "en": "wing",
-  "audio": "つばさ.mp3"
+  "audio": "つばさ.mp3",
+  "kanji": "翼"
  },
  {
   "id": 1492404465323,
   "kana": "ふゆ",
   "en": "winter",
-  "audio": "ふゆ.mp3"
+  "audio": "ふゆ.mp3",
+  "kanji": "冬"
  },
  {
   "id": 1492404476515,
   "kana": "じょせい",
   "en": "woman",
-  "audio": "じょせい.mp3"
+  "audio": "じょせい.mp3",
+  "kanji": "女性"
  },
  {
   "id": 1492404495901,
   "kana": "もくざい",
   "en": "wood",
-  "audio": "もくざい.mp3"
+  "audio": "もくざい.mp3",
+  "kanji": "木材"
  },
  {
   "id": 1492404571020,
   "kana": "せかい",
   "en": "world",
-  "audio": "せかい.mp3"
+  "audio": "せかい.mp3",
+  "kanji": "世界"
  },
  {
   "id": 1492404637246,
   "kana": "ねん",
   "en": "year",
-  "audio": "ねん.mp3"
+  "audio": "ねん.mp3",
+  "kanji": "年"
  },
  {
   "id": 1492404665984,
@@ -2673,13 +2992,15 @@
   "id": 1492404715198,
   "kana": "あなた",
   "en": "you",
-  "audio": "あなた.mp3"
+  "audio": "あなた.mp3",
+  "kanji": "貴方"
  },
  {
   "id": 1492404734287,
   "kana": "わかい",
   "en": "young",
-  "audio": "わかい.mp3"
+  "audio": "わかい.mp3",
+  "kanji": "若い"
  },
  {
   "id": 1492404744421,
@@ -2697,49 +3018,57 @@
   "id": 1492388256200,
   "kana": "うしろ",
   "en": "back",
-  "audio": "うしろ.mp3"
+  "audio": "うしろ.mp3",
+  "kanji": "後ろ"
  },
  {
   "id": 1492388379811,
   "kana": "さかば",
   "en": "bar",
-  "audio": "さかば.mp3"
+  "audio": "さかば.mp3",
+  "kanji": "酒場"
  },
  {
   "id": 1492388497131,
   "kana": "なぐる",
   "en": "to beat",
-  "audio": "なぐる.mp3"
+  "audio": "なぐる.mp3",
+  "kanji": "殴る"
  },
  {
   "id": 1492388672507,
   "kana": "まがる",
   "en": "to bend",
-  "audio": "まがる.mp3"
+  "audio": "まがる.mp3",
+  "kanji": "曲がる"
  },
  {
   "id": 1492389159814,
   "kana": "おる",
   "en": "to break",
-  "audio": "おる.mp3"
+  "audio": "おる.mp3",
+  "kanji": "折る"
  },
  {
   "id": 1492389314157,
   "kana": "たてる",
   "en": "to build",
-  "audio": "たてる.mp3"
+  "audio": "たてる.mp3",
+  "kanji": "建てる"
  },
  {
   "id": 1492389370682,
   "kana": "やく",
   "en": "burn",
-  "audio": "やく.mp3"
+  "audio": "やく.mp3",
+  "kanji": "焼く"
  },
  {
   "id": 1492389418886,
   "kana": "かう",
   "en": "to buy",
-  "audio": "かう.mp3"
+  "audio": "かう.mp3",
+  "kanji": "買う"
  },
  {
   "id": 1492389444619,
@@ -2751,7 +3080,8 @@
   "id": 1492389511901,
   "kana": "もつ",
   "en": "to carry",
-  "audio": "もつ.mp3"
+  "audio": "もつ.mp3",
+  "kanji": "持つ"
  },
  {
   "id": 1492389548786,
@@ -2769,7 +3099,8 @@
   "id": 1492389905608,
   "kana": "しめる",
   "en": "to close",
-  "audio": "しめる.mp3"
+  "audio": "しめる.mp3",
+  "kanji": "閉める"
  },
  {
   "id": 1492390067193,
@@ -2781,13 +3112,15 @@
   "id": 1492390152993,
   "kana": "かっこいい",
   "en": "cool",
-  "audio": "かっこいい.mp3"
+  "audio": "かっこいい.mp3",
+  "kanji": "格好いい"
  },
  {
   "id": 1492390296236,
   "kana": "かぞえる",
   "en": "to count",
-  "audio": "かぞえる.mp3"
+  "audio": "かぞえる.mp3",
+  "kanji": "数える"
  },
  {
   "id": 1492390388347,
@@ -2799,13 +3132,15 @@
   "id": 1492390427221,
   "kana": "なく",
   "en": "to cry",
-  "audio": "なく.mp3"
+  "audio": "なく.mp3",
+  "kanji": "泣く"
  },
  {
   "id": 1492390497740,
   "kana": "きる",
   "en": "to cut",
-  "audio": "きる.mp3"
+  "audio": "きる.mp3",
+  "kanji": "切る"
  },
  {
   "id": 1492390543259,
@@ -2817,37 +3152,43 @@
   "id": 1492390575611,
   "kana": "ひづけ",
   "en": "date",
-  "audio": "ひづけ.mp3"
+  "audio": "ひづけ.mp3",
+  "kanji": "日付"
  },
  {
   "id": 1492390685325,
   "kana": "しぬ",
   "en": "to die",
-  "audio": "しぬ.mp3"
+  "audio": "しぬ.mp3",
+  "kanji": "死ぬ"
  },
  {
   "id": 1492390826272,
   "kana": "ふかい",
   "en": "deep",
-  "audio": "ふかい.mp3"
+  "audio": "ふかい.mp3",
+  "kanji": "深い"
  },
  {
   "id": 1492390946301,
   "kana": "ほる",
   "en": "to dig",
-  "audio": "ほる.mp3"
+  "audio": "ほる.mp3",
+  "kanji": "掘る"
  },
  {
   "id": 1492391208832,
   "kana": "かく",
   "en": "to draw",
-  "audio": "かく.mp3"
+  "audio": "かく.mp3",
+  "kanji": "描く"
  },
  {
   "id": 1492391297384,
   "kana": "のむ",
   "en": "to drink",
-  "audio": "のむ.mp3"
+  "audio": "のむ.mp3",
+  "kanji": "飲む"
  },
  {
   "id": 1492391310046,
@@ -2859,13 +3200,15 @@
   "id": 1492391460030,
   "kana": "ちきゅう",
   "en": "earth",
-  "audio": "ちきゅう.mp3"
+  "audio": "ちきゅう.mp3",
+  "kanji": "地球"
  },
  {
   "id": 1492391750459,
   "kana": "たべる",
   "en": "to eat",
-  "audio": "たべる.mp3"
+  "audio": "たべる.mp3",
+  "kanji": "食べる"
  },
  {
   "id": 1492391947231,
@@ -2877,7 +3220,8 @@
   "id": 1492392060289,
   "kana": "うんどう",
   "en": "to exercise",
-  "audio": null
+  "audio": null,
+  "kanji": "運動"
  },
  {
   "id": 1492392132583,
@@ -2889,7 +3233,8 @@
   "id": 1492392227903,
   "kana": "あき",
   "en": "fall",
-  "audio": "あき.mp3"
+  "audio": "あき.mp3",
+  "kanji": "秋"
  },
  {
   "id": 1492392249238,
@@ -2919,13 +3264,15 @@
   "id": 1492392625589,
   "kana": "せんとう",
   "en": "to fight",
-  "audio": "せんとう.mp3"
+  "audio": "せんとう.mp3",
+  "kanji": "戦闘"
  },
  {
   "id": 1492392657269,
   "kana": "みつける",
   "en": "to find",
-  "audio": "みつける.mp3"
+  "audio": "みつける.mp3",
+  "kanji": "見つける"
  },
  {
   "id": 1492392750887,
@@ -2937,25 +3284,29 @@
   "id": 1492392840676,
   "kana": "とぶ",
   "en": "to fly",
-  "audio": "とぶ.mp3"
+  "audio": "とぶ.mp3",
+  "kanji": "飛ぶ"
  },
  {
   "id": 1492392874810,
   "kana": "したがう",
   "en": "to follow",
-  "audio": "したがう.mp3"
+  "audio": "したがう.mp3",
+  "kanji": "従う"
  },
  {
   "id": 1492392995413,
   "kana": "あし",
   "en": "foot",
-  "audio": "あし.mp3"
+  "audio": "あし.mp3",
+  "kanji": "足"
  },
  {
   "id": 1492393010768,
   "kana": "フィート",
   "en": "feet",
-  "audio": "フィート.mp3"
+  "audio": "フィート.mp3",
+  "kanji": "呎"
  },
  {
   "id": 1492393149360,
@@ -2967,43 +3318,50 @@
   "id": 1492393376651,
   "kana": "ガラス",
   "en": "glass",
-  "audio": "ガラス.mp3"
+  "audio": "ガラス.mp3",
+  "kanji": "硝子"
  },
  {
   "id": 1492393407349,
   "kana": "いく",
   "en": "to go",
-  "audio": "いく.mp3"
+  "audio": "いく.mp3",
+  "kanji": "行く"
  },
  {
   "id": 1492393629436,
   "kana": "はやす",
   "en": "to grow",
-  "audio": "はやす.mp3"
+  "audio": "はやす.mp3",
+  "kanji": "生やす"
  },
  {
   "id": 1492393828026,
   "kana": "つるす",
   "en": "to hang up",
-  "audio": "つるす.mp3"
+  "audio": "つるす.mp3",
+  "kanji": "吊るす"
  },
  {
   "id": 1492393911330,
   "kana": "かれ",
   "en": "he",
-  "audio": "かれ.mp3"
+  "audio": "かれ.mp3",
+  "kanji": "彼"
  },
  {
   "id": 1492393973846,
   "kana": "きく",
   "en": "to hear",
-  "audio": "きく.mp3"
+  "audio": "きく.mp3",
+  "kanji": "聞く"
  },
  {
   "id": 1492394184411,
   "kana": "たかい",
   "en": "high",
-  "audio": "たかい.mp3"
+  "audio": "たかい.mp3",
+  "kanji": "高い"
  },
  {
   "id": 1492394494121,
@@ -3021,13 +3379,15 @@
   "id": 1492394740031,
   "kana": "ちょうやく",
   "en": "to jump",
-  "audio": "ちょうやく.mp3"
+  "audio": "ちょうやく.mp3",
+  "kanji": "跳躍"
  },
  {
   "id": 1492394816840,
   "kana": "ころす",
   "en": "to kill",
-  "audio": "ころす.mp3"
+  "audio": "ころす.mp3",
+  "kanji": "殺す"
  },
  {
   "id": 1492394914974,
@@ -3039,7 +3399,8 @@
   "id": 1492395092096,
   "kana": "わらう",
   "en": "to laugh",
-  "audio": "わらう.mp3"
+  "audio": "わらう.mp3",
+  "kanji": "笑う"
  },
  {
   "id": 1492395142430,
@@ -3051,19 +3412,22 @@
   "id": 1492395168394,
   "kana": "ひだり",
   "en": "left",
-  "audio": "ひだり.mp3"
+  "audio": "ひだり.mp3",
+  "kanji": "左"
  },
  {
   "id": 1492395186196,
   "kana": "あし",
   "en": "leg",
-  "audio": "あし.mp3"
+  "audio": "あし.mp3",
+  "kanji": "足"
  },
  {
   "id": 1492395217767,
   "kana": "てがみ",
   "en": "letter",
-  "audio": "てがみ.mp3"
+  "audio": "てがみ.mp3",
+  "kanji": "手紙"
  },
  {
   "id": 1492395269322,
@@ -3075,13 +3439,15 @@
   "id": 1492395327093,
   "kana": "もちあげる",
   "en": "to lift up",
-  "audio": "もちあげる.mp3"
+  "audio": "もちあげる.mp3",
+  "kanji": "持ち上げる"
  },
  {
   "id": 1492395376537,
   "kana": "あかるい",
   "en": "light",
-  "audio": "あかるい.mp3"
+  "audio": "あかるい.mp3",
+  "kanji": "明るい"
  },
  {
   "id": 1492395409566,
@@ -3111,7 +3477,8 @@
   "id": 1492395759227,
   "kana": "あいす",
   "en": "to love",
-  "audio": "あいす.mp3"
+  "audio": "あいす.mp3",
+  "kanji": "愛す"
  },
  {
   "id": 1492395782265,
@@ -3129,25 +3496,29 @@
   "id": 1492396331823,
   "kana": "とかす",
   "en": "to melt",
-  "audio": "とかす.mp3"
+  "audio": "とかす.mp3",
+  "kanji": "溶かす"
  },
  {
   "id": 1492396497999,
   "kana": "まぜる",
   "en": "to mix",
-  "audio": "まぜる.mp3"
+  "audio": "まぜる.mp3",
+  "kanji": "混ぜる"
  },
  {
   "id": 1492396547702,
   "kana": "げっかん",
   "en": "month-long period",
-  "audio": "げっかん.mp3"
+  "audio": "げっかん.mp3",
+  "kanji": "月間"
  },
  {
   "id": 1492397075204,
   "kana": "よる",
   "en": "night",
-  "audio": "よる.mp3"
+  "audio": "よる.mp3",
+  "kanji": "夜"
  },
  {
   "id": 1492397158477,
@@ -3159,7 +3530,8 @@
   "id": 1492397340675,
   "kana": "せきゆ",
   "en": "oil",
-  "audio": "せきゆ.mp3"
+  "audio": "せきゆ.mp3",
+  "kanji": "石油"
  },
  {
   "id": 1492397372794,
@@ -3183,7 +3555,8 @@
   "id": 1492397649462,
   "kana": "えがく",
   "en": "to paint",
-  "audio": "えがく.mp3"
+  "audio": "えがく.mp3",
+  "kanji": "描く"
  },
  {
   "id": 1492397828144,
@@ -3201,7 +3574,8 @@
   "id": 1492398023585,
   "kana": "しはらう",
   "en": "to pay",
-  "audio": "しはらう.mp3"
+  "audio": "しはらう.mp3",
+  "kanji": "支払う"
  },
  {
   "id": 1492398189903,
@@ -3231,7 +3605,8 @@
   "id": 1492398777792,
   "kana": "いのる",
   "en": "to pray",
-  "audio": "いのる.mp3"
+  "audio": "いのる.mp3",
+  "kanji": "祈る"
  },
  {
   "id": 1492398932551,
@@ -3243,43 +3618,50 @@
   "id": 1492398965170,
   "kana": "ひく",
   "en": "to pull",
-  "audio": "ひく.mp3"
+  "audio": "ひく.mp3",
+  "kanji": "引く"
  },
  {
   "id": 1492398991232,
   "kana": "おす",
   "en": "to push",
-  "audio": "おす.mp3"
+  "audio": "おす.mp3",
+  "kanji": "押す"
  },
  {
   "id": 1492399082224,
   "kana": "みんぞく",
   "en": "race",
-  "audio": "みんぞく.mp3"
+  "audio": "みんぞく.mp3",
+  "kanji": "民族"
  },
  {
   "id": 1492399104341,
   "kana": "きょうそう",
   "en": "to race",
-  "audio": "きょうそう.mp3"
+  "audio": "きょうそう.mp3",
+  "kanji": "競走"
  },
  {
   "id": 1492399329441,
   "kana": "みぎ",
   "en": "right",
-  "audio": "みぎ.mp3"
+  "audio": "みぎ.mp3",
+  "kanji": "右"
  },
  {
   "id": 1492399378107,
   "kana": "へや",
   "en": "room",
-  "audio": "へや.mp3"
+  "audio": "へや.mp3",
+  "kanji": "部屋"
  },
  {
   "id": 1492399419033,
   "kana": "はしる",
   "en": "to run",
-  "audio": "はしる.mp3"
+  "audio": "はしる.mp3",
+  "kanji": "走る"
  },
  {
   "id": 1492399705602,
@@ -3297,13 +3679,15 @@
   "id": 1492399892723,
   "kana": "みる",
   "en": "to see",
-  "audio": "みる.mp3"
+  "audio": "みる.mp3",
+  "kanji": "見る"
  },
  {
   "id": 1492399948972,
   "kana": "うる",
   "en": "to sell",
-  "audio": "うる.mp3"
+  "audio": "うる.mp3",
+  "kanji": "売る"
  },
  {
   "id": 1492400062052,
@@ -3321,13 +3705,15 @@
   "id": 1492400126964,
   "kana": "ゆれる",
   "en": "to shake",
-  "audio": "ゆれる.mp3"
+  "audio": "ゆれる.mp3",
+  "kanji": "揺れる"
  },
  {
   "id": 1492400209609,
   "kana": "かのじょ",
   "en": "she",
-  "audio": "かのじょ.mp3"
+  "audio": "かのじょ.mp3",
+  "kanji": "彼女"
  },
  {
   "id": 1492400252995,
@@ -3339,7 +3725,8 @@
   "id": 1492400306485,
   "kana": "みじかい",
   "en": "short",
-  "audio": "みじかい.mp3"
+  "audio": "みじかい.mp3",
+  "kanji": "短い"
  },
  {
   "id": 1492400344284,
@@ -3357,7 +3744,8 @@
   "id": 1492400619546,
   "kana": "うたう",
   "en": "to sing",
-  "audio": "うたう.mp3"
+  "audio": "うたう.mp3",
+  "kanji": "歌う"
  },
  {
   "id": 1492400678911,
@@ -3375,7 +3763,8 @@
   "id": 1492400909664,
   "kana": "かぐ",
   "en": "to smell",
-  "audio": "かぐ.mp3"
+  "audio": "かぐ.mp3",
+  "kanji": "嗅ぐ"
  },
  {
   "id": 1492401053198,
@@ -3387,19 +3776,22 @@
   "id": 1492401503306,
   "kana": "はなす",
   "en": "to speak",
-  "audio": "はなす.mp3"
+  "audio": "はなす.mp3",
+  "kanji": "話す"
  },
  {
   "id": 1492401540200,
   "kana": "いう",
   "en": "to say",
-  "audio": "いう.mp3"
+  "audio": "いう.mp3",
+  "kanji": "言う"
  },
  {
   "id": 1492401604964,
   "kana": "はる",
   "en": "spring",
-  "audio": "はる.mp3"
+  "audio": "はる.mp3",
+  "kanji": "春"
  },
  {
   "id": 1492401702806,
@@ -3411,7 +3803,8 @@
   "id": 1492401754476,
   "kana": "とまる",
   "en": "to stop (moving)",
-  "audio": "とまる.mp3"
+  "audio": "とまる.mp3",
+  "kanji": "止まる"
  },
  {
   "id": 1492401800590,
@@ -3423,19 +3816,22 @@
   "id": 1492402095934,
   "kana": "およぐ",
   "en": "to swim",
-  "audio": "およぐ.mp3"
+  "audio": "およぐ.mp3",
+  "kanji": "泳ぐ"
  },
  {
   "id": 1492402227409,
   "kana": "あじわう",
   "en": "to taste",
-  "audio": "あじわう.mp3"
+  "audio": "あじわう.mp3",
+  "kanji": "味わう"
  },
  {
   "id": 1492402298786,
   "kana": "おしえる",
   "en": "to teach",
-  "audio": "おしえる.mp3"
+  "audio": "おしえる.mp3",
+  "kanji": "教える"
  },
  {
   "id": 1492402491993,
@@ -3447,7 +3843,8 @@
   "id": 1492402674650,
   "kana": "うすい",
   "en": "thin",
-  "audio": "うすい.mp3"
+  "audio": "うすい.mp3",
+  "kanji": "薄い"
  },
  {
   "id": 1492402721874,
@@ -3459,7 +3856,8 @@
   "id": 1492402757828,
   "kana": "おもう",
   "en": "to think",
-  "audio": "おもう.mp3"
+  "audio": "おもう.mp3",
+  "kanji": "思う"
  },
  {
   "id": 1492402775638,
@@ -3477,7 +3875,8 @@
   "id": 1492402918250,
   "kana": "きっぷ",
   "en": "ticket",
-  "audio": "きっぷ.mp3"
+  "audio": "きっぷ.mp3",
+  "kanji": "切符"
  },
  {
   "id": 1492403037765,
@@ -3489,79 +3888,92 @@
   "id": 1492403056525,
   "kana": "ゆび",
   "en": "toe",
-  "audio": "ゆび.mp3"
+  "audio": "ゆび.mp3",
+  "kanji": "指"
  },
  {
   "id": 1492403214896,
   "kana": "さわる",
   "en": "to touch",
-  "audio": "さわる.mp3"
+  "audio": "さわる.mp3",
+  "kanji": "触る"
  },
  {
   "id": 1492403533223,
   "kana": "まわす",
   "en": "to turn",
-  "audio": "まわす.mp3"
+  "audio": "まわす.mp3",
+  "kanji": "回す"
  },
  {
   "id": 1492403837886,
   "kana": "おきる",
   "en": "to get up",
-  "audio": "おきる.mp3"
+  "audio": "おきる.mp3",
+  "kanji": "起きる"
  },
  {
   "id": 1492403870707,
   "kana": "あるく",
   "en": "to walk",
-  "audio": "あるく.mp3"
+  "audio": "あるく.mp3",
+  "kanji": "歩く"
  },
  {
   "id": 1492403953711,
   "kana": "あらう",
   "en": "to wash",
-  "audio": "あらう.mp3"
+  "audio": "あらう.mp3",
+  "kanji": "洗う"
  },
  {
   "id": 1492404054573,
   "kana": "きる",
   "en": "to wear (from the shoulders down)",
-  "audio": "きる.mp3"
+  "audio": "きる.mp3",
+  "kanji": "着る"
  },
  {
   "id": 1492404183781,
   "kana": "ぬれる",
   "en": "to get wet",
-  "audio": "ぬれる.mp3"
+  "audio": "ぬれる.mp3",
+  "kanji": "濡れる"
  },
  {
   "id": 1492404345064,
   "kana": "かつ",
   "en": "to win",
-  "audio": "かつ.mp3"
+  "audio": "かつ.mp3",
+  "kanji": "勝つ"
  },
  {
   "id": 1492404533587,
   "kana": "はたらく",
   "en": "to work",
-  "audio": "はたらく.mp3"
+  "audio": "はたらく.mp3",
+  "kanji": "働く"
  },
  {
   "id": 1492404583914,
   "kana": "かく",
   "en": "to write",
-  "audio": "かく.mp3"
+  "audio": "かく.mp3",
+  "kanji": "書く"
  },
  {
   "id": 1492404594977,
   "kana": "にわ",
   "en": "yard",
-  "audio": "にわ.mp3"
+  "audio": "にわ.mp3",
+  "kanji": "庭"
  },
  {
   "id": 1492389797097,
   "kana": "せいけつ",
   "en": "clean",
-  "audio": "せいけつ.mp3"
+  "audio": "せいけつ.mp3",
+  "kanji": "清潔"
  },
  {
   "id": 1492397482056,

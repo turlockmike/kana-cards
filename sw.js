@@ -1,5 +1,5 @@
 /* Offline-first service worker. Cache-first for the app shell so it works with no network. */
-const CACHE='kana-v24';
+const CACHE='kana-v25';
 // App shell + the words image/word manifests. Individual images, audio, and cards are
 // cached on first view by the runtime fetch handler below — offline-first once seen.
 const ASSETS=['./','./index.html','./kana.js','./fsrs.js','./sync.js','./app.js',

@@ -50,6 +50,7 @@
       W.cards[slug] = {
         slug, en: e.en||slug, file: e.file, category: e.category||'',
         kana:  w ? (w.kana||null) : null,
+        kanji: w ? (w.kanji||null) : null,
         audio: w ? (w.audio||null) : null,
         sentence: sent ? (sent.s||null) : null,
         hl:       sent ? (sent.hl||null) : null,
@@ -337,8 +338,9 @@
           : esc(s);
         sentHtml = `<div class="sentence">${inner}</div>`;
       }
+      const kanjiHtml = c.kanji ? `<div class="kanji">${esc(c.kanji)}</div>` : '';
       const ans = hasKana
-        ? `<div class="kana">${esc(c.kana)}</div>${sentHtml}
+        ? `<div class="kana">${esc(c.kana)}</div>${kanjiHtml}${sentHtml}
            <button class="audiobtn" id="audioBtn" ${c.audio||c.saudio?'':'disabled'}>🔊 Play</button>`
         : `<div class="kana stub">かな + 🔊 coming soon</div>`;
       cardInner =
@@ -462,8 +464,10 @@
         : esc(s);
       sentHtml = `<div class="sentence" id="sentence">${inner}</div>`;
     }
+    const kanjiHtml = c.kanji ? `<div class="kanji">${esc(c.kanji)}</div>` : '';
     const answerInner = hasKana
       ? `<div class="kana">${esc(c.kana)}</div>
+         ${kanjiHtml}
          ${sentHtml}
          <button class="audiobtn" id="audioBtn" ${c.audio?'':'disabled'}>🔊 Play</button>`
       : `<div class="kana stub">かな + 🔊 coming soon</div>`;

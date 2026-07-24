@@ -2,6 +2,7 @@
 # Index — /home/mike/projects/kana-flashcards/media/audio
 
 ## Files
+- `1st_s.mp3`
 - `adjective_s.mp3`
 - `adult_s.mp3`
 - `afternoon_s.mp3`
@@ -14,8 +15,10 @@
 - `army_s.mp3`
 - `art_s.mp3`
 - `artist_s.mp3`
+- `attack_noun_s.mp3`
 - `august_s.mp3`
 - `author_s.mp3`
+- `autograph_s.mp3`
 - `baby_s.mp3`
 - `back_s.mp3`
 - `bad_s.mp3`
@@ -24,6 +27,7 @@
 - `banana_s.mp3`
 - `band_s.mp3`
 - `bank_s.mp3`
+- `bar_s.mp3`
 - `bathroom_s.mp3`
 - `beach_s.mp3`
 - `beard_s.mp3`
@@ -54,6 +58,7 @@
 - `bridge_s.mp3`
 - `brown_s.mp3`
 - `building_s.mp3`
+- `burn_s.mp3`
 - `bus_s.mp3`
 - `cake_s.mp3`
 - `camera_s.mp3`
@@ -61,6 +66,7 @@
 - `car_s.mp3`
 - `card_s.mp3`
 - `cat_s.mp3`
+- `ceiling_s.mp3`
 - `cell_phone_s.mp3`
 - `chair_s.mp3`
 - `cheap_s.mp3`
@@ -70,20 +76,60 @@
 - `church_s.mp3`
 - `circle_s.mp3`
 - `clay_s.mp3`
+- `clean_s.mp3`
 - `clock_s.mp3`
 - `clothes_s.mp3`
 - `club_s.mp3`
 - `coat_s.mp3`
 - `coffee_s.mp3`
+- `coin_s.mp3`
 - `cold_s.mp3`
 - `color_s.mp3`
 - `computer_s.mp3`
+- `consonant_s.mp3`
+- `contract_s.mp3`
+- `cool_s.mp3`
+- `copper_s.mp3`
 - `corn_s.mp3`
+- `corner_s.mp3`
+- `country_s.mp3`
+- `court_s.mp3`
 - `cow_s.mp3`
+- `crowd_s.mp3`
 - `cup_s.mp3`
+- `curved_s.mp3`
+- `dark_s.mp3`
+- `date_s.mp3`
+- `daughter_s.mp3`
+- `day_s.mp3`
+- `deaf_person_s.mp3`
+- `december_s.mp3`
+- `deep_s.mp3`
+- `diamond_s.mp3`
 - `dinner_s.mp3`
+- `direction_s.mp3`
+- `dirty_s.mp3`
+- `disease_s.mp3`
+- `doctor_s.mp3`
 - `dog_s.mp3`
+- `dollar_s.mp3`
+- `door_s.mp3`
+- `dot_s.mp3`
+- `down_s.mp3`
+- `dream_s.mp3`
+- `dress_s.mp3`
+- `drug_s.mp3`
+- `dry_s.mp3`
+- `dust_s.mp3`
+- `ear_s.mp3`
+- `earth_s.mp3`
+- `east_s.mp3`
+- `edge_s.mp3`
 - `egg_s.mp3`
+- `eight_s.mp3`
+- `eighteen_s.mp3`
+- `eighty_s.mp3`
+- `electric_fan_s.mp3`
 - `fish_s.mp3`
 - `food_s.mp3`
 - `fork_s.mp3`
@@ -94,13 +140,16 @@
 - `knife_s.mp3`
 - `lemon_s.mp3`
 - `little_brother_s.mp3`
+- `little_sister_s.mp3`
 - `lunch_s.mp3`
 - `milk_s.mp3`
 - `mother_s.mp3`
 - `mouse_s.mp3`
+- `movie_theater_s.mp3`
 - `north_s.mp3`
 - `oil_s.mp3`
 - `older_brother_s.mp3`
+- `older_sister_s.mp3`
 - `orange_s.mp3`
 - `pig_s.mp3`
 - `plate_s.mp3`
@@ -113,6 +162,7 @@
 - `spoon_s.mp3`
 - `sugar_s.mp3`
 - `tea_s.mp3`
+- `town_market_s.mp3`
 - `water_s.mp3`
 - `wine_s.mp3`
 - `wing_s.mp3`
@@ -688,4 +738,4 @@
 - `買う.mp3`
 - `電話する.mp3`
 
-_0 subfolders, 685 files._
+_0 subfolders, 735 files._

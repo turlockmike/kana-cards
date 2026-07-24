@@ -709,6 +709,104 @@
   function closeChart(){ const el=chartEl(); if(el) el.classList.remove('show'); }
   const _chartBtn=$('#chartBtn'); if(_chartBtn) _chartBtn.onclick=openChart;
 
+  // ================= KANA MATCHING GAME (BACKLOG #3) =================
+  // Card-matching / concentration: flip tiles two at a time, match a kana to its romaji.
+  // CORRECTNESS INVARIANT (BACKLOG #3 design constraint): the board is drawn ONLY from kana
+  // the active profile has actually been SHOWN — taught (teach mode) or reviewed. Games
+  // reinforce; they must NEVER introduce unseen kana (introduction stays teach mode's job).
+  // The seen gate is isSeenKana(); gameKanaPool() is the SINGLE source of the board pool and
+  // MUST filter through it. kana-smoke check #7 guards this statically (mutation-proven).
+  const isSeenKana = c => !!c && (c.taught || (c.reps||0)>0);   // SEEN gate: taught OR reviewed
+  function gameKanaPool(){
+    const d = pid ? loadDeck(pid,'kana') : null;   // always the KANA deck, whatever the current mode
+    if(!d || !d.cards) return [];
+    return KANA_IDS.filter(id=>isSeenKana(d.cards[id]));   // seen-only — never surface un-taught kana
+  }
+  const GAME_MAX_PAIRS = 6, GAME_MIN_KANA = 4;
+  let gTiles=[], gOpen=[], gMoves=0, gMatched=0, gLock=false;
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  const gameEl = () => document.getElementById('gameSheet');
+  function buildGameSheet(){
+    let el = gameEl();
+    if(el) return el;
+    el = document.createElement('div');
+    el.id='gameSheet'; el.className='gamesheet';
+    el.innerHTML =
+     `<div class="charthead"><h3>Matching game</h3><button class="x" id="gameClose">Done</button></div>
+      <div class="gamescroll" id="gameScroll"></div>`;
+    document.body.appendChild(el);
+    document.getElementById('gameClose').onclick=closeGame;
+    return el;
+  }
+  function newGame(){
+    const scroll = document.getElementById('gameScroll'); if(!scroll) return;
+    const pool = gameKanaPool();
+    if(pool.length < GAME_MIN_KANA){
+      scroll.innerHTML =
+        `<div class="gmsg">Study a few kana first! 🌱<br>The matching game unlocks once you've
+         seen at least ${GAME_MIN_KANA} characters.<br><br>Tap ✍️ Kana to keep learning.</div>`;
+      return;
+    }
+    const k = Math.min(GAME_MAX_PAIRS, pool.length);
+    const chosen = shuffle(pool.slice()).slice(0,k);
+    // two tiles per kana: one shows the character, one shows its romaji
+    gTiles = shuffle(chosen.flatMap(id=>[{id,face:'kana'},{id,face:'roma'}]));
+    gOpen=[]; gMoves=0; gMatched=0; gLock=false;
+    renderGame();
+  }
+  function renderGame(){
+    const scroll = document.getElementById('gameScroll'); if(!scroll) return;
+    const tiles = gTiles.map((t,i)=>`<button class="gtile down" data-gi="${i}"></button>`).join('');
+    scroll.innerHTML =
+      `<div class="gstat" id="gStat">Moves: 0 · Pairs: 0/${gTiles.length/2}</div>
+       <div class="ggrid">${tiles}</div>`;
+    scroll.querySelectorAll('[data-gi]').forEach(b=>b.onclick=()=>flipTile(+b.dataset.gi));
+  }
+  function tileFace(t){
+    const kc = KANA[t.id];
+    return t.face==='kana' ? `<span class="face">${esc(kc.kana)}</span>` : `<span>${esc(kc.romaji)}</span>`;
+  }
+  function tileEl(i){ return document.querySelector(`[data-gi="${i}"]`); }
+  function updateGStat(){ const s=document.getElementById('gStat'); if(s) s.textContent = `Moves: ${gMoves} · Pairs: ${gMatched}/${gTiles.length/2}`; }
+  function flipTile(i){
+    if(gLock) return;
+    const btn = tileEl(i);
+    if(!btn || btn.classList.contains('matched') || btn.classList.contains('up')) return;
+    btn.classList.remove('down'); btn.classList.add('up'); btn.innerHTML = tileFace(gTiles[i]);
+    gOpen.push(i);
+    if(gOpen.length===2){
+      gMoves++;
+      const a=gOpen[0], b=gOpen[1];
+      if(gTiles[a].id===gTiles[b].id){
+        gOpen=[]; gMatched++;
+        const ea=tileEl(a), eb=tileEl(b);
+        if(ea) ea.classList.add('matched'); if(eb) eb.classList.add('matched');
+        updateGStat();
+        if(gMatched===gTiles.length/2) winGame();
+      } else {
+        gLock=true; updateGStat();
+        setTimeout(()=>{
+          [a,b].forEach(j=>{ const e=tileEl(j); if(e){ e.classList.remove('up'); e.classList.add('down'); e.innerHTML=''; } });
+          gOpen=[]; gLock=false;
+        }, 850);
+      }
+    } else { updateGStat(); }
+  }
+  function winGame(){
+    const scroll=document.getElementById('gameScroll'); if(!scroll) return;
+    const pairs=gTiles.length/2;
+    scroll.innerHTML =
+      `<div class="gwin"><h3>🎉 You matched all ${pairs} pairs!</h3>
+         <p class="gstat">Finished in ${gMoves} moves.</p>
+         <div class="gamebtns"><button id="gAgain">Play again</button>
+           <button class="ghost" id="gDone">Done</button></div></div>`;
+    document.getElementById('gAgain').onclick=newGame;
+    document.getElementById('gDone').onclick=closeGame;
+  }
+  function openGame(){ buildGameSheet(); gameEl().classList.add('show'); newGame(); }
+  function closeGame(){ const el=gameEl(); if(el) el.classList.remove('show'); }
+  const _gameBtn=$('#gameBtn'); if(_gameBtn) _gameBtn.onclick=openGame;
+
   // ================= BOOT =================
   // Kana is ready immediately; start now if the active mode is kana.
   if(pid && readyOf(mode)){ if(deck.introduced.length===0) introduceNext(3); startSession(); syncPull(); }

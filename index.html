@@ -131,6 +131,26 @@
   .kdcard svg.stroke{width:184px;height:184px;}
   .kdcard .btns{display:flex;gap:10px;width:100%;margin-top:4px;}
   .kdcard .btns button{flex:1;border:none;border-radius:14px;padding:13px;font-size:15px;font-weight:700;background:#eef0fb;color:var(--accent);}
+  /* ===== kana matching game (full-screen overlay) — reuses .charthead/.x for the header ===== */
+  .gamesheet{position:fixed;inset:0;background:var(--bg);z-index:30;display:none;flex-direction:column;}
+  .gamesheet.show{display:flex;}
+  .gamescroll{flex:1;overflow:auto;padding:14px 14px calc(24px + env(safe-area-inset-bottom));min-height:0;}
+  .gstat{text-align:center;color:var(--muted);font-size:14px;font-weight:700;margin:4px 0 14px;}
+  .ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px;margin:0 auto;}
+  .gtile{aspect-ratio:3/4;border:none;border-radius:14px;background:#dfe3f7;
+        display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;
+        font-size:18px;font-weight:700;color:var(--accent);transition:background .12s,transform .08s;}
+  .gtile.down::after{content:"?";color:var(--accent);font-size:26px;font-weight:800;}
+  .gtile.up{background:#fff;color:#222;border:2px solid var(--accent);}
+  .gtile.up .face{font-size:30px;line-height:1;}
+  .gtile.matched{background:#e7f7ec;border:2px solid #46b26a;color:#2f7d49;pointer-events:none;}
+  .gtile.matched .face{font-size:30px;line-height:1;}
+  .gwin{text-align:center;padding:36px 16px;}
+  .gwin h3{font-size:22px;margin:0 0 6px;}
+  .gmsg{text-align:center;color:var(--muted);padding:44px 22px;font-size:16px;line-height:1.55;}
+  .gamebtns{display:flex;gap:10px;justify-content:center;margin-top:18px;}
+  .gamebtns button{border:none;border-radius:14px;padding:12px 22px;font-size:15px;font-weight:700;background:var(--accent);color:#fff;}
+  .gamebtns button.ghost{background:#eef0fb;color:var(--accent);}
 </style>
 </head>
 <body>
@@ -144,6 +164,7 @@
   <button data-mode="kana" class="on">✍️ Kana</button>
   <button data-mode="words">🖼️ Words</button>
   <button class="chart" id="chartBtn" title="Kana chart" aria-label="Kana reference chart">📖</button>
+  <button class="chart" id="gameBtn" title="Matching game" aria-label="Kana matching game">🎮</button>
 </div>
 
 <main id="main"></main>

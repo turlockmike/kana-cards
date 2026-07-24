@@ -96,6 +96,10 @@ mutation) and `kana-smoke --live` (key GitHub Pages paths 200 + sw cache version
 Built 2026-07-23 to replace the throwaway DOM-shim harness the consolidation used.
 This IS the regression gate — the "no English on the word card" rule leaked once
 (journal 2026-07-23 15:42); the pedagogy check now catches it automatically.
+**Teach-mode anti-poison oracle added 2026-07-24 (check #6 + 2nd mutation):**
+`teach()` must set `c.taught=true` but NEVER call `FSRS.schedule` or mutate
+`.reps/.S/.D` — else first-sight poisons the scheduler (feature #1's core
+invariant). Now 10 checks, both mutations proven load-bearing.
 
 ## Notes
 - All three fit the existing offline-first/no-backend architecture

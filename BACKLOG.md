@@ -6,7 +6,7 @@ sessions pull from); implement when the queue reaches it, ship increments,
 `tg` Mike as each lands. "Don't implement now" meant not-in-that-session,
 not gated-on-approval (Mike clarified 2026-07-23 15:29).
 
-## 1. First-exposure teach mode (no quiz on first sight)
+## 1. First-exposure teach mode — ✅ SHIPPED & LIVE 2026-07-24
 The FIRST time a card is ever shown to a profile, skip the quiz interaction:
 show the back side (character + stroke order) immediately with a simple
 "Continue" button — no draw canvas, no Good/Okay/Bad grading. Learning-science
@@ -14,6 +14,18 @@ rationale: you can't recall what you've never been taught; first exposure is
 encoding, not retrieval. FSRS note: the teach view should register as the
 card's initial learning step (or schedule it as `new→learning` with a neutral
 grade), not as a review — otherwise first-sight stats poison the scheduler.
+
+**DONE — do NOT rebuild.** `isFirstExposure(id)` = `!c.taught && reps===0`;
+`renderCard` branches to `renderTeachCard` on first sight. Teach view: kana →
+`#answer.show` strokebox (big kana + romaji + animated stroke order via shared
+`animateStrokes`) + Continue; words → picture + kana + sentence (highlighted) +
+audio (`playSequence`) + Continue. **NO English on the word teach view** (pedagogy
+held). `continueBtn` → `teach()` which sets ONLY `c.taught=true` (never calls
+FSRS.schedule), then re-queues the card at pos min(3,len) for the real quiz. So
+FSRS state stays 'new' / reps stays 0 → the first real grade runs initS/initD,
+first-sight never poisons the scheduler; learnedCount (reps>0 && S>=1) not inflated.
+Verified: `node --check` OK · kana-smoke --selftest 7/7 + --live 12/12 GREEN · sw
+v9→v10 · pushed origin ahead=0 · live sw=v10 + renderTeachCard confirmed deployed.
 
 ## 2. Kana reference section — ✅ SHIPPED & LIVE 2026-07-23 (commit 3f89ac9)
 A browsable "view all kana" chart — hiragana + katakana in the standard gojūon

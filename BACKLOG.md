@@ -123,6 +123,19 @@ was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" t
   sentence renders, on the card whose kana = the LAST words.json entry. slice-5 authored
   `light`=かるい (the winning entry, "light-weight") — correct. Also skip words with `img=n`
   (no image → no card ever renders the sentence): slice-5 skipped `i (formal`, `long (distance`.
+- **✅ FULL duplicate-`en` audit (slice-5 REFLECT — the whole last-wins defect class, sized).**
+  Exactly **8** duplicate-`en` words exist; card shows the LAST row's kana for each. Audited all 8:
+  | en | last-wins kana (card shows) | other row(s) | verdict |
+  |---|---|---|---|
+  | **heart** | ねつ (熱 fever) | しんぞう | ❌ **DEFECT — WRONG tx.** Fix: drop/repair ねつ so しんぞう wins |
+  | hand | て | て | ✅ identical, fine |
+  | back | うしろ (behind) | せ | ✅ valid sense |
+  | light | かるい (light-weight) | ひかり, あかるい | ✅ valid sense |
+  | orange | オレンジいろ | オレンジ | ✅ valid sense |
+  | second | にかいめ (2nd time) | ふつか | ✅ valid sense |
+  | short | せがひくい (short stature) | みじかい | ✅ valid sense |
+  | thin | やせている (skinny) | うすい | ✅ valid sense |
+  **Bottom line: only `heart` is a true mistranslation** (child would learn ねつ=fever as "heart" — pedagogically harmful). The other 7 last-wins picks are *valid alternate senses* of ambiguous English → leave (or optionally reorder to primary sense; NOT defects). So the `/workshop` sweep's duplicate-`en` fix-list is exactly ONE word: **heart**. (`kitchen` だいところ→だいどころ typo is a separate character-class fix.)
 
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate

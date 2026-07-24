@@ -67,6 +67,21 @@ origin ahead=0 · live sw=v11 + gameKanaPool + gameBtn confirmed deployed. Remai
 candidates (whack-a-mole / falling-kana / speed rounds) are net-new future increments.
 
 ## 4. Words mode: example sentence + word→sentence→word audio (Mike 2026-07-23)
+**✅ FEATURE CLOSED 2026-07-24 (sw v26). Coverage 582/586 rendered cards; the remaining 4 are a documented permanent skip-set (below).**
+Final close-out slice authored the whole authorable remainder in one pass (32 sentences) rather than another mid-slice, closing the feature:
+- **+32 sentences** (550→582 rendered coverage): attack-noun, cell-phone, deaf-person, electric-fan, electronic-device, little-brother, little-sister, mean-spirited, month-long-period, movie-theater, old-thing, older-brother, older-sister, one-million, town-market, billion, centimeter, front, i-formal, long-distance, we, white, they, to-buy, to-call, program, soft, to-catch + the 4 tile-fixed words below. All machine-validated (hl a literal substring of s, pure-kana, terminal 。, key an `ok`-status image slug, hl==`byEn` kana for 31/32 — mean-spirited is a な-adjective stem, expected). Nanami audio for all 32.
+- **4 tile defects FIXED** (words.json kana + regen audio): `transportation` うにゅ→うんゆ (運輸) · `yellow` きいいろい→きいろい (黄色い) · `toe` ゆび→あしのゆび (足の指; kanji 指→足の指 — ゆび=finger was a mistranslation, and ゆび.mp3 KEPT because "finger" legitimately shares it) · `alive` せいぜん→いきている (生前 "before death" was wrong-sense). All 4 PINNED in kana-smoke #8; うにゅ/きいいろい BANNED. せいぜん/ゆび NOT banned (valid words used elsewhere).
+- **⚠ `front` is NOT a defect** — kana ぜんぶ resolves to kanji **前部** (front part, JMdict-backfilled), a legitimate reading of "front". The old BACKLOG note calling it 全部="all" mistranslation was WRONG and is retired. Authored normally.
+- **Discovery/SURPRISE:** sentences.json had 565 keys but 15 were stale non-rendered slugs, so true rendered coverage was 550/586 (not 565) → 36 cards missing, not the assumed ~21. The "frontier near ceiling" belief was an artifact of counting sentences.json size instead of joining on `ok`-status image slugs. Correct coverage metric = join sentences keys against `imgs.filter(status=='ok' && file)` slugs.
+
+**📌 PERMANENT SKIP-SET (4 — feature is CLOSED with these documented, each needs a Mike curriculum/content decision, not an authoring pass):**
+- `to-have-sex` (セックス) — **inappropriate for a child-facing app; this card should probably be REMOVED from the deck entirely — flagged for Mike.**
+- `city` (し) — a 1-character highlight (し) is pedagogically ambiguous (し is an ubiquitous mora/particle sound); better as とし/まち, a translation decision.
+- `old` (おい) — ambiguous sense (甥 nephew / 老い aging) and collides with `old-thing`=ふるい; needs a sense decision.
+- `blindess` (めのふじゆ（な）) — misspelled `en` ("blindess") + messy kana; needs a data-cleanup decision.
+
+<details><summary>Historical slice log (superseded by the close-out above)</summary>
+
 **STATUS 2026-07-23: slice-1 SHIPPED & LIVE (commit 41f1ca1).** First 50 words
 (animals/beverages/food + core nouns, deck-order front) each have a JP-only example
 sentence with the target word highlighted + per-sentence Neural-TTS audio; flip playback
@@ -171,6 +186,8 @@ Two coupled asks:
 - Needs per-word example sentences (source: generate/curate JP sentences + their own
   audio; keep the NO-English pedagogy rule — sentence is JP only, word highlighted).
 - Applies to Words mode specifically (word625 deck now inside the kana app).
+
+</details>
 
 ## 5. Words mode: kanji on the card back (Mike 2026-07-24) — ✅ SHIPPED & LIVE (sw v25)
 Mike: "the back of the vocab card should show both the kana version and the kanji version if it exists."

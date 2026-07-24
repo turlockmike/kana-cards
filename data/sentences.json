@@ -2823,5 +2823,165 @@
   "s": "テストのてんすうはぜろでした。",
   "hl": "ぜろ",
   "a": "zero_s.mp3"
+ },
+ "alive": {
+  "s": "さかなが みずの なかで いきている。",
+  "hl": "いきている",
+  "a": "alive_s.mp3"
+ },
+ "attack-noun": {
+  "s": "ドラゴンの こうげきは つよい。",
+  "hl": "こうげき",
+  "a": "attack-noun_s.mp3"
+ },
+ "billion": {
+  "s": "せかいには じゅうおくにんの ひとが いる。",
+  "hl": "じゅうおく",
+  "a": "billion_s.mp3"
+ },
+ "cell-phone": {
+  "s": "ははは けいたいでんわで はなす。",
+  "hl": "けいたいでんわ",
+  "a": "cell-phone_s.mp3"
+ },
+ "centimeter": {
+  "s": "この えんぴつは じゅうごセンチ です。",
+  "hl": "センチ",
+  "a": "centimeter_s.mp3"
+ },
+ "deaf-person": {
+  "s": "ろうしゃは てで はなします。",
+  "hl": "ろうしゃ",
+  "a": "deaf-person_s.mp3"
+ },
+ "electric-fan": {
+  "s": "なつは せんぷうきが すずしい。",
+  "hl": "せんぷうき",
+  "a": "electric-fan_s.mp3"
+ },
+ "electronic-device": {
+  "s": "へやには でんしききが たくさん ある。",
+  "hl": "でんしきき",
+  "a": "electronic-device_s.mp3"
+ },
+ "front": {
+  "s": "くるまの ぜんぶが あかい。",
+  "hl": "ぜんぶ",
+  "a": "front_s.mp3"
+ },
+ "i-formal": {
+  "s": "わたしは がくせいです。",
+  "hl": "わたし",
+  "a": "i-formal_s.mp3"
+ },
+ "little-brother": {
+  "s": "わたしの おとうとは ちいさい。",
+  "hl": "おとうと",
+  "a": "little-brother_s.mp3"
+ },
+ "little-sister": {
+  "s": "いもうとは かわいい。",
+  "hl": "いもうと",
+  "a": "little-sister_s.mp3"
+ },
+ "long-distance": {
+  "s": "この かわは とても ながい。",
+  "hl": "ながい",
+  "a": "long-distance_s.mp3"
+ },
+ "mean-spirited": {
+  "s": "あの こは いじわる です。",
+  "hl": "いじわる",
+  "a": "mean-spirited_s.mp3"
+ },
+ "month-long-period": {
+  "s": "なつやすみは ながい げっかん です。",
+  "hl": "げっかん",
+  "a": "month-long-period_s.mp3"
+ },
+ "movie-theater": {
+  "s": "えいがかんで えいがを みる。",
+  "hl": "えいがかん",
+  "a": "movie-theater_s.mp3"
+ },
+ "old-thing": {
+  "s": "この ほんは とても ふるい。",
+  "hl": "ふるい",
+  "a": "old-thing_s.mp3"
+ },
+ "older-brother": {
+  "s": "おにいさんは せが たかい。",
+  "hl": "おにいさん",
+  "a": "older-brother_s.mp3"
+ },
+ "older-sister": {
+  "s": "おねえさんは やさしい。",
+  "hl": "おねえさん",
+  "a": "older-sister_s.mp3"
+ },
+ "one-million": {
+  "s": "この いえは ひゃくまんえん です。",
+  "hl": "ひゃくまん",
+  "a": "one-million_s.mp3"
+ },
+ "program": {
+  "s": "テレビの プログラムを みる。",
+  "hl": "プログラム",
+  "a": "program_s.mp3"
+ },
+ "soft": {
+  "s": "この まくらは やわらかい。",
+  "hl": "やわらかい",
+  "a": "soft_s.mp3"
+ },
+ "they": {
+  "s": "あのひとたちは ともだち です。",
+  "hl": "あのひとたち",
+  "a": "they_s.mp3"
+ },
+ "to-buy": {
+  "s": "みせで パンを かう。",
+  "hl": "かう",
+  "a": "to-buy_s.mp3"
+ },
+ "to-call": {
+  "s": "ともだちに でんわを かける。",
+  "hl": "でんわ",
+  "a": "to-call_s.mp3"
+ },
+ "to-catch": {
+  "s": "ボールを キャッチする。",
+  "hl": "キャッチ",
+  "a": "to-catch_s.mp3"
+ },
+ "toe": {
+  "s": "あしのゆびが いたい。",
+  "hl": "あしのゆび",
+  "a": "toe_s.mp3"
+ },
+ "town-market": {
+  "s": "いちばで やさいを かう。",
+  "hl": "いちば",
+  "a": "town-market_s.mp3"
+ },
+ "transportation": {
+  "s": "うんゆの しごとは いそがしい。",
+  "hl": "うんゆ",
+  "a": "transportation_s.mp3"
+ },
+ "we": {
+  "s": "わたしたちは ともだち です。",
+  "hl": "わたしたち",
+  "a": "we_s.mp3"
+ },
+ "white": {
+  "s": "ゆきは しろい。",
+  "hl": "しろい",
+  "a": "white_s.mp3"
+ },
+ "yellow": {
+  "s": "レモンは きいろい。",
+  "hl": "きいろい",
+  "a": "yellow_s.mp3"
  }
 }

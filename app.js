@@ -333,9 +333,11 @@
     buildStrokes(id);
     $('#replayBtn').onclick=()=>buildStrokes(id);
   }
-  function buildStrokes(id){
-    const strokes=KANA[id].strokes;
-    const svg=$('#strokeSvg'); svg.innerHTML='';
+  // Animate KanjiVG stroke order into any <svg> (viewBox 0 0 109 109). Shared by the
+  // study card (buildStrokes) and the reference chart's detail view.
+  function animateStrokes(svg, strokes){
+    if(!svg||!strokes) return;
+    svg.innerHTML='';
     const NS='http://www.w3.org/2000/svg';
     strokes.forEach(d=>{ const p=document.createElementNS(NS,'path');
       p.setAttribute('d',d); p.setAttribute('class','guide'); svg.appendChild(p); });
@@ -352,6 +354,7 @@
       i++; setTimeout(step, dur+180);
     })();
   }
+  function buildStrokes(id){ animateStrokes($('#strokeSvg'), KANA[id].strokes); }
   function setupPad(){
     const cv=$('#pad'); if(!cv) return;
     const fit=()=>{
@@ -539,6 +542,101 @@
   document.querySelectorAll('#modebar [data-mode]').forEach(b=>{
     b.onclick=()=>setMode(b.dataset.mode);
   });
+
+  // ================= KANA REFERENCE CHART =================
+  // Browsable "view all kana" chart in the standard gojūon grid: rows = consonant
+  // families, columns = vowels a/i/u/e/o. Tap a kana → big form + animated stroke order
+  // (reuses animateStrokes). Read-only reference — no FSRS, no deck, no profile needed.
+  // Cells are matched to KANA entries by romaji; `null` marks a real gap in the grid
+  // (yi/ye/wu/wi/we) rendered as a blank cell so the classic layout stays aligned.
+  const GOJUON_BASE = [
+    ['a','i','u','e','o'],
+    ['ka','ki','ku','ke','ko'],
+    ['sa','shi','su','se','so'],
+    ['ta','chi','tsu','te','to'],
+    ['na','ni','nu','ne','no'],
+    ['ha','hi','fu','he','ho'],
+    ['ma','mi','mu','me','mo'],
+    ['ya',null,'yu',null,'yo'],
+    ['ra','ri','ru','re','ro'],
+    ['wa',null,null,null,'wo'],
+    ['n',null,null,null,null]
+  ];
+  const GOJUON_DAKU = [
+    ['ga','gi','gu','ge','go'],
+    ['za','ji','zu','ze','zo'],
+    ['da','di','du','de','do'],
+    ['ba','bi','bu','be','bo'],
+    ['pa','pi','pu','pe','po']
+  ];
+  const ROMA = {hiragana:{}, katakana:{}};   // romaji -> id, per type
+  KANA_IDS.forEach(id=>{ const k=KANA[id]; if(ROMA[k.type]) ROMA[k.type][k.romaji]=id; });
+  let chartType = 'hiragana';
+  const chartEl = () => document.getElementById('chartSheet');
+
+  function gridHtml(type){
+    const cell = roma=>{
+      const id = roma ? ROMA[type][roma] : null;
+      if(!id) return `<div class="kcell empty"></div>`;
+      const k = KANA[id];
+      return `<div class="kcell" data-kid="${id}"><span class="kc">${esc(k.kana)}</span><span class="kr">${esc(k.romaji)}</span></div>`;
+    };
+    const grid = rows => `<div class="kgrid">${rows.map(r=>r.map(cell).join('')).join('')}</div>`;
+    return `<div class="chartsec">Basic · gojūon</div>${grid(GOJUON_BASE)}`
+         + `<div class="chartsec">Voiced · dakuten / handakuten</div>${grid(GOJUON_DAKU)}`;
+  }
+  function buildChartSheet(){
+    let el = chartEl();
+    if(el) return el;
+    el = document.createElement('div');
+    el.id='chartSheet'; el.className='chartsheet';
+    el.innerHTML =
+     `<div class="charthead"><h3>Kana chart</h3><button class="x" id="chartClose">Done</button></div>
+      <div class="charttabs">
+        <button data-ctype="hiragana" class="on">Hiragana あ</button>
+        <button data-ctype="katakana">Katakana ア</button>
+      </div>
+      <div class="chartscroll" id="chartScroll"></div>
+      <div class="kdetail" id="kdetail">
+        <div class="kdcard">
+          <div class="big" id="kdBig"></div>
+          <div class="rr" id="kdRoma"></div>
+          <div class="tt" id="kdType"></div>
+          <svg class="stroke" id="kdSvg" viewBox="0 0 109 109"></svg>
+          <div class="btns">
+            <button id="kdReplay">▶ Replay</button>
+            <button id="kdBack">Back</button>
+          </div>
+        </div>
+      </div>`;
+    document.body.appendChild(el);
+    el.querySelectorAll('[data-ctype]').forEach(b=>b.onclick=()=>{ chartType=b.dataset.ctype; renderChartGrid(); });
+    document.getElementById('chartClose').onclick=closeChart;
+    document.getElementById('kdBack').onclick=()=>document.getElementById('kdetail').classList.remove('show');
+    document.getElementById('kdetail').addEventListener('click',e=>{ if(e.target.id==='kdetail') e.target.classList.remove('show'); });
+    return el;
+  }
+  function renderChartGrid(){
+    buildChartSheet();
+    chartEl().querySelectorAll('[data-ctype]').forEach(b=>b.classList.toggle('on', b.dataset.ctype===chartType));
+    const scroll=document.getElementById('chartScroll');
+    scroll.innerHTML=gridHtml(chartType);
+    scroll.querySelectorAll('[data-kid]').forEach(c=>c.onclick=()=>openKanaDetail(c.dataset.kid));
+    scroll.scrollTop=0;
+  }
+  function openKanaDetail(id){
+    const k=KANA[id]; if(!k) return;
+    document.getElementById('kdBig').textContent=k.kana;
+    document.getElementById('kdRoma').textContent=k.romaji;
+    document.getElementById('kdType').textContent=k.type;
+    document.getElementById('kdetail').classList.add('show');
+    const svg=document.getElementById('kdSvg');
+    animateStrokes(svg, k.strokes);
+    document.getElementById('kdReplay').onclick=()=>animateStrokes(svg, k.strokes);
+  }
+  function openChart(){ buildChartSheet(); renderChartGrid(); chartEl().classList.add('show'); }
+  function closeChart(){ const el=chartEl(); if(el) el.classList.remove('show'); }
+  const _chartBtn=$('#chartBtn'); if(_chartBtn) _chartBtn.onclick=openChart;
 
   // ================= BOOT =================
   // Kana is ready immediately; start now if the active mode is kana.

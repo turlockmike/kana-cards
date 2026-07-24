@@ -94,6 +94,41 @@
   .audiobtn{background:#eef0fb;border:none;color:var(--accent);font-weight:700;
         border-radius:20px;padding:10px 22px;font-size:16px;}
   .audiobtn:disabled{opacity:.4;}
+  /* chart entry button (in modebar, not a study mode) */
+  #modebar button.chart{flex:0 0 auto;padding:10px 13px;background:#eef0fb;color:var(--accent);}
+  /* ===== kana reference chart (full-screen overlay) ===== */
+  .chartsheet{position:fixed;inset:0;background:var(--bg);z-index:30;display:none;flex-direction:column;}
+  .chartsheet.show{display:flex;}
+  .charthead{display:flex;align-items:center;justify-content:space-between;
+        padding:12px 16px calc(12px);border-bottom:1px solid #e6e9f5;background:#fff;
+        padding-top:calc(12px + env(safe-area-inset-top));}
+  .charthead h3{margin:0;font-size:18px;}
+  .charthead .x{background:#eef0fb;border:none;color:var(--accent);font-size:15px;font-weight:700;border-radius:14px;padding:8px 16px;}
+  .charttabs{display:flex;gap:6px;padding:10px 14px;background:#fff;border-bottom:1px solid #eef0f6;}
+  .charttabs button{flex:1;background:#eef0fb;border:none;color:var(--muted);font-size:15px;font-weight:700;border-radius:12px;padding:10px;}
+  .charttabs button.on{background:var(--accent);color:#fff;}
+  .chartscroll{flex:1;overflow:auto;padding:8px 12px calc(24px + env(safe-area-inset-bottom));min-height:0;}
+  .chartsec{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:16px 4px 8px;font-weight:700;}
+  .kgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+  .kcell{background:var(--card);border:1px solid #e6e9f5;border-radius:12px;
+        padding:9px 2px 6px;text-align:center;display:flex;flex-direction:column;
+        align-items:center;gap:2px;cursor:pointer;}
+  .kcell.empty{background:transparent;border:none;pointer-events:none;}
+  .kcell .kc{font-size:25px;font-weight:700;line-height:1;}
+  .kcell .kr{font-size:10px;color:var(--muted);}
+  .kcell:active{background:#e2e6fb;}
+  /* detail popover inside the chart */
+  .kdetail{position:absolute;inset:0;background:rgba(20,24,40,.5);display:none;
+        align-items:center;justify-content:center;z-index:5;padding:22px;}
+  .kdetail.show{display:flex;}
+  .kdcard{background:#fff;border-radius:22px;padding:22px 20px;width:100%;max-width:320px;
+        display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 12px 44px rgba(30,40,90,.28);}
+  .kdcard .big{font-size:72px;font-weight:700;line-height:1;}
+  .kdcard .rr{font-size:22px;color:var(--accent);font-weight:700;}
+  .kdcard .tt{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+  .kdcard svg.stroke{width:184px;height:184px;}
+  .kdcard .btns{display:flex;gap:10px;width:100%;margin-top:4px;}
+  .kdcard .btns button{flex:1;border:none;border-radius:14px;padding:13px;font-size:15px;font-weight:700;background:#eef0fb;color:var(--accent);}
 </style>
 </head>
 <body>
@@ -106,6 +141,7 @@
 <div id="modebar">
   <button data-mode="kana" class="on">✍️ Kana</button>
   <button data-mode="words">🖼️ Words</button>
+  <button class="chart" id="chartBtn" title="Kana chart" aria-label="Kana reference chart">📖</button>
 </div>
 
 <main id="main"></main>

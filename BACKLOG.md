@@ -32,6 +32,14 @@ already in localStorage) so play reinforces, never introduces unseen kana —
 introduction stays feature 1's job.
 
 ## 4. Words mode: example sentence + word→sentence→word audio (Mike 2026-07-23)
+**STATUS 2026-07-23: slice-1 SHIPPED & LIVE (commit 41f1ca1).** First 50 words
+(animals/beverages/food + core nouns, deck-order front) each have a JP-only example
+sentence with the target word highlighted + per-sentence Neural-TTS audio; flip playback
+is word→sentence→word. Data: `data/sentences.json` (slug-keyed `{s,hl,a}`); audio
+`media/audio/<slug>_s.mp3`. Pipeline (author sentence → edge-tts-batch → sentences.json)
+is reusable. **CARRY: remaining 536 words** need sentences authored + audio generated the
+same way. Audio-quality fix (32k→48k Nanami) already done separately (commit d0b2b50).
+
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate
   the source (which voice/engine word625 uses) and improve it as part of this work.

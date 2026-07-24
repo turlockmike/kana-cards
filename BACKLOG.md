@@ -15,12 +15,22 @@ encoding, not retrieval. FSRS note: the teach view should register as the
 card's initial learning step (or schedule it as `new→learning` with a neutral
 grade), not as a review — otherwise first-sight stats poison the scheduler.
 
-## 2. Kana reference section
+## 2. Kana reference section — ✅ SHIPPED & LIVE 2026-07-23 (commit 3f89ac9)
 A browsable "view all kana" chart — hiragana + katakana in the standard gojūon
 grid (rows: あかさたなはまやらわ…), tap a kana to see its big form + animated
 stroke order (KanjiVG data is already in the app). Entry point from the main
 menu; useful both as a study aid and as the natural home for feature 1's
 "what did I just learn" lookups.
+
+**DONE — do NOT rebuild.** `📖` button in `#modebar` → full-screen `#chartSheet`
+overlay; Hiragana/Katakana tabs; gojūon grid (rows=consonant families,
+cols=a/i/u/e/o, real gaps blank); tap kana → detail popover (big form + romaji +
+type + animated KanjiVG stroke order + Replay/Back). Read-only, no FSRS/deck/profile
+touched. Refactor landed: shared `animateStrokes(svg, strokes)` reused by study card
++ chart (this is the reuse hook feature #1's teach view should also call). Verified:
+`node --check` OK · 71/71 kana placed once per type both scripts · kana-smoke
+--selftest 7/7 + --live 12/12 GREEN · sw kana-v8→v9. Pushed origin ahead=0, deploy
+confirmed live. This is now the browse-home feature #1 hooks into.
 
 ## 3. Mini games
 Fun modes alongside the FSRS deck, e.g.:

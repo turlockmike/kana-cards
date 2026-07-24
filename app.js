@@ -283,9 +283,80 @@
       session=deck.introduced.slice().sort((a,b)=>deck.cards[a].due-deck.cards[b].due).slice(0,10); render(); });
   }
 
+  // First exposure = the card has never been taught AND never quizzed (reps 0). On the
+  // very first sight we TEACH (show the answer, no quiz), then re-queue for the real quiz.
+  function isFirstExposure(id){
+    const c=deck && deck.cards[id];
+    return !!c && !c.taught && (c.reps||0)===0;
+  }
   function renderCard(id){
+    if(isFirstExposure(id)){ renderTeachCard(id); return; }
     if(mode==='kana') renderKanaCard(id);
     else renderWordCard(id);
+  }
+
+  // TEACH STEP (BACKLOG #1): first time a card is shown to a profile, skip the quiz —
+  // present the back side (char + animated stroke order for kana; picture + kana + audio
+  // for words) with a single Continue button. No draw canvas, no grading. It registers as
+  // a new→learning step (flag `taught`), NOT a review: FSRS state stays 'new' and reps stays
+  // 0, so the first REAL grade still runs initS/initD and first-sight never poisons the scheduler.
+  function teach(){
+    const id=session[0]; if(!id) return;
+    const c=deck.cards[id];
+    c.taught=true;                 // FSRS state untouched (still 'new'); reps untouched
+    saveDeck(pid,mode,deck);
+    session.shift();
+    const pos=Math.min(3,session.length); session.splice(pos,0,id); // re-queue for the real quiz
+    flipped=false; curDrawn=false;
+    if(session.length===0) session=dueIds();
+    render();
+  }
+  function renderTeachCard(id){
+    const c=contentOf(mode,id);
+    let cardInner;
+    if(mode==='kana'){
+      cardInner =
+       `<div class="teachintro">✨ New character — here's how it looks</div>
+        <div id="answer" class="show">
+          <div class="strokebox">
+            <svg class="stroke" id="strokeSvg" viewBox="0 0 109 109"></svg>
+            <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+              <div class="kana">${esc(c.kana)}</div>
+              <div class="romaji">${esc(c.romaji)}</div>
+              <button class="replay" id="replayBtn">▶ Replay</button>
+            </div>
+          </div>
+        </div>`;
+    } else {
+      const hasKana=!!c.kana;
+      let sentHtml='';
+      if(c.sentence){
+        const s=c.sentence, hl=c.hl, i = hl ? s.indexOf(hl) : -1;
+        const inner = i>=0
+          ? esc(s.slice(0,i))+'<mark class="hl">'+esc(hl)+'</mark>'+esc(s.slice(i+hl.length))
+          : esc(s);
+        sentHtml = `<div class="sentence">${inner}</div>`;
+      }
+      const ans = hasKana
+        ? `<div class="kana">${esc(c.kana)}</div>${sentHtml}
+           <button class="audiobtn" id="audioBtn" ${c.audio||c.saudio?'':'disabled'}>🔊 Play</button>`
+        : `<div class="kana stub">かな + 🔊 coming soon</div>`;
+      cardInner =
+       `<div class="teachintro">✨ New word — here's what it is</div>
+        <div class="imgwrap"><img class="cardimg" src="${esc(IMG_DIR+c.file)}" alt=""></div>
+        <div id="answer" class="wordanswer show">${ans}</div>`;
+    }
+    main.innerHTML =
+     `<div class="card">${cardInner}</div>
+      <div class="actions"><button class="bigbtn" id="continueBtn">Got it — continue →</button></div>`;
+    if(mode==='kana'){
+      animateStrokes($('#strokeSvg'), c.strokes);
+      $('#replayBtn').onclick=()=>animateStrokes($('#strokeSvg'), c.strokes);
+    } else {
+      const ab=$('#audioBtn');
+      if(ab && (c.audio||c.saudio)){ ab.onclick=()=>playSequence(c); playSequence(c); }
+    }
+    $('#continueBtn').onclick=teach;
   }
 
   // ---- KANA card: draw the sound, flip -> stroke-order + kana ----

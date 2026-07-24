@@ -139,6 +139,13 @@ was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" t
 
   **✅ FIXED 2026-07-24 (/workshop, commit 96c5d33, sw v15, live-verified).** `heart`: relabeled ねつ→`en:"fever"` (its true meaning 熱) → `byEn['heart']` now resolves しんぞう (live-confirmed). `kitchen`: だいところ→だいどころ (台所) + regenerated audio (Nanami; old typo mp3 removed; new `だいどころ.mp3` HTTP 200 live). **Engine fix, not just the instance:** `kana-smoke` check #8 SENSE GUARD pins the corrected en↔kana pairings via the app's own last-wins resolution + bans typo kana, so a mistranslation-via-last-wins can't silently reship. Mutation-proven load-bearing (`--selftest` now 15 checks / 4 mutations killed). The other 7 dups need no action (valid senses).
 
+  **📌 CURRENT SKIP SET (authoritative — supersedes the scattered slice-4/5 notes above; the journal/plan skip-list is ADVISORY & stale-prone, so the truth is THIS list ∧ author-time `byEn` resolution).** Skip when authoring a slice:
+  - `alive` (せいぜん = 生前 "before death" — mistranslation) · `front` (ぜんぶ 全部 "all" — mistranslation) · `old` (おい = old-age, ambiguous/loose — flagged slice-6)
+  - `billion` (abstract number, phrasing decision) · `centimeter` (awkward) · `city` (し too short a substring) · `blindess` (typo'd `en` + messy kana)
+  - `img=n` words (no card ever renders the sentence): `i (formal`, `long (distance`, + any paren-`en`/kanji-kana rows
+  - **NO LONGER SKIP (fixed 2026-07-24, /workshop):** `heart`→しんぞう, `kitchen`→だいどころ, `fever`→ねつ — all three AUTHORED in slice-6; do NOT re-skip on a stale inherited list. Verify each candidate via `byEn[en]` at author-time (translation-sanity), which is the real guard against a stale skip-list.
+  - **Lesson (slice-6 REFLECT):** a skip-list propagated by hand through the journal Next-action goes stale the moment /workshop fixes a word. Keep the canonical list HERE; ACT already resolves via `byEn` at author-time, which caught the staleness — trust that resolution over any inherited list.
+
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate
   the source (which voice/engine word625 uses) and improve it as part of this work.

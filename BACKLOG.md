@@ -37,8 +37,23 @@ introduction stays feature 1's job.
 sentence with the target word highlighted + per-sentence Neural-TTS audio; flip playback
 is word→sentence→word. Data: `data/sentences.json` (slug-keyed `{s,hl,a}`); audio
 `media/audio/<slug>_s.mp3`. Pipeline (author sentence → edge-tts-batch → sentences.json)
-is reusable. **CARRY: remaining 536 words** need sentences authored + audio generated the
-same way. Audio-quality fix (32k→48k Nanami) already done separately (commit d0b2b50).
+is reusable. **CARRY: remaining ~472 words** (slice-2 shipped 64 more, alphabetical
+adjective→computer; sentences.json now 114/586). Author the next alphabetical slice
+(after "computer") the same way. Audio-quality fix (32k→48k Nanami) already done (d0b2b50).
+
+**⚠ AUTHORING NOTES (learned slice-2, save the next ~7 cycles the re-discovery):**
+- **Deck order = `data/words.json`, alphabetical by `en`.** (There is NO `images.json`;
+  older notes named it — that name is stale. `kana-smoke` only checks images.json's
+  *presence*, it is not the deck.) The done-50 from slice-1 were category-scattered, not
+  the alphabetical front — key by `en` slug, not by position.
+- **6 words SKIPPED for a phrasing/data decision** (don't just re-hit them): `alive`
+  (せいぜん odd), `billion` (abstract number), `blindess` (messy kana + typo'd `en`),
+  `ceiling` (kana was でんじょう typo — NOW FIXED to てんじょう, safe to author),
+  `centimeter` (awkward in a sentence), `city` (し too short/ambiguous a substring).
+- **Deck data-quality: 4 corrupt kana entries FIXED 2026-07-23** (bridge/ceiling/chair/
+  glass had HTML junk / entity / English annotation / a kana typo). Full-file scan is now
+  CLEAN (0 junk kana, 0 missing audio, 595 entries). If authoring surfaces more, fix the
+  kana + regen that word's audio in the same pass — `grep -nE '"kana": "[^"]*(<!--|&[a-z]+;|not |[A-Za-z])' data/words.json` is the detector.
 
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate

@@ -44,14 +44,27 @@ touched. Refactor landed: shared `animateStrokes(svg, strokes)` reused by study 
 --selftest 7/7 + --live 12/12 GREEN · sw kana-v8→v9. Pushed origin ahead=0, deploy
 confirmed live. This is now the browse-home feature #1 hooks into.
 
-## 3. Mini games
+## 3. Mini games — ✅ CARD MATCHING SHIPPED & LIVE 2026-07-24 (commit 0e9c346)
 Fun modes alongside the FSRS deck, e.g.:
-- **Card matching** (memory/concentration): flip pairs — kana ↔ romaji.
+- **Card matching** (memory/concentration): flip pairs — kana ↔ romaji. ✅ SHIPPED.
 - Other candidates when we get there: kana whack-a-mole (tap the called kana),
-  falling-kana catch, romaji→kana speed rounds.
+  falling-kana catch, romaji→kana speed rounds. ← remaining game candidates (net-new).
 Design constraint: games draw from the learner's SEEN kana (profile progress
 already in localStorage) so play reinforces, never introduces unseen kana —
 introduction stays feature 1's job.
+
+**DONE (card matching) — do NOT rebuild.** `🎮` button in `#modebar` → full-screen
+`#gameSheet` overlay (reuses `.charthead/.x`). Concentration board: pick K=min(6, seen)
+kana → 2K tiles (K kana faces + K romaji faces), shuffled; flip two, match by kana id,
+matched tiles lock green; Moves/Pairs counter; win screen (Play again / Done). Under
+`GAME_MIN_KANA=4` seen → friendly "study first" gate, no board. **SEEN-ONLY invariant**
+enforced at a single gated source: `isSeenKana(c) = c.taught || reps>0`; `gameKanaPool()`
+= `KANA_IDS.filter(id=>isSeenKana(deck.cards[id]))` on the KANA deck (regardless of current
+mode) — never surfaces un-taught kana. Verified: `node --check` OK · kana-smoke --selftest
+**13/13** GREEN (new check #7 SEEN-only oracle + 3rd mutation proving it load-bearing) ·
+pure-logic unit test (seen filter + 2-per-kana pairing) PASS · sw kana-v10→v11 · pushed
+origin ahead=0 · live sw=v11 + gameKanaPool + gameBtn confirmed deployed. Remaining game
+candidates (whack-a-mole / falling-kana / speed rounds) are net-new future increments.
 
 ## 4. Words mode: example sentence + word→sentence→word audio (Mike 2026-07-23)
 **STATUS 2026-07-23: slice-1 SHIPPED & LIVE (commit 41f1ca1).** First 50 words

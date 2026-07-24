@@ -2318,5 +2318,255 @@
   "s": "なくしたかぎをみつける。",
   "hl": "みつける",
   "a": "to-find_s.mp3"
+ },
+ "to-fly": {
+  "s": "とりがそらをとぶ。",
+  "hl": "とぶ",
+  "a": "to-fly_s.mp3"
+ },
+ "to-follow": {
+  "s": "こどもがおやにしたがう。",
+  "hl": "したがう",
+  "a": "to-follow_s.mp3"
+ },
+ "to-get-up": {
+  "s": "あさはやくおきる。",
+  "hl": "おきる",
+  "a": "to-get-up_s.mp3"
+ },
+ "to-get-wet": {
+  "s": "あめでふくがぬれる。",
+  "hl": "ぬれる",
+  "a": "to-get-wet_s.mp3"
+ },
+ "to-go": {
+  "s": "がっこうへいく。",
+  "hl": "いく",
+  "a": "to-go_s.mp3"
+ },
+ "to-grow": {
+  "s": "おじいさんがひげをはやす。",
+  "hl": "はやす",
+  "a": "to-grow_s.mp3"
+ },
+ "to-hang-up": {
+  "s": "ハンガーにコートをつるす。",
+  "hl": "つるす",
+  "a": "to-hang-up_s.mp3"
+ },
+ "to-hear": {
+  "s": "とりのこえをきく。",
+  "hl": "きく",
+  "a": "to-hear_s.mp3"
+ },
+ "to-jump": {
+  "s": "せんしゅがたかくちょうやくする。",
+  "hl": "ちょうやく",
+  "a": "to-jump_s.mp3"
+ },
+ "to-kill": {
+  "s": "かをたたいてころす。",
+  "hl": "ころす",
+  "a": "to-kill_s.mp3"
+ },
+ "to-kiss": {
+  "s": "あかちゃんのほおにキスする。",
+  "hl": "キス",
+  "a": "to-kiss_s.mp3"
+ },
+ "to-laugh": {
+  "s": "おもしろいはなしでわらう。",
+  "hl": "わらう",
+  "a": "to-laugh_s.mp3"
+ },
+ "to-learn": {
+  "s": "ピアノをならう。",
+  "hl": "ならう",
+  "a": "to-learn_s.mp3"
+ },
+ "to-lie-down-and-rest": {
+  "s": "ソファーによこになる。",
+  "hl": "よこになる",
+  "a": "to-lie-down-and-rest_s.mp3"
+ },
+ "to-lift-up": {
+  "s": "おもいはこをもちあげる。",
+  "hl": "もちあげる",
+  "a": "to-lift-up_s.mp3"
+ },
+ "to-lock": {
+  "s": "いえのドアをロックする。",
+  "hl": "ロック",
+  "a": "to-lock_s.mp3"
+ },
+ "to-lose-someone-or-something": {
+  "s": "でんしゃでさいふをなくす。",
+  "hl": "なくす",
+  "a": "to-lose-someone-or-something_s.mp3"
+ },
+ "to-love": {
+  "s": "かぞくをあいす。",
+  "hl": "あいす",
+  "a": "to-love_s.mp3"
+ },
+ "to-marry": {
+  "s": "ふたりがけっこんする。",
+  "hl": "けっこん",
+  "a": "to-marry_s.mp3"
+ },
+ "to-melt": {
+  "s": "たいようがゆきをとかす。",
+  "hl": "とかす",
+  "a": "to-melt_s.mp3"
+ },
+ "to-mix": {
+  "s": "ボウルでたまごをまぜる。",
+  "hl": "まぜる",
+  "a": "to-mix_s.mp3"
+ },
+ "to-open": {
+  "s": "へやのまどをあける。",
+  "hl": "あける",
+  "a": "to-open_s.mp3"
+ },
+ "to-paint": {
+  "s": "がようしにえをえがく。",
+  "hl": "えがく",
+  "a": "to-paint_s.mp3"
+ },
+ "to-pass": {
+  "s": "にゅうがくしけんにうかる。",
+  "hl": "うかる",
+  "a": "to-pass_s.mp3"
+ },
+ "to-pay": {
+  "s": "レジでだいきんをしはらう。",
+  "hl": "しはらう",
+  "a": "to-pay_s.mp3"
+ },
+ "to-play": {
+  "s": "こうえんでともだちとあそぶ。",
+  "hl": "あそぶ",
+  "a": "to-play_s.mp3"
+ },
+ "to-pray": {
+  "s": "かみさまにいのる。",
+  "hl": "いのる",
+  "a": "to-pray_s.mp3"
+ },
+ "to-pull": {
+  "s": "みんなでつなをひく。",
+  "hl": "ひく",
+  "a": "to-pull_s.mp3"
+ },
+ "to-push": {
+  "s": "エレベーターのボタンをおす。",
+  "hl": "おす",
+  "a": "to-push_s.mp3"
+ },
+ "to-race": {
+  "s": "ともだちときょうそうする。",
+  "hl": "きょうそう",
+  "a": "to-race_s.mp3"
+ },
+ "to-run": {
+  "s": "まいあさこうえんをはしる。",
+  "hl": "はしる",
+  "a": "to-run_s.mp3"
+ },
+ "to-say": {
+  "s": "せんせいにおれいをいう。",
+  "hl": "いう",
+  "a": "to-say_s.mp3"
+ },
+ "to-see": {
+  "s": "いえでえいがをみる。",
+  "hl": "みる",
+  "a": "to-see_s.mp3"
+ },
+ "to-sell": {
+  "s": "みせでやさいをうる。",
+  "hl": "うる",
+  "a": "to-sell_s.mp3"
+ },
+ "to-shake": {
+  "s": "じしんでビルがゆれる。",
+  "hl": "ゆれる",
+  "a": "to-shake_s.mp3"
+ },
+ "to-shoot-at": {
+  "s": "ゆみでまとをうつ。",
+  "hl": "うつ",
+  "a": "to-shoot-at_s.mp3"
+ },
+ "to-sing": {
+  "s": "みんなでうたをうたう。",
+  "hl": "うたう",
+  "a": "to-sing_s.mp3"
+ },
+ "to-sit": {
+  "s": "いすにしずかにすわる。",
+  "hl": "すわる",
+  "a": "to-sit_s.mp3"
+ },
+ "to-sleep": {
+  "s": "よるベッドでぐっすりねる。",
+  "hl": "ねる",
+  "a": "to-sleep_s.mp3"
+ },
+ "to-smell": {
+  "s": "はなのにおいをかぐ。",
+  "hl": "かぐ",
+  "a": "to-smell_s.mp3"
+ },
+ "to-smile-also-laugh": {
+  "s": "あかちゃんがにっこりわらう。",
+  "hl": "わらう",
+  "a": "to-smile-also-laugh_s.mp3"
+ },
+ "to-speak": {
+  "s": "ともだちとにほんごではなす。",
+  "hl": "はなす",
+  "a": "to-speak_s.mp3"
+ },
+ "to-stand": {
+  "s": "せきからしずかにたつ。",
+  "hl": "たつ",
+  "a": "to-stand_s.mp3"
+ },
+ "to-stop-moving": {
+  "s": "でんしゃがえきにとまる。",
+  "hl": "とまる",
+  "a": "to-stop-moving_s.mp3"
+ },
+ "to-swim": {
+  "s": "うみでたのしくおよぐ。",
+  "hl": "およぐ",
+  "a": "to-swim_s.mp3"
+ },
+ "to-taste": {
+  "s": "あたらしいりょうりをあじわう。",
+  "hl": "あじわう",
+  "a": "to-taste_s.mp3"
+ },
+ "to-teach": {
+  "s": "せんせいがえいごをおしえる。",
+  "hl": "おしえる",
+  "a": "to-teach_s.mp3"
+ },
+ "to-think": {
+  "s": "これはたいせつだとおもう。",
+  "hl": "おもう",
+  "a": "to-think_s.mp3"
+ },
+ "to-throw-e-g-a-ball": {
+  "s": "ともだちにボールをなげる。",
+  "hl": "なげる",
+  "a": "to-throw-e-g-a-ball_s.mp3"
+ },
+ "to-touch": {
+  "s": "そっといぬにさわる。",
+  "hl": "さわる",
+  "a": "to-touch_s.mp3"
  }
 }

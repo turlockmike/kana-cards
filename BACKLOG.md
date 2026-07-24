@@ -137,6 +137,8 @@ was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" t
   | thin | やせている (skinny) | うすい | ✅ valid sense |
   **Bottom line: only `heart` is a true mistranslation** (child would learn ねつ=fever as "heart" — pedagogically harmful). The other 7 last-wins picks are *valid alternate senses* of ambiguous English → leave (or optionally reorder to primary sense; NOT defects). So the `/workshop` sweep's duplicate-`en` fix-list is exactly ONE word: **heart**. (`kitchen` だいところ→だいどころ typo is a separate character-class fix.)
 
+  **✅ FIXED 2026-07-24 (/workshop, commit 96c5d33, sw v15, live-verified).** `heart`: relabeled ねつ→`en:"fever"` (its true meaning 熱) → `byEn['heart']` now resolves しんぞう (live-confirmed). `kitchen`: だいところ→だいどころ (台所) + regenerated audio (Nanami; old typo mp3 removed; new `だいどころ.mp3` HTTP 200 live). **Engine fix, not just the instance:** `kana-smoke` check #8 SENSE GUARD pins the corrected en↔kana pairings via the app's own last-wins resolution + bans typo kana, so a mistranslation-via-last-wins can't silently reship. Mutation-proven load-bearing (`--selftest` now 15 checks / 4 mutations killed). The other 7 dups need no action (valid senses).
+
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate
   the source (which voice/engine word625 uses) and improve it as part of this work.

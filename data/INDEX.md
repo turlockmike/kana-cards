@@ -2,6 +2,7 @@
 # Index — /home/mike/projects/kana-flashcards/data
 
 ## Files
+- `sentences.json`
 - `words.json`
 
-_0 subfolders, 1 files._
+_0 subfolders, 2 files._

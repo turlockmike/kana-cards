@@ -2,6 +2,56 @@
 # Index — /home/mike/projects/kana-flashcards/media/audio
 
 ## Files
+- `animal_s.mp3`
+- `apple_s.mp3`
+- `banana_s.mp3`
+- `beef_s.mp3`
+- `beer_s.mp3`
+- `beverage_s.mp3`
+- `bird_s.mp3`
+- `bottle_s.mp3`
+- `bread_s.mp3`
+- `breakfast_s.mp3`
+- `cake_s.mp3`
+- `cat_s.mp3`
+- `cheese_s.mp3`
+- `chicken_s.mp3`
+- `coffee_s.mp3`
+- `corn_s.mp3`
+- `cow_s.mp3`
+- `cup_s.mp3`
+- `dinner_s.mp3`
+- `dog_s.mp3`
+- `egg_s.mp3`
+- `fish_s.mp3`
+- `food_s.mp3`
+- `fork_s.mp3`
+- `friend_s.mp3`
+- `horse_s.mp3`
+- `juice_s.mp3`
+- `knife_s.mp3`
+- `lemon_s.mp3`
+- `lunch_s.mp3`
+- `milk_s.mp3`
+- `mother_s.mp3`
+- `mouse_s.mp3`
+- `north_s.mp3`
+- `oil_s.mp3`
+- `orange_s.mp3`
+- `pig_s.mp3`
+- `plate_s.mp3`
+- `pork_s.mp3`
+- `red_s.mp3`
+- `rice_s.mp3`
+- `salt_s.mp3`
+- `seed_s.mp3`
+- `soup_s.mp3`
+- `spoon_s.mp3`
+- `sugar_s.mp3`
+- `tea_s.mp3`
+- `water_s.mp3`
+- `wine_s.mp3`
+- `wing_s.mp3`
 - `あいす.mp3`
 - `あいず.mp3`
 - `あおい.mp3`
@@ -573,4 +623,4 @@
 - `買う.mp3`
 - `電話する.mp3`
 
-_0 subfolders, 570 files._
+_0 subfolders, 620 files._

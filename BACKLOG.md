@@ -101,6 +101,15 @@ was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" t
   glass had HTML junk / entity / English annotation / a kana typo). Full-file scan is now
   CLEAN (0 junk kana, 0 missing audio, 595 entries). If authoring surfaces more, fix the
   kana + regen that word's audio in the same pass — `grep -nE '"kana": "[^"]*(<!--|&[a-z]+;|not |[A-Za-z])' data/words.json` is the detector.
+- **⚠ TWO DISTINCT CHECK-CLASSES — don't conflate (learned slice-4):** the junk-kana
+  detector above catches corrupt *characters* (HTML/entities/latin/typos). It does NOT
+  catch a **valid-kana WRONG translation** — kana that is clean but means the wrong word
+  (`front`=ぜんぶ "all", should be まえ 前). Before authoring a slice, eyeball each word's
+  en↔kana sense, not just its kana validity; when the kana clearly mistranslates `en`,
+  **skip + flag** (as with `front`), never force a sentence onto the wrong word. Known
+  loose-fits authored anyway (acceptable comprehensible-input, NOT wrong): `evening`=よる
+  (=night), `feet`=フィート (the unit). A future `/workshop` could sweep words.json for
+  wrong-translation entries — a semantic pass distinct from the character-level detector.
 
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate

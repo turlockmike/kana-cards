@@ -110,6 +110,19 @@ was inserted last. (slice-3 correctly ran "(little) sister" → "electric fan" t
   loose-fits authored anyway (acceptable comprehensible-input, NOT wrong): `evening`=よる
   (=night), `feet`=フィート (the unit). A future `/workshop` could sweep words.json for
   wrong-translation entries — a semantic pass distinct from the character-level detector.
+- **slice-5 added 2 more skips (h–m range):** `heart` — card-facing kana is ねつ (熱
+  "fever/heat", WRONG translation; should be しんぞう 心臓 or heart-sense こころ). NOTE the
+  card renders `byEn[en]` = LAST words.json entry for that `en`; "heart" has two entries
+  (しんぞう + ねつ) and ねつ wins → the CARD itself shows the wrong reading. `kitchen` — card
+  kana だいところ is a **missing-dakuten typo**, should be だいどころ (台所). Both skipped +
+  flagged; both are words.json card-data defects the `/workshop` sweep should FIX (heart:
+  drop/repair the ねつ entry; kitchen: だいところ→だいどころ + regen that word's audio).
+- **⚠ AUTHORING = author for CARD-FACING kana, not the words.json row you eyeball.** The app
+  keys cards by image slug and pulls kana via `byEn[en]` (last-wins on duplicate `en`), and
+  keys the sentence by `en` too. So for duplicate-`en` words (`heart`, `light`, …) only ONE
+  sentence renders, on the card whose kana = the LAST words.json entry. slice-5 authored
+  `light`=かるい (the winning entry, "light-weight") — correct. Also skip words with `img=n`
+  (no image → no card ever renders the sentence): slice-5 skipped `i (formal`, `long (distance`.
 
 Two coupled asks:
 - **Audio quality is bad** — the current word audio (TTS?) sounds poor. Investigate

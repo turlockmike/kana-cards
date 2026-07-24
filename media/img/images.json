@@ -7672,16 +7672,6 @@
   "prompt_style": "jp-anchored"
  },
  {
-  "en": "to have sex",
-  "slug": "to-have-sex",
-  "file": "to-have-sex.jpg",
-  "category": "",
-  "status": "ok",
-  "source": "ai:openrouter:nano-lite",
-  "curated": "word625-gen-images",
-  "prompt_style": "jp-anchored"
- },
- {
   "en": "to shake",
   "slug": "to-shake",
   "file": "to-shake.jpg",
